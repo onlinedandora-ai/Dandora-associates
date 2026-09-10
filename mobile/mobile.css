@@ -2,25 +2,28 @@
    Dandora.online Associate Mobile Application - Native App Styling
    ========================================================================== */
 
-@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@500;600;700;800&display=swap');
 
 :root {
-  --bg-app: #070a13;
+  --bg-app: #07090e;
   --bg-card: #0d1527;
-  --bg-card-glass: rgba(16, 24, 42, 0.85);
+  --bg-card-glass: rgba(16, 25, 48, 0.88);
   --border-color: rgba(255, 255, 255, 0.08);
-  --border-glow: rgba(0, 229, 255, 0.3);
+  --border-glow: rgba(0, 240, 255, 0.35);
 
-  --cyan: #00e5ff;
+  --cyan: #00f0ff;
+  --cyan-glow: rgba(0, 240, 255, 0.22);
   --emerald: #10b981;
+  --emerald-bright: #00f5a0;
   --amber: #f59e0b;
 
   --text-primary: #f8fafc;
   --text-secondary: #94a3b8;
   --text-muted: #64748b;
 
-  --font-display: 'Outfit', sans-serif;
+  --font-display: 'Space Grotesk', sans-serif;
   --font-body: 'Plus Jakarta Sans', sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
 
   --bottom-bar-h: 68px;
   --top-header-h: 58px;
