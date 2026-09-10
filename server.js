@@ -486,14 +486,28 @@ try {
   console.warn('DB initialization notice:', e.message);
 }
 
-// Start Server
-app.listen(PORT, () => {
-  console.log(`====================================================`);
-  console.log(`🚀 Dandora Partner Platform is live!`);
-  console.log(`🌐 Marketing Portal:  http://localhost:${PORT}`);
-  console.log(`💼 Partner Portal:    http://localhost:${PORT}/portal.html`);
-  console.log(`👑 Admin Console:     http://localhost:${PORT}/admin.html`);
-  console.log(`📱 Mobile Web App:    http://localhost:${PORT}/mobile/`);
-  console.log(`🗄️ Database API:      http://localhost:${PORT}/api/health`);
-  console.log(`====================================================`);
-});
+// Start Server with automatic fallback if port is in use
+function startServer(port) {
+  const server = app.listen(port, () => {
+    console.log(`====================================================`);
+    console.log(`🚀 Dandora Partner Platform is live!`);
+    console.log(`🌐 Marketing Portal:  http://localhost:${port}`);
+    console.log(`💼 Partner Portal:    http://localhost:${port}/portal.html`);
+    console.log(`👑 Admin Console:     http://localhost:${port}/admin.html`);
+    console.log(`📱 Mobile Web App:    http://localhost:${port}/mobile/`);
+    console.log(`🗄️ Database API:      http://localhost:${port}/api/health`);
+    console.log(`====================================================`);
+  });
+
+  server.on('error', (err) => {
+    if (err.code === 'EADDRINUSE') {
+      const nextPort = Number(port) + 1;
+      console.warn(`⚠️ Port ${port} is already in use. Automatically switching to http://localhost:${nextPort}...`);
+      startServer(nextPort);
+    } else {
+      console.error('Server error:', err);
+    }
+  });
+}
+
+startServer(PORT);
