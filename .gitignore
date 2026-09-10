@@ -24,7 +24,8 @@ data/*.sqlite-journal
 dist/
 build/
 out/
-downloads/
+downloads/*
+!downloads/Dandora-Partner-App.apk
 .cache/
 
 # Capacitor & Mobile Native Artifacts
