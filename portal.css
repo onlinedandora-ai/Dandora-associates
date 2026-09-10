@@ -6,35 +6,37 @@
 @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@500;600;700;800&display=swap');
 
 :root {
-  /* User-Specified Warm Organic Editorial Palette */
-  --sage-green: #7C8B5E;       /* primary/brand */
-  --terracotta: #B5764F;       /* accent/CTA */
-  --warm-amber: #E7B978;       /* highlight */
-  --soft-sage: #DCE3CB;        /* secondary background */
-  --cream: #F4EFE6;            /* main background */
-  --deep-brown: #8A6A4A;       /* text/contrast */
+  /* Enhanced Earthy Warmth Palette (User Selected) */
+  --coffee-dark: #1A120B;      /* Rich Coffee / Espresso - ultra contrast */
+  --terracotta: #D95D39;       /* Vibrant Terracotta Orange - accent / CTA */
+  --forest-olive: #385E38;     /* Rich Forest Olive - primary / brand */
+  --sage-green: #385E38;       /* alias to forest olive */
+  --warm-amber: #E5A93C;       /* Rich Honey Amber - highlights */
+  --soft-sage: #EAEFE5;        /* Soft olive-cream secondary background */
+  --cream: #FAF7F2;            /* Luminous Warm Cream - main background */
+  --deep-brown: #6E5343;       /* Warm mocha contrast text */
 
   /* Structural UI tokens */
-  --bg-main: #F4EFE6;
-  --bg-sidebar: #ECE5D8;
-  --bg-card: rgba(255, 255, 255, 0.9);
+  --bg-main: #FAF7F2;
+  --bg-sidebar: #F2EFE9;
+  --bg-card: rgba(255, 255, 255, 0.94);
   --bg-card-solid: #FFFFFF;
-  --bg-hover: rgba(220, 227, 203, 0.5);
-  --border-color: rgba(138, 106, 74, 0.2);
-  --border-hairline: rgba(138, 106, 74, 0.15);
-  --border-glow: rgba(181, 118, 79, 0.4);
+  --bg-hover: rgba(234, 239, 229, 0.6);
+  --border-color: rgba(26, 18, 11, 0.1);
+  --border-hairline: rgba(26, 18, 11, 0.08);
+  --border-glow: rgba(217, 93, 57, 0.35);
 
-  --cyan: #7C8B5E;             /* Sage Green brand */
-  --cyan-glow: rgba(124, 139, 94, 0.25);
-  --emerald: #7C8B5E;
-  --emerald-bright: #526338;
-  --amber: #E7B978;
-  --indigo: #8A6A4A;
+  --cyan: #385E38;             /* Forest Olive brand */
+  --cyan-glow: rgba(56, 94, 56, 0.25);
+  --emerald: #385E38;
+  --emerald-bright: #477747;
+  --amber: #E5A93C;
+  --indigo: #6E5343;
   --danger: #C2410C;
 
-  --text-primary: #2C1E15;     /* High contrast deep espresso */
-  --text-secondary: #5C4533;   /* Rich warm tone */
-  --text-muted: #8A6A4A;       /* Deep brown contrast */
+  --text-primary: #1A120B;     /* High contrast rich coffee */
+  --text-secondary: #4A3B32;   /* Rich warm tone */
+  --text-muted: #8C7364;       /* Soft mocha contrast */
 
   --font-display: 'Space Grotesk', sans-serif;
   --font-body: 'Plus Jakarta Sans', sans-serif;
