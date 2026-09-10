@@ -1175,14 +1175,60 @@ function initMobileMenu() {
       navLinks.style.display = isVisible ? 'none' : 'flex';
       navLinks.style.flexDirection = 'column';
       navLinks.style.position = 'absolute';
-      navLinks.style.top = '74px';
-      navLinks.style.left = '0';
-      navLinks.style.right = '0';
-      navLinks.style.background = '#0d1527';
-      navLinks.style.padding = '1.5rem';
-      navLinks.style.borderBottom = '1px solid var(--border-subtle)';
+      navLinks.style.top = '72px';
+      navLinks.style.left = '1rem';
+      navLinks.style.right = '1rem';
+      navLinks.style.background = 'rgba(244, 239, 230, 0.98)';
+      navLinks.style.backdropFilter = 'blur(20px)';
+      navLinks.style.padding = '1.2rem';
+      navLinks.style.borderRadius = 'var(--radius-lg)';
+      navLinks.style.border = '1px solid var(--border-subtle)';
+      navLinks.style.boxShadow = 'var(--shadow-lg)';
+      navLinks.style.zIndex = '150';
     });
   }
+}
+
+// Nav Tab Buttons Active Highlighter & ScrollSpy
+function initNavTabHighlighter() {
+  const tabLinks = document.querySelectorAll('.nav-tab-wrapper .nav-link');
+  if (!tabLinks.length) return;
+
+  tabLinks.forEach(link => {
+    link.addEventListener('click', function () {
+      tabLinks.forEach(l => l.classList.remove('active'));
+      this.classList.add('active');
+    });
+  });
+
+  const sections = [
+    { id: 'hero', link: document.querySelector('.nav-tab-wrapper .nav-link[href="#hero"]') },
+    { id: 'earnings', link: document.querySelector('.nav-tab-wrapper .nav-link[href="#earnings"]') },
+    { id: 'calculator', link: document.querySelector('.nav-tab-wrapper .nav-link[href="#calculator"]') },
+    { id: 'how-it-works', link: document.querySelector('.nav-tab-wrapper .nav-link[href="#how-it-works"]') }
+  ];
+
+  window.addEventListener('scroll', () => {
+    let currentId = 'hero';
+    const scrollPosition = window.scrollY + 140;
+
+    sections.forEach(sec => {
+      const el = document.getElementById(sec.id);
+      if (el && el.offsetTop <= scrollPosition) {
+        currentId = sec.id;
+      }
+    });
+
+    sections.forEach(sec => {
+      if (sec.link) {
+        if (sec.id === currentId) {
+          sec.link.classList.add('active');
+        } else {
+          sec.link.classList.remove('active');
+        }
+      }
+    });
+  }, { passive: true });
 }
 
 // Toast Notifications
@@ -1193,7 +1239,7 @@ function showToast(message) {
   const toast = document.createElement('div');
   toast.className = 'toast';
   toast.innerHTML = `
-    <span style="color: var(--cyan); font-size: 1.1rem;">⚡</span>
+    <span style="color: var(--terracotta); font-size: 1.1rem;">⚡</span>
     <span>${escapeHtml(message)}</span>
   `;
 
@@ -1216,3 +1262,9 @@ function escapeHtml(str) {
     .replace(/"/g, '&quot;')
     .replace(/'/g, '&#039;');
 }
+
+// Auto-run navigation initializers
+document.addEventListener('DOMContentLoaded', () => {
+  initMobileMenu();
+  initNavTabHighlighter();
+});

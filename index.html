@@ -23,35 +23,33 @@
         <span class="badge badge-sm" style="font-size: 0.68rem; margin-left: 0.4rem;">Associates</span>
       </a>
 
-      <nav>
-        <ul class="nav-links">
-          <li><a href="#motivation" class="nav-link">Who It's For</a></li>
-          <li><a href="#earnings" class="nav-link">Earnings &amp; Tiers</a></li>
-          <li><a href="#calculator" class="nav-link">Income Calculator</a></li>
-          <li><a href="#simulator" class="nav-link">App Simulator</a></li>
-          <li><a href="#how-it-works" class="nav-link">How It Works</a></li>
-          <li><a href="#faq" class="nav-link">FAQ</a></li>
+      <nav class="nav-tab-wrapper">
+        <ul class="nav-links" role="tablist">
+          <li role="presentation"><a href="#hero" class="nav-link active" role="tab">Home</a></li>
+          <li role="presentation"><a href="#earnings" class="nav-link" role="tab">Earnings &amp; Tiers</a></li>
+          <li role="presentation"><a href="#calculator" class="nav-link" role="tab">Calculator</a></li>
+          <li role="presentation"><a href="#how-it-works" class="nav-link" role="tab">How It Works</a></li>
         </ul>
       </nav>
 
       <div class="nav-actions">
         <button class="sync-status-pill offline" id="globalSyncPill" onclick="openCloudSyncModal()" title="Configure Remote API / Google Sheets Sync">
           <span class="sync-indicator-dot"></span>
-          <span id="syncStatusText">Local Only</span>
+          <span id="syncStatusText">Sync</span>
           <span class="queue-badge" id="syncQueueBadge" style="display: none;">0</span>
         </button>
-        <a href="admin.html" class="btn btn-secondary btn-sm" style="border-color: rgba(239, 68, 68, 0.4); color: #f87171; white-space: nowrap;" title="Administrative CRM &amp; KYC Console">
-          👑 Admin Console
+        <a href="admin.html" class="btn btn-secondary btn-sm" style="border-color: rgba(239, 68, 68, 0.4); color: #f87171;" title="Administrative CRM &amp; KYC Console">
+          👑 Admin
         </a>
-        <a href="portal.html" class="btn btn-secondary btn-sm" id="navLoginBtn" style="white-space: nowrap;">
-          <svg width="15" height="15" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 16l-4-4m0 0l4-4m-4 4h14m-5 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h7a3 3 0 013 3v1"></path></svg>
-          Partner Portal
+        <a href="portal.html" class="btn btn-secondary btn-sm" id="navLoginBtn">
+          <svg width="14" height="14" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 16l-4-4m0 0l4-4m-4 4h14m-5 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h7a3 3 0 013 3v1"></path></svg>
+          Portal
         </a>
-        <a href="mobile/index.html" class="btn btn-secondary btn-sm" id="navMobileBtn" style="white-space: nowrap;">
-          📱 Mobile App
+        <a href="mobile/index.html" class="btn btn-secondary btn-sm" id="navMobileBtn">
+          📱 App
         </a>
-        <a href="register.html" class="btn btn-primary btn-sm" id="navRegisterBtn" style="white-space: nowrap;">
-          Register (4 Steps) &rarr;
+        <a href="register.html" class="btn btn-primary btn-sm" id="navRegisterBtn">
+          Register &rarr;
         </a>
         <button class="mobile-toggle" id="mobileMenuBtn" aria-label="Open Navigation Menu">
           <svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
