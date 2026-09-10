@@ -12,6 +12,8 @@
     "cap:copy": "cap copy",
     "cap:android": "cap open android",
     "cap:add:android": "cap add android",
+    "android:build": "cd android && .\\gradlew.bat assembleDebug",
+    "android:sync": "cap sync android",
     "test": "echo \"Error: no test specified\" && exit 0"
   },
   "keywords": [

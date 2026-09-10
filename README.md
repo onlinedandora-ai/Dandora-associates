@@ -58,15 +58,26 @@ npm run db:seed
 
 ---
 
-### 3. మొబైల్ యాప్ కెపాసిటర్ సింక్ (Capacitor Mobile Sync):
-ఆండ్రాయిడ్ యాప్ లేదా APK బిల్డ్ కోసం:
-```bash
-# ఫ్రంటెండ్ ఫైళ్లను ఆండ్రాయిడ్ ప్రాజెక్ట్‌కి సింక్ చేయండి
-npm run cap:sync
+### 3. ఆండ్రాయిడ్ యాప్ డెవలప్‌మెంట్ & APK బిల్డ్ (Android Application Development):
 
-# ఆండ్రాయిడ్ స్టూడియోలో ఓపెన్ చేయండి
+ఆండ్రాయిడ్ యాప్ లేదా APK బిల్డ్ చేయడం కోసం:
+```bash
+# 1. ఫ్రంటెండ్ వెబ్ ఫైళ్లను ఆండ్రాయిడ్ ప్రాజెక్ట్‌కి సింక్ చేయండి
+npm run android:sync
+
+# 2. ఆండ్రాయిడ్ స్టూడియోలో ప్రాజెక్ట్ ఓపెన్ చేయండి
 npm run cap:android
+
+# 3. కమాండ్ లైన్ ద్వారా నేరుగా డీబగ్ APK బిల్డ్ చేయండి
+npm run android:build
 ```
+
+బిల్డ్ అయిన APK లొకేషన్:
+- `downloads/Dandora-Partner-App.apk`
+- `android/app/build/outputs/apk/debug/app-debug.apk`
+
+బిల్డ్ అయిన APK ని బ్రౌజర్ లేదా మొబైల్ ఫోన్ ద్వారా నేరుగా డౌన్‌లోడ్ చేసుకోవచ్చు:
+- 📲 **APK డైరెక్ట్ డౌన్‌లోడ్**: [http://localhost:8080/downloads/Dandora-Partner-App.apk](http://localhost:8080/downloads/Dandora-Partner-App.apk)
 
 ---
 

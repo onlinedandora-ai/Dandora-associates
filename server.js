@@ -470,6 +470,16 @@ app.get('/portal', (req, res) => res.sendFile(path.join(__dirname, 'portal.html'
 app.get('/admin', (req, res) => res.sendFile(path.join(__dirname, 'admin.html')));
 app.get('/register', (req, res) => res.sendFile(path.join(__dirname, 'register.html')));
 
+// Direct Android APK Download Route
+app.get(['/download/app-debug.apk', '/download/apk'], (req, res) => {
+  const apkPath = path.join(__dirname, 'android', 'app', 'build', 'outputs', 'apk', 'debug', 'app-debug.apk');
+  res.download(apkPath, 'Dandora-Partner-App.apk', (err) => {
+    if (err && !res.headersSent) {
+      res.status(404).send('APK not found. Please build the Android project first using: npm run android:build');
+    }
+  });
+});
+
 // Fallback for root
 app.get('/', (req, res) => {
   res.sendFile(path.join(__dirname, 'index.html'));

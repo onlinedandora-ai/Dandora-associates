@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">Dandora Partner</string>
+    <string name="title_activity_main">Dandora Partner</string>
+    <string name="package_name">online.dandora.associate</string>
+    <string name="custom_url_scheme">online.dandora.associate</string>
+</resources>

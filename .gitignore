@@ -24,6 +24,7 @@ data/*.sqlite-journal
 dist/
 build/
 out/
+downloads/
 .cache/
 
 # Capacitor & Mobile Native Artifacts
