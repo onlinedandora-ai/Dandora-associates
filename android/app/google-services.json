@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "24328359898",
+    "project_id": "dandora-associates",
+    "storage_bucket": "dandora-associates.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:24328359898:android:51891d56e22ecbc951fae3",
+        "android_client_info": {
+          "package_name": "online.dandora.associate"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDGY-m88Qaim9kNNYtwgrSEx7ScNppaBiE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:24328359898:android:51891d56e22ecbc951fae3",
+        "android_client_info": {
+          "package_name": "DandoraAssociates.com"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDGY-m88Qaim9kNNYtwgrSEx7ScNppaBiE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
