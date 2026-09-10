@@ -1,0 +1,650 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dandora Partner Portal | Associate Web Application</title>
+  <meta name="description" content="Official Dandora.online Associate Portal. Manage your local digital transformation lead pipeline, track commission payouts, access the video academy, and share marketing collateral." />
+  <link rel="stylesheet" href="portal.css" />
+</head>
+<body>
+
+  <!-- App Sidebar Navigation -->
+  <aside class="app-sidebar" id="appSidebar">
+    <div class="sidebar-header">
+      <div class="brand-symbol">D</div>
+      <div>
+        <div class="brand-title">Dandora<span style="color: var(--cyan);">.online</span></div>
+        <div style="font-size: 0.68rem; color: var(--text-muted); letter-spacing: 0.04em;">PARTNER PORTAL</div>
+      </div>
+    </div>
+
+    <!-- Associate ID & Profile Pill -->
+    <div class="associate-profile-card">
+      <div class="avatar-badge" id="portalAvatar">SK</div>
+      <div style="overflow: hidden;">
+        <div style="font-weight: 700; font-size: 0.92rem; white-space: nowrap; text-overflow: ellipsis; overflow: hidden;" id="portalUserName">
+          Sravan Kumar
+        </div>
+        <div style="font-size: 0.72rem; color: var(--cyan); font-family: monospace;" id="portalUserCode">
+          DAN-HYD-8821
+        </div>
+        <span class="badge badge-emerald" style="margin-top: 0.3rem;" id="portalUserTier">
+          Consultant Tier
+        </span>
+      </div>
+    </div>
+
+    <!-- Navigation Menu -->
+    <ul class="nav-menu">
+      <li>
+        <button class="nav-item-btn active" data-view="dashboardView" onclick="switchPortalView('dashboardView', this)">
+          <svg width="18" height="18" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"></path></svg>
+          Dashboard Overview
+        </button>
+      </li>
+      <li>
+        <button class="nav-item-btn" data-view="crmView" onclick="switchPortalView('crmView', this)">
+          <svg width="18" height="18" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01"></path></svg>
+          Lead Pipeline CRM
+          <span class="nav-badge-count" id="sidebarLeadCount">3</span>
+        </button>
+      </li>
+      <li>
+        <button class="nav-item-btn" data-view="academyView" onclick="switchPortalView('academyView', this)">
+          <svg width="18" height="18" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path></svg>
+          Training Academy Hub
+        </button>
+      </li>
+      <li>
+        <button class="nav-item-btn" data-view="marketingView" onclick="switchPortalView('marketingView', this)">
+          <svg width="18" height="18" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5.882V19.24a1.76 1.76 0 01-3.417.592l-2.147-6.15M18 13a3 3 0 100-6M5.436 13.683A4.001 4.001 0 017 6h1.832c4.1 0 7.625-1.234 9.168-3v14c-1.543-1.766-5.067-3-9.168-3H7a3.988 3.988 0 01-1.564-.317z"></path></svg>
+          Broadcasts &amp; Collateral
+        </button>
+      </li>
+      <li>
+        <button class="nav-item-btn" data-view="financeView" onclick="switchPortalView('financeView', this)">
+          <svg width="18" height="18" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+          Financial Ledger
+        </button>
+      </li>
+      <li>
+        <button class="nav-item-btn" data-view="credentialsView" onclick="switchPortalView('credentialsView', this)">
+          <svg width="18" height="18" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H5a2 2 0 00-2 2v9a2 2 0 002 2h14a2 2 0 002-2V8a2 2 0 00-2-2h-5m-4 0V5a2 2 0 114 0v1m-4 0a2 2 0 104 0m-5 8a2 2 0 100-4 2 2 0 000 4zm0 0c1.306 0 2.417.835 2.83 2M9 14a3.001 3.001 0 00-2.83 2M15 11h3m-3 4h2"></path></svg>
+          Digital ID &amp; Badges
+        </button>
+      </li>
+      <li>
+        <button class="nav-item-btn" data-view="settingsView" onclick="switchPortalView('settingsView', this)">
+          <svg width="18" height="18" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
+          Google Sheets Sync
+        </button>
+      </li>
+    </ul>
+
+    <div class="sidebar-footer">
+      <a href="index.html" class="btn btn-secondary btn-sm" style="width: 100%;">
+        ← Public Landing Page
+      </a>
+    </div>
+  </aside>
+
+  <!-- Main Portal Workspace -->
+  <main class="app-main">
+    <!-- Top Bar -->
+    <header class="app-topbar">
+      <div style="display: flex; align-items: center; gap: 1rem;">
+        <button class="action-icon-btn" onclick="toggleSidebar()" aria-label="Toggle Sidebar" style="display: none;" id="sidebarToggleBtn">
+          <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+        </button>
+        <div class="search-box">
+          <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
+          <input type="text" id="globalPortalSearch" placeholder="Search leads, clients, or tickets..." oninput="filterPortalLeads(this.value)" />
+        </div>
+      </div>
+
+      <div class="topbar-actions">
+        <a href="admin.html" class="btn btn-secondary btn-sm" style="border-color: rgba(239, 68, 68, 0.4); color: #f87171;" title="Switch to Admin Console">
+          👑 Admin Console
+        </a>
+        <button class="btn btn-emerald btn-sm" onclick="openNewLeadModal()">
+          + Submit New Lead
+        </button>
+        <div class="action-icon-btn" onclick="showNotificationToast()" title="Notifications">
+          <svg width="18" height="18" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9"></path></svg>
+          <span class="notification-dot"></span>
+        </div>
+        <a href="mobile/index.html" class="btn btn-secondary btn-sm" title="Launch Mobile App Version">
+          📱 Mobile View
+        </a>
+      </div>
+    </header>
+
+    <!-- Content Views Container -->
+    <div class="app-content">
+
+      <!-- VIEW 1: DASHBOARD OVERVIEW -->
+      <section class="portal-view active" id="dashboardView">
+        <div class="view-header">
+          <div>
+            <h1 class="view-title">Partner Performance Dashboard</h1>
+            <p class="view-desc">Real-time overview of your digital scout pipeline, commissions, and Hyderabad chapter rank.</p>
+          </div>
+          <button class="btn btn-secondary btn-sm" onclick="exportData('leads')">
+            📥 Export Pipeline CSV
+          </button>
+        </div>
+
+        <!-- Onboarding & KYC Status Banner (Section 9) -->
+        <div class="onboarding-readiness-banner" style="background: rgba(18, 24, 38, 0.85); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: var(--radius-md); padding: 1rem 1.25rem; margin-bottom: 1.5rem; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem;">
+          <div style="display: flex; align-items: center; gap: 1rem;">
+            <div style="width: 42px; height: 42px; border-radius: 50%; background: rgba(0, 229, 255, 0.15); color: #00e5ff; display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 0.95rem;" id="dashCompletionScore">100%</div>
+            <div>
+              <div style="display: flex; align-items: center; gap: 0.6rem;">
+                <strong style="color: #ffffff; font-size: 0.95rem;">Profile & Verification Status</strong>
+                <span class="badge badge-emerald" id="dashKycBadge">KYC Verified</span>
+                <span class="badge" style="background: rgba(168, 85, 247, 0.15); color: #c084fc; border: 1px solid rgba(168, 85, 247, 0.3);" id="dashWorkShareBadge">⚡ Work-Sharing Ready</span>
+              </div>
+              <small style="color: #94a3b8; font-size: 0.8rem;">Associate ID: <strong style="color: #00e5ff;" id="dashAssociateCodeDisplay">DAN-HYD-1042</strong> • Hyderabad Chapter</small>
+            </div>
+          </div>
+          <div style="display: flex; gap: 0.6rem;">
+            <a href="register.html" class="btn btn-secondary btn-sm" style="font-size: 0.75rem;">
+              ⚙️ Review 4-Step Onboarding Data
+            </a>
+          </div>
+        </div>
+
+        <!-- 4 Metric Cards -->
+        <div class="metrics-overview-grid">
+          <div class="metric-card emerald">
+            <div class="metric-header-row">
+              <span>Verified Payouts Earned</span>
+              <span>💰</span>
+            </div>
+            <div class="metric-large-val" id="dashTotalPayout">₹48,500</div>
+            <div class="metric-sub-note">
+              <span>●</span> Fast 48-72h UPI Clearance
+            </div>
+          </div>
+
+          <div class="metric-card amber">
+            <div class="metric-header-row">
+              <span>Pending Commission Approval</span>
+              <span>⏳</span>
+            </div>
+            <div class="metric-large-val" id="dashPendingPayout">₹18,000</div>
+            <div class="metric-sub-note" style="color: var(--amber);">
+              2 Client Proposals in Review
+            </div>
+          </div>
+
+          <div class="metric-card">
+            <div class="metric-header-row">
+              <span>Active Pipeline Leads</span>
+              <span>📋</span>
+            </div>
+            <div class="metric-large-val" id="dashActiveLeadsCount">3 Leads</div>
+            <div class="metric-sub-note" style="color: var(--cyan);">
+              Dandora Strategists Assigned
+            </div>
+          </div>
+
+          <div class="metric-card">
+            <div class="metric-header-row">
+              <span>Chapter Leaderboard Rank</span>
+              <span>🏆</span>
+            </div>
+            <div class="metric-large-val">#4</div>
+            <div class="metric-sub-note" style="color: var(--amber);">
+              Top 5% in Hyderabad Region
+            </div>
+          </div>
+        </div>
+
+        <!-- Quick Funnel & Recent Activity -->
+        <div style="display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 1.5rem;">
+          <div style="background: var(--bg-card-solid); border: 1px solid var(--border-color); border-radius: var(--radius-lg); padding: 1.5rem;">
+            <h3 style="font-size: 1.15rem; margin-bottom: 1rem;">Pipeline Funnel Status</h3>
+            <div style="display: flex; flex-direction: column; gap: 0.8rem;" id="dashboardFunnelStream">
+              <!-- Rendered via portal.js -->
+            </div>
+          </div>
+
+          <div style="background: var(--bg-card-solid); border: 1px solid var(--border-color); border-radius: var(--radius-lg); padding: 1.5rem;">
+            <h3 style="font-size: 1.15rem; margin-bottom: 1rem;">Live Hyderabad Hub Ticker</h3>
+            <div style="display: flex; flex-direction: column; gap: 0.8rem; font-size: 0.85rem;">
+              <div style="padding: 0.6rem; background: rgba(255,255,255,0.02); border-radius: var(--radius-sm); border-left: 3px solid var(--emerald);">
+                <strong>Meenakshi Jewellers</strong>: Strategist Amit scheduled discovery call today at 4 PM.
+              </div>
+              <div style="padding: 0.6rem; background: rgba(255,255,255,0.02); border-radius: var(--radius-sm); border-left: 3px solid var(--cyan);">
+                <strong>Dr. Ananya Dental</strong>: Milestone payment cleared! ₹9,750 transferred via UPI.
+              </div>
+              <div style="padding: 0.6rem; background: rgba(255,255,255,0.02); border-radius: var(--radius-sm); border-left: 3px solid var(--amber);">
+                <strong>New Service Live</strong>: Restaurant Smart QR Menus with table checkout.
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- VIEW 2: LEAD PIPELINE CRM -->
+      <section class="portal-view" id="crmView">
+        <div class="view-header">
+          <div>
+            <h1 class="view-title">Lead Management CRM</h1>
+            <p class="view-desc">Monitor real-time deal stages: from lead submission to contract sign-off and payout.</p>
+          </div>
+          <div style="display: flex; gap: 0.8rem;">
+            <button class="btn btn-secondary btn-sm" id="toggleViewModeBtn" onclick="toggleCrmViewMode()">
+              📊 Toggle Table / Kanban
+            </button>
+            <button class="btn btn-primary btn-sm" onclick="openNewLeadModal()">
+              + Submit Lead
+            </button>
+          </div>
+        </div>
+
+        <!-- Kanban Board View -->
+        <div id="crmKanbanView" class="kanban-board-container">
+          <!-- Col 1: Submitted -->
+          <div class="kanban-column" id="kcol-submitted">
+            <div class="kanban-col-header" style="border-top: 3px solid #3b82f6;">
+              <span>Submitted</span>
+              <span class="badge badge-cyan" id="count-submitted">0</span>
+            </div>
+            <div class="kanban-cards-stream" id="cards-submitted"></div>
+          </div>
+
+          <!-- Col 2: Assigned -->
+          <div class="kanban-column" id="kcol-assigned">
+            <div class="kanban-col-header" style="border-top: 3px solid #8b5cf6;">
+              <span>Strategist Assigned</span>
+              <span class="badge badge-cyan" id="count-assigned">0</span>
+            </div>
+            <div class="kanban-cards-stream" id="cards-assigned"></div>
+          </div>
+
+          <!-- Col 3: Meeting -->
+          <div class="kanban-column" id="kcol-meeting">
+            <div class="kanban-col-header" style="border-top: 3px solid var(--amber);">
+              <span>Meeting Scheduled</span>
+              <span class="badge badge-amber" id="count-meeting">0</span>
+            </div>
+            <div class="kanban-cards-stream" id="cards-meeting"></div>
+          </div>
+
+          <!-- Col 4: Won -->
+          <div class="kanban-column" id="kcol-won">
+            <div class="kanban-col-header" style="border-top: 3px solid var(--emerald);">
+              <span>Deal Won</span>
+              <span class="badge badge-emerald" id="count-won">0</span>
+            </div>
+            <div class="kanban-cards-stream" id="cards-won"></div>
+          </div>
+
+          <!-- Col 5: Paid -->
+          <div class="kanban-column" id="kcol-paid">
+            <div class="kanban-col-header" style="border-top: 3px solid var(--cyan);">
+              <span>Paid to Bank</span>
+              <span class="badge badge-cyan" id="count-paid">0</span>
+            </div>
+            <div class="kanban-cards-stream" id="cards-paid"></div>
+          </div>
+        </div>
+
+        <!-- Table View -->
+        <div id="crmTableView" class="crm-table-container" style="display: none;">
+          <table class="crm-table">
+            <thead>
+              <tr>
+                <th>Ticket ID</th>
+                <th>Business Name</th>
+                <th>Contact Person</th>
+                <th>Category</th>
+                <th>Service Need</th>
+                <th>Status</th>
+                <th>Est. Payout</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody id="crmTableBody">
+              <!-- Rendered via portal.js -->
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- VIEW 3: TRAINING ACADEMY -->
+      <section class="portal-view" id="academyView">
+        <div class="view-header">
+          <div>
+            <h1 class="view-title">Digital Training &amp; Enablement Hub</h1>
+            <p class="view-desc">Watch 3-minute video lessons, take domain micro-quizzes, and unlock verified digital badges.</p>
+          </div>
+          <span class="badge badge-amber">4 Specialized Tracks</span>
+        </div>
+
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem;">
+          <!-- Course Lessons Library -->
+          <div style="background: var(--bg-card-solid); border: 1px solid var(--border-color); border-radius: var(--radius-lg); padding: 1.5rem;">
+            <h3 style="font-size: 1.15rem; margin-bottom: 1rem;">Video Lessons Curriculum</h3>
+            <div style="display: flex; flex-direction: column; gap: 0.9rem;" id="portalLessonsList">
+              <!-- Rendered via portal.js -->
+            </div>
+          </div>
+
+          <!-- Quiz & Certification Center -->
+          <div style="background: var(--bg-card-solid); border: 1px solid var(--border-color); border-radius: var(--radius-lg); padding: 1.5rem;">
+            <h3 style="font-size: 1.15rem; margin-bottom: 0.3rem;" id="portalQuizTitle">Scout Certification Quiz</h3>
+            <p style="font-size: 0.8rem; color: var(--text-secondary); margin-bottom: 1.2rem;">Answer 3 quick questions to certify your partner profile.</p>
+
+            <div id="portalQuizCard">
+              <div style="font-size: 0.82rem; color: var(--cyan); font-weight: 700; margin-bottom: 0.5rem;" id="portalQuizProg">
+                Question 1 of 3
+              </div>
+              <div style="font-size: 1.05rem; font-weight: 600; margin-bottom: 1.2rem;" id="portalQuizQ">
+                When approaching a local business owner who has no website, what is your primary objective as an Associate?
+              </div>
+              <div style="display: flex; flex-direction: column; gap: 0.6rem;" id="portalQuizOpts">
+                <!-- Rendered via JS -->
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- VIEW 4: BROADCASTS & MARKETING -->
+      <section class="portal-view" id="marketingView">
+        <div class="view-header">
+          <div>
+            <h1 class="view-title">Marketing Collateral &amp; Broadcasts</h1>
+            <p class="view-desc">One-click shareable marketing assets that append your unique partner referral code.</p>
+          </div>
+        </div>
+
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 1.5rem;">
+          <!-- Card 1: WhatsApp Referral Pitch -->
+          <div style="background: var(--bg-card-solid); border: 1px solid var(--border-color); border-radius: var(--radius-md); padding: 1.5rem;">
+            <h4 style="font-size: 1.1rem; margin-bottom: 0.4rem;">📱 Local Business Elevator Script</h4>
+            <p style="font-size: 0.85rem; color: var(--text-secondary); margin-bottom: 1.2rem;">
+              Send this personalized message to shop owners, clinics, and restaurants in your area with your referral link attached.
+            </p>
+            <div style="background: rgba(0,0,0,0.4); padding: 1rem; border-radius: var(--radius-sm); font-size: 0.85rem; margin-bottom: 1rem; color: #cbd5e1;">
+              "Hi sir! Saw your clinic in Hyderabad. Dandora.online is offering automated online booking with zero tech headache. Check our launch portfolio here: <span style="color: var(--cyan);" id="waSampleLink">https://dandora.online/associates?ref=DAN-HYD-8821</span>"
+            </div>
+            <button class="btn btn-emerald btn-sm" onclick="shareToWhatsApp('Local Business Pitch', 'DAN-HYD-8821')">
+              Share to WhatsApp
+            </button>
+          </div>
+
+          <!-- Card 2: Brochures & PDF Kits -->
+          <div style="background: var(--bg-card-solid); border: 1px solid var(--border-color); border-radius: var(--radius-md); padding: 1.5rem;">
+            <h4 style="font-size: 1.1rem; margin-bottom: 0.4rem;">📄 Downloadable PDF Brochures</h4>
+            <p style="font-size: 0.85rem; color: var(--text-secondary); margin-bottom: 1.2rem;">
+              Official brochures branded with Dandora credentials to present in face-to-face discussions.
+            </p>
+            <div style="display: flex; flex-direction: column; gap: 0.6rem;">
+              <button class="btn btn-secondary btn-sm" onclick="downloadKit('Solutions Brochure')">📥 Dandora Corporate Portfolio Brochure</button>
+              <button class="btn btn-secondary btn-sm" onclick="downloadKit('Restaurant Smart QR')">📥 Restaurant Smart QR Table Checkout Deck</button>
+              <button class="btn btn-secondary btn-sm" onclick="downloadKit('2026 Rate Card')">📥 Associate 2026 Pricing Rate Card</button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- VIEW 5: FINANCIAL LEDGER -->
+      <section class="portal-view" id="financeView">
+        <div class="view-header">
+          <div>
+            <h1 class="view-title">Financial Ledger &amp; Payout Receipts</h1>
+            <p class="view-desc">Track every commission credit, payment milestone clearance, and download official receipts.</p>
+          </div>
+          <button class="btn btn-emerald btn-sm" onclick="openPayoutReceiptModal()">
+            🧾 Generate Latest Receipt
+          </button>
+        </div>
+
+        <div class="crm-table-container">
+          <table class="crm-table">
+            <thead>
+              <tr>
+                <th>Receipt ID</th>
+                <th>Client Project</th>
+                <th>Contract Value</th>
+                <th>Commission Rate</th>
+                <th>Payout Amount</th>
+                <th>Disbursement Mode</th>
+                <th>Date &amp; Status</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>#RCP-7712</strong></td>
+                <td>Urban Craft Brewery (Jubilee Hills)</td>
+                <td>₹1,20,000</td>
+                <td>15%</td>
+                <td><strong style="color: var(--emerald);">₹18,000</strong></td>
+                <td>UPI (sravan@oksbi)</td>
+                <td><span class="badge badge-emerald">Disbursed (Sep 8)</span></td>
+              </tr>
+              <tr>
+                <td><strong>#RCP-7711</strong></td>
+                <td>Dr. Ananya Dental Speciality</td>
+                <td>₹65,000</td>
+                <td>15%</td>
+                <td><strong style="color: var(--cyan);">₹9,750</strong></td>
+                <td>UPI Pending</td>
+                <td><span class="badge badge-amber">Milestone Cleared</span></td>
+              </tr>
+              <tr>
+                <td><strong>#RCP-7710</strong></td>
+                <td>Prism Interiors Corporate Website</td>
+                <td>₹85,000</td>
+                <td>15%</td>
+                <td><strong style="color: var(--emerald);">₹12,750</strong></td>
+                <td>NEFT / IMPS</td>
+                <td><span class="badge badge-emerald">Disbursed (Aug 28)</span></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- VIEW 6: DIGITAL ID & CREDENTIALS -->
+      <section class="portal-view" id="credentialsView">
+        <div class="view-header">
+          <div>
+            <h1 class="view-title">Verified Digital Associate Credentials</h1>
+            <p class="view-desc">Official Dandora ID card and verified competency badges for fieldwork and client introductions.</p>
+          </div>
+          <button class="btn btn-primary btn-sm" onclick="exportData('associate')">
+            📥 Download Digital Pass
+          </button>
+        </div>
+
+        <div style="max-width: 600px; margin: 0 auto;">
+          <div style="background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #090e1a 100%); border: 2px solid var(--cyan); border-radius: var(--radius-lg); padding: 2.2rem; box-shadow: 0 15px 40px rgba(0,0,0,0.7), 0 0 25px var(--cyan-glow); position: relative;">
+            <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 1rem; margin-bottom: 1.4rem;">
+              <div style="font-weight: 800; font-size: 1.2rem; font-family: var(--font-display);">
+                Dandora<span style="color: var(--cyan);">.online</span>
+              </div>
+              <span class="badge badge-emerald">● VERIFIED ASSOCIATE</span>
+            </div>
+
+            <div style="display: flex; gap: 1.5rem; align-items: center; margin-bottom: 1.4rem;">
+              <div style="width: 80px; height: 80px; border-radius: var(--radius-md); background: linear-gradient(135deg, var(--cyan), #3b82f6); display: flex; align-items: center; justify-content: center; font-size: 2rem; color: #030712; font-weight: 800;">
+                SK
+              </div>
+              <div>
+                <h3 style="font-size: 1.4rem; margin-bottom: 0.2rem;" id="credCardName">Sravan Kumar</h3>
+                <div style="font-family: monospace; color: var(--cyan); font-weight: 700; font-size: 1.05rem;" id="credCardCode">DAN-HYD-2026-8821</div>
+                <div style="font-size: 0.8rem; color: var(--text-muted);">Track: Associate Consultant • Hyderabad Chapter</div>
+              </div>
+            </div>
+
+            <div style="border-top: 1px dashed rgba(255,255,255,0.15); padding-top: 0.8rem;">
+              <div style="font-size: 0.75rem; color: var(--amber); text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.4rem;">
+                Verified Certifications:
+              </div>
+              <div style="display: flex; gap: 0.5rem; flex-wrap: wrap;" id="credBadgesRow">
+                <span class="badge badge-amber">🏅 Certified Scout</span>
+                <span class="badge badge-amber">🩺 Healthcare Specialist</span>
+                <span class="badge badge-amber">🍽️ F&amp;B QR Advisor</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- VIEW 7: SETTINGS & GOOGLE SHEETS SYNC -->
+      <section class="portal-view" id="settingsView">
+        <div class="view-header">
+          <div>
+            <h1 class="view-title">System Settings &amp; Google Sheets Bridge</h1>
+            <p class="view-desc">Configure your remote webhook endpoint and auto-sync preferences.</p>
+          </div>
+        </div>
+
+        <div style="background: var(--bg-card-solid); border: 1px solid var(--border-color); border-radius: var(--radius-lg); padding: 2rem; max-width: 750px;">
+          <div style="margin-bottom: 1.5rem;">
+            <label style="display: block; font-weight: 600; font-size: 0.9rem; margin-bottom: 0.4rem;">Google Apps Script / Webhook Endpoint</label>
+            <div style="display: flex; gap: 0.6rem;">
+              <input type="url" id="portalWebhookInput" class="search-box" style="width: 100%;" placeholder="https://script.google.com/macros/s/.../exec" />
+              <button class="btn btn-secondary btn-sm" onclick="testCloudConnectionPortal()">Test Ping</button>
+            </div>
+          </div>
+
+          <div style="margin-bottom: 1.5rem; display: flex; justify-content: space-between; align-items: center; padding: 1rem; background: rgba(255,255,255,0.02); border-radius: var(--radius-sm);">
+            <div>
+              <div style="font-weight: 600;">Auto-Sync Leads Real-Time</div>
+              <div style="font-size: 0.8rem; color: var(--text-muted);">Dispatches every lead directly to Google Sheets upon submit</div>
+            </div>
+            <input type="checkbox" id="portalAutoSyncToggle" checked style="width: 20px; height: 20px;" />
+          </div>
+
+          <button class="btn btn-primary" onclick="savePortalSettings()">
+            Save Configuration
+          </button>
+        </div>
+      </section>
+
+    </div>
+  </main>
+
+  <!-- New Lead Submission Modal -->
+  <div class="modal-backdrop" id="portalLeadModal" style="position: fixed; inset: 0; background: rgba(0,0,0,0.8); z-index: 1000; display: none; align-items: center; justify-content: center; padding: 1.5rem;">
+    <div style="background: #0d1527; border: 1px solid var(--border-glow); border-radius: var(--radius-lg); max-width: 550px; width: 100%; padding: 2rem;">
+      <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.2rem;">
+        <h3 style="font-size: 1.3rem;">Submit Business Lead</h3>
+        <button onclick="closeNewLeadModal()" style="background: none; border: none; color: var(--text-muted); font-size: 1.5rem; cursor: pointer;">&times;</button>
+      </div>
+
+      <form id="portalNewLeadForm" onsubmit="handlePortalLeadSubmit(event)">
+        <div style="margin-bottom: 1rem;">
+          <label style="display: block; font-size: 0.85rem; font-weight: 600; margin-bottom: 0.3rem;">Store / Business Name *</label>
+          <input type="text" id="pLeadBiz" class="search-box" style="width: 100%;" required placeholder="e.g. Hyderabad Chai Point" />
+        </div>
+
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1rem;">
+          <div>
+            <label style="display: block; font-size: 0.85rem; font-weight: 600; margin-bottom: 0.3rem;">Contact Person *</label>
+            <input type="text" id="pLeadContact" class="search-box" style="width: 100%;" required placeholder="Owner Name" />
+          </div>
+          <div>
+            <label style="display: block; font-size: 0.85rem; font-weight: 600; margin-bottom: 0.3rem;">Phone Number *</label>
+            <input type="tel" id="pLeadPhone" class="search-box" style="width: 100%;" required pattern="[0-9]{10}" placeholder="10-digit mobile" />
+          </div>
+        </div>
+
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1rem;">
+          <div>
+            <label style="display: block; font-size: 0.85rem; font-weight: 600; margin-bottom: 0.3rem;">Category</label>
+            <select id="pLeadCat" class="search-box" style="width: 100%;">
+              <option value="Retail / Boutique">Retail / Boutique</option>
+              <option value="Healthcare / Clinic">Healthcare / Clinic</option>
+              <option value="Restaurant / Cafe">Restaurant / Cafe</option>
+              <option value="Corporate / Enterprise">Corporate</option>
+            </select>
+          </div>
+          <div>
+            <label style="display: block; font-size: 0.85rem; font-weight: 600; margin-bottom: 0.3rem;">Digital Need</label>
+            <select id="pLeadNeed" class="search-box" style="width: 100%;">
+              <option value="Website & Branding">Website &amp; Branding</option>
+              <option value="Custom Web App / ERP">Custom Web App / ERP</option>
+              <option value="Restaurant Smart QR">Restaurant Smart QR</option>
+              <option value="Digital Marketing & SEO">SEO &amp; Marketing</option>
+            </select>
+          </div>
+        </div>
+
+        <div style="margin-bottom: 1.4rem;">
+          <label style="display: block; font-size: 0.85rem; font-weight: 600; margin-bottom: 0.3rem;">Notes &amp; Requirements</label>
+          <textarea id="pLeadNotes" class="search-box" style="width: 100%; height: 70px; resize: none;" placeholder="Details about current challenges..."></textarea>
+        </div>
+
+        <div style="display: flex; gap: 0.8rem; justify-content: flex-end;">
+          <button type="button" class="btn btn-secondary btn-sm" onclick="closeNewLeadModal()">Cancel</button>
+          <button type="submit" class="btn btn-primary btn-sm">Log Lead to Dandora</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Payout Receipt Modal -->
+  <div class="modal-backdrop" id="receiptModal" style="position: fixed; inset: 0; background: rgba(0,0,0,0.85); z-index: 1000; display: none; align-items: center; justify-content: center; padding: 1.5rem;">
+    <div class="ledger-receipt-card" style="width: 100%;">
+      <div class="receipt-header-row">
+        <div>
+          <div style="font-weight: 800; font-size: 1.3rem;">Dandora<span style="color: var(--cyan);">.online</span></div>
+          <div style="font-size: 0.78rem; color: var(--text-muted);">DISBURSEMENT VOUCHER &amp; RECEIPT</div>
+        </div>
+        <div style="text-align: right;">
+          <div style="font-family: monospace; color: var(--cyan); font-weight: 700;">RCP-2026-7712</div>
+          <div style="font-size: 0.75rem; color: var(--text-muted);">Milestone: Final Delivery</div>
+        </div>
+      </div>
+
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1.5rem; font-size: 0.88rem;">
+        <div>
+          <span style="color: var(--text-muted);">Beneficiary:</span>
+          <div style="font-weight: 700;">Sravan Kumar (DAN-HYD-8821)</div>
+        </div>
+        <div>
+          <span style="color: var(--text-muted);">Settlement Channel:</span>
+          <div style="font-weight: 700; color: var(--emerald);">UPI Instant Payout</div>
+        </div>
+      </div>
+
+      <div style="background: rgba(255,255,255,0.02); border: 1px solid var(--border-color); border-radius: var(--radius-sm); padding: 1.2rem; margin-bottom: 1.5rem;">
+        <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem; font-size: 0.85rem;">
+          <span>Client: Urban Craft Brewery Website</span>
+          <span>₹1,20,000.00</span>
+        </div>
+        <div style="display: flex; justify-content: space-between; margin-bottom: 0.8rem; font-size: 0.85rem;">
+          <span>Associate Consultant Commission (15%):</span>
+          <span style="color: var(--cyan); font-weight: 700;">₹18,000.00</span>
+        </div>
+        <div style="display: flex; justify-content: space-between; border-top: 1px solid var(--border-color); padding-top: 0.8rem; font-size: 1.1rem; font-weight: 800;">
+          <span>Total Paid to Bank:</span>
+          <span style="color: var(--emerald);">₹18,000.00</span>
+        </div>
+      </div>
+
+      <div style="display: flex; justify-content: flex-end; gap: 0.8rem;">
+        <button class="btn btn-secondary btn-sm" onclick="closePayoutReceiptModal()">Close</button>
+        <button class="btn btn-primary btn-sm" onclick="window.print()">Print / Save PDF</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast Container -->
+  <div id="portalToastContainer" style="position: fixed; bottom: 20px; right: 20px; z-index: 9999; display: flex; flex-direction: column; gap: 0.5rem;"></div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="animations.js"></script>
+  <script src="db.js"></script>
+  <script src="api.js"></script>
+  <script src="portal.js"></script>
+</body>
+</html>

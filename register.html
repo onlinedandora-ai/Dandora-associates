@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Associate Onboarding Wizard | Dandora.online</title>
+  <meta name="description" content="Join the Dandora.online Associate Ecosystem in Hyderabad. Complete the 4-step verified partner onboarding.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="register.css">
+</head>
+<body class="wizard-body">
+
+  <!-- Top Navigation Header -->
+  <header class="wizard-header">
+    <div class="wizard-header-container">
+      <a href="index.html" class="logo-link">
+        <span class="logo-text">Dandora<span class="dot">.</span>online</span>
+        <span class="badge-tag">Partner Recruitment</span>
+      </a>
+      <div class="header-right">
+        <div class="autosave-status" id="autosaveIndicator">
+          <span class="pulse-dot"></span>
+          <span id="autosaveText">Draft saved locally</span>
+        </div>
+        <a href="portal.html" class="portal-link-btn">Already registered? Log in &rarr;</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Progress Bar Container -->
+  <section class="wizard-progress-section">
+    <div class="wizard-progress-container">
+      <div class="progress-bar-wrapper">
+        <div class="progress-fill" id="progressFill" style="width: 25%;"></div>
+      </div>
+      <div class="steps-row">
+        <div class="step-item active" id="stepIndicator1" onclick="WizardApp.goToStep(1)">
+          <div class="step-num">1</div>
+          <div class="step-text">
+            <span class="step-title">Account & OTP</span>
+            <span class="step-sub">Phone verification</span>
+          </div>
+        </div>
+        <div class="step-item" id="stepIndicator2" onclick="WizardApp.goToStep(2)">
+          <div class="step-num">2</div>
+          <div class="step-text">
+            <span class="step-title">Profile & Location</span>
+            <span class="step-sub">Hyderabad chapter</span>
+          </div>
+        </div>
+        <div class="step-item" id="stepIndicator3" onclick="WizardApp.goToStep(3)">
+          <div class="step-num">3</div>
+          <div class="step-text">
+            <span class="step-title">Skills & Availability</span>
+            <span class="step-sub">Talent matrix</span>
+          </div>
+        </div>
+        <div class="step-item" id="stepIndicator4" onclick="WizardApp.goToStep(4)">
+          <div class="step-num">4</div>
+          <div class="step-text">
+            <span class="step-title">KYC & Payout</span>
+            <span class="step-sub">Bank / UPI setup</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Main Wizard Form Container -->
+  <main class="wizard-main">
+    <div class="wizard-card" id="wizardCard">
+      
+      <!-- STEP 1: ACCOUNT CREATION & MOBILE OTP -->
+      <div class="step-panel active" id="stepPanel1">
+        <div class="step-intro">
+          <span class="step-tag">Step 1 of 4</span>
+          <h2>Create Your Associate Account</h2>
+          <p>Register with your legal name and mobile number. A 6-digit OTP will be sent to verify your identity.</p>
+        </div>
+
+        <form id="step1Form" onsubmit="WizardApp.handleStep1Submit(event)">
+          <div class="form-grid">
+            <div class="form-group full-width">
+              <label for="fullName">Full Legal Name (as per PAN/Aadhaar) <span class="req">*</span></label>
+              <input type="text" id="fullName" placeholder="e.g. Vikram Sharma" required autocomplete="name">
+            </div>
+
+            <div class="form-group">
+              <label for="mobileNumber">Mobile Number (WhatsApp Enabled) <span class="req">*</span></label>
+              <div class="input-with-prefix">
+                <span class="prefix">+91</span>
+                <input type="tel" id="mobileNumber" placeholder="98490 12345" maxlength="10" required>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="email">Email Address <span class="req">*</span></label>
+              <input type="email" id="email" placeholder="vikram.sharma@example.com" required autocomplete="email">
+            </div>
+
+            <div class="form-group">
+              <label for="password">Create Security PIN / Password <span class="req">*</span></label>
+              <input type="password" id="password" placeholder="At least 6 characters" minlength="6" required>
+            </div>
+
+            <div class="form-group">
+              <label for="referralCode">Referral / Invite Code (Optional)</label>
+              <input type="text" id="referralCode" placeholder="e.g. VIKRAM1042">
+            </div>
+
+            <div class="form-group full-width">
+              <label class="checkbox-label">
+                <input type="checkbox" id="termsCheck" required>
+                <span>I agree to the <a href="index.html#terms" target="_blank">Associate Partner Terms</a> and acknowledge that commissions are performance-based and payable upon client milestone clearance.</span>
+              </label>
+            </div>
+          </div>
+
+          <div class="form-actions">
+            <div></div>
+            <button type="submit" class="btn btn-primary" id="sendOtpBtn">
+              Verify Mobile via OTP &rarr;
+            </button>
+          </div>
+        </form>
+      </div>
+
+      <!-- STEP 2: PROFILE & LOCATION -->
+      <div class="step-panel" id="stepPanel2">
+        <div class="step-intro">
+          <span class="step-tag">Step 2 of 4</span>
+          <h2>Personal Demographics & Education</h2>
+          <p>Help us route high-priority commercial leads in your specific Hyderabad locality.</p>
+        </div>
+
+        <form id="step2Form" onsubmit="WizardApp.handleStep2Submit(event)">
+          <div class="form-grid">
+            <div class="form-group">
+              <label for="dob">Date of Birth <span class="req">*</span></label>
+              <input type="date" id="dob" required>
+            </div>
+
+            <div class="form-group">
+              <label for="gender">Gender <span class="req">*</span></label>
+              <select id="gender" required>
+                <option value="">Select Gender</option>
+                <option value="Male">Male</option>
+                <option value="Female">Female</option>
+                <option value="Other">Other</option>
+                <option value="Prefer not to say">Prefer not to say</option>
+              </select>
+            </div>
+
+            <div class="form-group full-width">
+              <label for="addressLine">Street Address / Landmark <span class="req">*</span></label>
+              <input type="text" id="addressLine" placeholder="e.g. Flat 402, Green Avenue, Plot 14" required>
+            </div>
+
+            <div class="form-group">
+              <label for="locality">Locality / Area <span class="req">*</span></label>
+              <input type="text" id="locality" placeholder="e.g. Madhapur / Ameerpet / Kukatpally" required>
+            </div>
+
+            <div class="form-group">
+              <label for="city">City / Region <span class="req">*</span></label>
+              <input type="text" id="city" value="Hyderabad" required>
+            </div>
+
+            <div class="form-group">
+              <label for="state">State <span class="req">*</span></label>
+              <input type="text" id="state" value="Telangana" required>
+            </div>
+
+            <div class="form-group">
+              <label for="pincode">PIN Code <span class="req">*</span></label>
+              <input type="text" id="pincode" placeholder="e.g. 500081" maxlength="6" required>
+            </div>
+
+            <div class="form-group">
+              <label for="highestEducation">Highest Education Level <span class="req">*</span></label>
+              <select id="highestEducation" required>
+                <option value="">Select Education</option>
+                <option value="Undergraduate Student">Currently in College (Undergraduate)</option>
+                <option value="Bachelor's Degree">Bachelor's Degree (Graduated)</option>
+                <option value="Master's / Post Graduate">Master's / Post Graduate</option>
+                <option value="Diploma / Polytechnic">Diploma / Polytechnic</option>
+                <option value="Higher Secondary (10+2)">Higher Secondary (10+2)</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="degreeSpecialization">Degree / Specialization</label>
+              <input type="text" id="degreeSpecialization" placeholder="e.g. B.Tech CS / B.Com / MBA">
+            </div>
+
+            <div class="form-group">
+              <label for="institutionName">College / University Name</label>
+              <input type="text" id="institutionName" placeholder="e.g. Osmania University / JNTUH">
+            </div>
+
+            <div class="form-group">
+              <label for="profileSegment">Your Current Profile Segment <span class="req">*</span></label>
+              <select id="profileSegment" required>
+                <option value="Student">College Student</option>
+                <option value="Working Professional">Working Professional (Part-Time)</option>
+                <option value="Freelancer">Independent Freelancer</option>
+                <option value="Homemaker">Educated Homemaker</option>
+                <option value="Job Seeker">Active Job Seeker</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-actions">
+            <button type="button" class="btn btn-secondary" onclick="WizardApp.goToStep(1)">&larr; Back</button>
+            <button type="submit" class="btn btn-primary">Save & Continue to Skills &rarr;</button>
+          </div>
+        </form>
+      </div>
+
+      <!-- STEP 3: SKILLS & AVAILABILITY -->
+      <div class="step-panel" id="stepPanel3">
+        <div class="step-intro">
+          <span class="step-tag">Step 3 of 4</span>
+          <h2>Skills & Field Availability</h2>
+          <p>Select the domains where you have direct expertise. (At least 1 skill required for work-sharing eligibility).</p>
+        </div>
+
+        <form id="step3Form" onsubmit="WizardApp.handleStep3Submit(event)">
+          <div class="skills-selection-container">
+            <div class="skill-category-block">
+              <span class="cat-label">💼 Business Development & Sales</span>
+              <div class="skill-chips" id="bdSkillsContainer"></div>
+            </div>
+
+            <div class="skill-category-block">
+              <span class="cat-label">📈 Digital Marketing & Local SEO</span>
+              <div class="skill-chips" id="dmSkillsContainer"></div>
+            </div>
+
+            <div class="skill-category-block">
+              <span class="cat-label">🎨 Creative, Video & Design</span>
+              <div class="skill-chips" id="crSkillsContainer"></div>
+            </div>
+
+            <div class="skill-category-block">
+              <span class="cat-label">⚙️ Tech, E-commerce & Web Integration</span>
+              <div class="skill-chips" id="tcSkillsContainer"></div>
+            </div>
+          </div>
+
+          <div class="form-grid mt-4">
+            <div class="form-group">
+              <label for="weeklyAvailability">Weekly Time Commitment <span class="req">*</span></label>
+              <select id="weeklyAvailability" required>
+                <option value="5-10 hours/week">5–10 hours / week (Casual Scout)</option>
+                <option value="10-15 hours/week" selected>10–15 hours / week (Active Consultant)</option>
+                <option value="15-25 hours/week">15–25 hours / week (High Commitment)</option>
+                <option value="25+ hours/week">25+ hours / week (Full-time Partner)</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="portfolioUrl">Portfolio / LinkedIn / Social Profile (Optional)</label>
+              <input type="url" id="portfolioUrl" placeholder="https://linkedin.com/in/yourprofile">
+            </div>
+          </div>
+
+          <div class="form-actions">
+            <button type="button" class="btn btn-secondary" onclick="WizardApp.goToStep(2)">&larr; Back</button>
+            <button type="submit" class="btn btn-primary">Save & Continue to KYC &rarr;</button>
+          </div>
+        </form>
+      </div>
+
+      <!-- STEP 4: KYC & PAYOUT SETUP -->
+      <div class="step-panel" id="stepPanel4">
+        <div class="step-intro">
+          <span class="step-tag">Step 4 of 4</span>
+          <h2>KYC & Payout Account Setup</h2>
+          <p>Set up your bank or UPI details for direct milestone commission payouts.</p>
+        </div>
+
+        <!-- Section 17 Compliance Notice -->
+        <div class="compliance-alert-box">
+          <div class="alert-icon">⚖️</div>
+          <div class="alert-content">
+            <strong>Payout Policy & Compliance Notice:</strong>
+            <p>Commissions are paid directly upon verified client payment milestones (standard target 48–72h). KYC and PAN verification are legally required before commission disbursement under Indian tax law (TDS Section 194H).</p>
+          </div>
+        </div>
+
+        <form id="step4Form" onsubmit="WizardApp.handleStep4Submit(event)">
+          <div class="form-grid">
+            <div class="form-group">
+              <label for="panNumber">Permanent Account Number (PAN) <span class="req">*</span></label>
+              <input type="text" id="panNumber" placeholder="ABCDE1234F" maxlength="10" style="text-transform: uppercase;">
+              <small class="field-hint">Format: 5 letters, 4 digits, 1 letter</small>
+            </div>
+
+            <div class="form-group">
+              <label for="upiId">Instant Payout UPI ID (VPA) <span class="req">*</span></label>
+              <input type="text" id="upiId" placeholder="e.g. yourname@okhdfcbank">
+              <small class="field-hint">Supports Google Pay, PhonePe, Paytm, or BHIM</small>
+            </div>
+
+            <div class="form-group full-width">
+              <div class="divider-line"><span>OR DIRECT BANK ACCOUNT</span></div>
+            </div>
+
+            <div class="form-group">
+              <label for="accountHolderName">Bank Account Holder Name</label>
+              <input type="text" id="accountHolderName" placeholder="Exact name as in passbook">
+            </div>
+
+            <div class="form-group">
+              <label for="ifscCode">Bank IFSC Code</label>
+              <input type="text" id="ifscCode" placeholder="e.g. HDFC0001627" maxlength="11" style="text-transform: uppercase;" onblur="WizardApp.lookupIfsc(this.value)">
+              <div id="ifscBranchOutput" class="branch-pill" style="display:none;"></div>
+            </div>
+
+            <div class="form-group">
+              <label for="bankAccountNumber">Bank Account Number</label>
+              <input type="password" id="bankAccountNumber" placeholder="Account Number">
+            </div>
+
+            <div class="form-group">
+              <label for="confirmAccountNumber">Re-enter Account Number</label>
+              <input type="text" id="confirmAccountNumber" placeholder="Confirm Account Number">
+            </div>
+
+            <div class="form-group full-width">
+              <label>PAN Card / ID Document Photo (Optional for Instant Verification)</label>
+              <div class="file-dropzone" onclick="document.getElementById('kycFileInput').click()">
+                <input type="file" id="kycFileInput" accept="image/*,.pdf" style="display:none;" onchange="WizardApp.handleFileUpload(this)">
+                <div class="dropzone-content" id="dropzoneContent">
+                  <span class="upload-icon">📄</span>
+                  <span class="upload-text">Click or drag file here to upload (JPG, PNG, or PDF max 5MB)</span>
+                  <span class="upload-sub">Your document will be encrypted and reviewed by our compliance officer.</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="form-actions space-between">
+            <button type="button" class="btn btn-secondary" onclick="WizardApp.goToStep(3)">&larr; Back</button>
+            <div class="btn-group-right">
+              <button type="button" class="btn btn-outline" onclick="WizardApp.skipKYCAndFinish()">
+                Skip for Now & Go to Dashboard
+              </button>
+              <button type="submit" class="btn btn-primary">
+                Complete Onboarding & Verify &rarr;
+              </button>
+            </div>
+          </div>
+        </form>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- OTP Verification Modal Simulation -->
+  <div class="modal-overlay" id="otpModal">
+    <div class="modal-box">
+      <div class="modal-badge">📱 SMS Verification</div>
+      <h3>Enter 6-Digit Code</h3>
+      <p>We've sent a verification code to <strong id="otpMobileDisplay">+91 98490 12345</strong>.</p>
+      
+      <div class="demo-otp-banner">
+        <span>💡 Demo Simulation Code: <strong>123456</strong></span>
+        <button type="button" class="btn-sm-auto" onclick="WizardApp.autoFillDemoOtp()">Auto-Fill</button>
+      </div>
+
+      <div class="otp-inputs-row">
+        <input type="text" maxlength="1" class="otp-digit" autofocus onkeyup="WizardApp.focusNextOtp(this, 0)">
+        <input type="text" maxlength="1" class="otp-digit" onkeyup="WizardApp.focusNextOtp(this, 1)">
+        <input type="text" maxlength="1" class="otp-digit" onkeyup="WizardApp.focusNextOtp(this, 2)">
+        <input type="text" maxlength="1" class="otp-digit" onkeyup="WizardApp.focusNextOtp(this, 3)">
+        <input type="text" maxlength="1" class="otp-digit" onkeyup="WizardApp.focusNextOtp(this, 4)">
+        <input type="text" maxlength="1" class="otp-digit" onkeyup="WizardApp.focusNextOtp(this, 5)">
+      </div>
+
+      <div class="otp-timer-row">
+        <span>Resend code in <span id="otpCountdown">55</span>s</span>
+        <button type="button" class="link-btn" id="resendOtpBtn" disabled onclick="WizardApp.resendOtp()">Resend OTP</button>
+      </div>
+
+      <div class="modal-actions">
+        <button type="button" class="btn btn-secondary" onclick="WizardApp.closeOtpModal()">Cancel</button>
+        <button type="button" class="btn btn-primary" onclick="WizardApp.submitOtpVerification()">Verify & Continue</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Final Launchpad Modal -->
+  <div class="modal-overlay" id="successModal">
+    <div class="modal-box success-box">
+      <div class="success-icon">🎉</div>
+      <h2>Welcome to Dandora Associate Ecosystem!</h2>
+      <p>Your official Associate Partner record has been activated for the Hyderabad Chapter.</p>
+
+      <div class="associate-id-card-preview">
+        <div class="card-chip"></div>
+        <div class="card-body">
+          <span class="card-brand">DANDORA.ONLINE ASSOCIATE</span>
+          <div class="card-id" id="issuedAssociateId">DAN-HYD-1043</div>
+          <div class="card-holder" id="issuedHolderName">Vikram Sharma</div>
+          <div class="card-footer">
+            <span class="status-pill active-pill" id="issuedStatusPill">REGISTERED</span>
+            <span class="tier-pill">Scout Tier (10%)</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="launchpad-choices">
+        <a href="portal.html" class="choice-card">
+          <span class="icon">🖥️</span>
+          <div class="text">
+            <strong>Open Associate Web App Portal</strong>
+            <span>Desktop dashboard with Kanban CRM, training & financial ledger.</span>
+          </div>
+        </a>
+        <a href="mobile/index.html" class="choice-card">
+          <span class="icon">📱</span>
+          <div class="text">
+            <strong>Launch Associate Mobile App</strong>
+            <span>Touch-optimized smartphone PWA with quick storefront photo logger.</span>
+          </div>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <script src="db.js"></script>
+  <script src="api.js"></script>
+  <script src="register.js"></script>
+</body>
+</html>

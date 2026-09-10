@@ -1,0 +1,38 @@
+{
+  "name": "dandora-associates",
+  "version": "1.0.0",
+  "description": "Dandora.online Associate Partner Platform, Database, and Mobile Application",
+  "main": "server.js",
+  "scripts": {
+    "dev": "node server.js",
+    "start": "node server.js",
+    "server": "node server.js",
+    "db:seed": "node server/seed.js",
+    "cap:sync": "cap sync",
+    "cap:copy": "cap copy",
+    "cap:android": "cap open android",
+    "cap:add:android": "cap add android",
+    "test": "echo \"Error: no test specified\" && exit 0"
+  },
+  "keywords": [
+    "dandora",
+    "associate",
+    "partner",
+    "mobile-app",
+    "capacitor",
+    "sqlite",
+    "database",
+    "gsap"
+  ],
+  "author": "Dandora.online",
+  "license": "ISC",
+  "dependencies": {
+    "@capacitor/android": "^6.0.0",
+    "@capacitor/cli": "^6.0.0",
+    "@capacitor/core": "^6.0.0",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "gsap": "^3.12.5"
+  }
+}

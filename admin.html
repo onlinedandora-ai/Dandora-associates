@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dandora.online Admin Console | Hyderabad Chapter</title>
+  <meta name="description" content="Administrative command center for reviewing associates, managing the 12-stage lead CRM, KYC compliance, and commission disbursements.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="admin.css">
+</head>
+<body class="admin-body">
+
+  <!-- Top Navigation Bar -->
+  <header class="admin-header">
+    <div class="admin-header-container">
+      <div class="admin-brand">
+        <a href="index.html" class="brand-logo">
+          <span class="logo-text">Dandora<span class="dot">.</span>online</span>
+          <span class="admin-badge">Admin Console</span>
+        </a>
+        <span class="env-tag">Hyderabad Chapter v2.0</span>
+      </div>
+
+      <div class="admin-controls">
+        <!-- Role-Based Access Control Switcher (Section 4) -->
+        <div class="role-switcher-wrapper">
+          <label for="adminRoleSelect">Active RBAC Role:</label>
+          <select id="adminRoleSelect" class="role-select" onchange="AdminApp.switchRole(this.value)">
+            <option value="role_super_admin">👑 Super Admin (Full Control)</option>
+            <option value="role_ops_exec">🎯 Operations Executive (Leads & CRM)</option>
+            <option value="role_kyc_reviewer">🛡️ KYC Reviewer (Compliance & Docs)</option>
+            <option value="role_finance_mgr">💰 Finance Manager (Commissions & Payouts)</option>
+            <option value="role_content_mgr">📢 Content Manager (Broadcasts & Training)</option>
+          </select>
+        </div>
+
+        <div class="admin-user-pill" id="adminUserPill">
+          <div class="avatar-sm">AR</div>
+          <div class="user-meta">
+            <span class="name" id="adminUserName">Arjun Reddy</span>
+            <span class="role-title" id="adminUserRole">Super Admin</span>
+          </div>
+        </div>
+
+        <div class="quick-links">
+          <a href="portal.html" class="btn-top-link" title="Open Associate Partner View">
+            <span>Associate Portal &rarr;</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Admin Main Layout -->
+  <div class="admin-layout">
+    
+    <!-- Sidebar Navigation -->
+    <aside class="admin-sidebar">
+      <nav class="sidebar-nav">
+        <button class="nav-btn active" data-tab="overview" onclick="AdminApp.switchTab('overview')">
+          <span class="icon">📊</span>
+          <span class="label">Overview</span>
+        </button>
+        <button class="nav-btn" data-tab="associates" onclick="AdminApp.switchTab('associates')">
+          <span class="icon">👥</span>
+          <span class="label">Associate Directory</span>
+          <span class="count-badge" id="badgeAssocCount">3</span>
+        </button>
+        <button class="nav-btn" data-tab="leads" onclick="AdminApp.switchTab('leads')">
+          <span class="icon">💼</span>
+          <span class="label">Lead CRM & Pipeline</span>
+          <span class="count-badge" id="badgeLeadsCount">6</span>
+        </button>
+        <button class="nav-btn" data-tab="kyc" onclick="AdminApp.switchTab('kyc')">
+          <span class="icon">🛡️</span>
+          <span class="label">KYC Verification</span>
+          <span class="count-badge alert-badge" id="badgeKycCount">1</span>
+        </button>
+        <button class="nav-btn" data-tab="commissions" onclick="AdminApp.switchTab('commissions')">
+          <span class="icon">💵</span>
+          <span class="label">Commissions & Ledger</span>
+        </button>
+        <button class="nav-btn" data-tab="cms" onclick="AdminApp.switchTab('cms')">
+          <span class="icon">📢</span>
+          <span class="label">Broadcasts & Training</span>
+        </button>
+        <button class="nav-btn" data-tab="audit" onclick="AdminApp.switchTab('audit')">
+          <span class="icon">📜</span>
+          <span class="label">System Audit Logs</span>
+        </button>
+      </nav>
+
+      <div class="sidebar-footer">
+        <div class="chapter-stat-box">
+          <span class="title">Active Chapter</span>
+          <strong>Hyderabad, TS</strong>
+          <small>Target: 50 Pilot Associates</small>
+        </div>
+      </div>
+    </aside>
+
+    <!-- Main Workspace -->
+    <main class="admin-main">
+      
+      <!-- TAB 1: OVERVIEW -->
+      <section class="tab-panel active" id="tabOverview">
+        <div class="panel-header">
+          <div>
+            <h1>Executive Overview</h1>
+            <p>Real-time telemetry across Hyderabad chapter associate recruitment, pipeline velocity, and disbursements.</p>
+          </div>
+          <div class="panel-actions">
+            <button class="btn btn-sm btn-outline" onclick="AdminApp.refreshAllData()">🔄 Refresh Data</button>
+            <button class="btn btn-sm btn-secondary" onclick="AdminApp.exportAuditCSV()">📥 Export Audit Log</button>
+          </div>
+        </div>
+
+        <!-- Metric KPI Cards -->
+        <div class="kpi-grid">
+          <div class="kpi-card">
+            <div class="kpi-icon blue">👥</div>
+            <div class="kpi-data">
+              <span class="kpi-label">Total Recruited Associates</span>
+              <h3 id="kpiTotalAssociates">0</h3>
+              <span class="kpi-sub green">↑ 100% Hyderabad Chapter</span>
+            </div>
+          </div>
+
+          <div class="kpi-card">
+            <div class="kpi-icon purple">💼</div>
+            <div class="kpi-data">
+              <span class="kpi-label">Active Leads in CRM</span>
+              <h3 id="kpiActiveLeads">0</h3>
+              <span class="kpi-sub text-cyan">12-Stage Lifecycle Engine</span>
+            </div>
+          </div>
+
+          <div class="kpi-card">
+            <div class="kpi-icon amber">🛡️</div>
+            <div class="kpi-data">
+              <span class="kpi-label">Pending KYC Verifications</span>
+              <h3 id="kpiPendingKyc">0</h3>
+              <span class="kpi-sub amber">Review required for payout</span>
+            </div>
+          </div>
+
+          <div class="kpi-card">
+            <div class="kpi-icon green">💵</div>
+            <div class="kpi-data">
+              <span class="kpi-label">Disbursed Commission (Net)</span>
+              <h3 id="kpiDisbursedCommissions">₹0</h3>
+              <span class="kpi-sub green">TDS 194H Compliant</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Recent Pipeline & Quick Actions -->
+        <div class="overview-dual-grid mt-4">
+          <div class="content-card">
+            <div class="card-head">
+              <h3>Live Deal Funnel (12 Stages)</h3>
+              <span class="badge-tag">Real-time</span>
+            </div>
+            <div class="funnel-bars-container" id="overviewFunnelBars"></div>
+          </div>
+
+          <div class="content-card">
+            <div class="card-head">
+              <h3>Recent System Audit Logs</h3>
+              <button class="link-btn" onclick="AdminApp.switchTab('audit')">View All &rarr;</button>
+            </div>
+            <div class="audit-stream" id="overviewAuditStream"></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- TAB 2: ASSOCIATE DIRECTORY -->
+      <section class="tab-panel" id="tabAssociates">
+        <div class="panel-header">
+          <div>
+            <h1>Associate Directory</h1>
+            <p>Manage, filter, and inspect all registered partner profiles, tiers, and operational statuses.</p>
+          </div>
+          <div class="panel-actions">
+            <a href="register.html" target="_blank" class="btn btn-sm btn-primary">+ Register New Partner</a>
+          </div>
+        </div>
+
+        <!-- Search and Multi-Filter Bar (Section 10.1) -->
+        <div class="filter-toolbar">
+          <div class="search-box">
+            <span class="search-icon">🔍</span>
+            <input type="text" id="assocSearchInput" placeholder="Search by Associate ID (e.g. DAN-HYD-1042), Name, Phone..." onkeyup="AdminApp.filterAssociates()">
+          </div>
+
+          <div class="filters-row">
+            <select id="assocStatusFilter" onchange="AdminApp.filterAssociates()">
+              <option value="">All Account Statuses</option>
+              <option value="ACTIVE">ACTIVE</option>
+              <option value="KYC_PENDING">KYC_PENDING</option>
+              <option value="PROFILE_COMPLETE">PROFILE_COMPLETE</option>
+              <option value="PROFILE_INCOMPLETE">PROFILE_INCOMPLETE</option>
+              <option value="REGISTERED_LEAD">REGISTERED_LEAD</option>
+              <option value="SUSPENDED">SUSPENDED</option>
+            </select>
+
+            <select id="assocKycFilter" onchange="AdminApp.filterAssociates()">
+              <option value="">All KYC Statuses</option>
+              <option value="KYC_VERIFIED">KYC_VERIFIED</option>
+              <option value="KYC_PENDING">KYC_PENDING</option>
+              <option value="NOT_SUBMITTED">NOT_SUBMITTED</option>
+              <option value="REJECTED">REJECTED</option>
+            </select>
+
+            <select id="assocSegmentFilter" onchange="AdminApp.filterAssociates()">
+              <option value="">All Segments</option>
+              <option value="Student">Student</option>
+              <option value="Working Professional">Working Professional</option>
+              <option value="Freelancer">Freelancer</option>
+              <option value="Homemaker">Homemaker</option>
+              <option value="Job Seeker">Job Seeker</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- Associates Data Table -->
+        <div class="table-card">
+          <table class="data-table" id="associatesTable">
+            <thead>
+              <tr>
+                <th>Associate ID</th>
+                <th>Legal Name</th>
+                <th>Contact</th>
+                <th>Locality / City</th>
+                <th>Segment</th>
+                <th>Tier</th>
+                <th>KYC Status</th>
+                <th>Status</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody id="associatesTableBody"></tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- TAB 3: LEAD CRM & PIPELINE -->
+      <section class="tab-panel" id="tabLeads">
+        <div class="panel-header">
+          <div>
+            <h1>Lead CRM & Verification Inbox</h1>
+            <p>Comprehensive 12-stage commercial pipeline tracking, duplicate detection, and strategist routing.</p>
+          </div>
+          <div class="panel-actions">
+            <button class="btn btn-sm btn-outline" onclick="AdminApp.renderLeadsTable()">🔄 Refresh Inbox</button>
+          </div>
+        </div>
+
+        <div class="filter-toolbar">
+          <div class="search-box">
+            <span class="search-icon">🔍</span>
+            <input type="text" id="leadSearchInput" placeholder="Search by Business Name, Contact Person, Phone..." onkeyup="AdminApp.filterLeads()">
+          </div>
+
+          <div class="filters-row">
+            <select id="leadStatusFilter" onchange="AdminApp.filterLeads()">
+              <option value="">All 12 Pipeline Stages</option>
+              <option value="SUBMITTED">1. SUBMITTED</option>
+              <option value="UNDER_REVIEW">2. UNDER_REVIEW</option>
+              <option value="DUPLICATE">3. DUPLICATE (Flagged)</option>
+              <option value="CONTACT_VERIFIED">4. CONTACT_VERIFIED</option>
+              <option value="ASSIGNED">5. ASSIGNED</option>
+              <option value="MEETING_SCHEDULED">6. MEETING_SCHEDULED</option>
+              <option value="PROPOSAL_SENT">7. PROPOSAL_SENT</option>
+              <option value="WON">8. WON</option>
+              <option value="LOST">9. LOST</option>
+              <option value="COMMISSION_PENDING">10. COMMISSION_PENDING</option>
+              <option value="COMMISSION_APPROVED">11. COMMISSION_APPROVED</option>
+              <option value="PAID">12. PAID</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- Leads Data Table -->
+        <div class="table-card">
+          <table class="data-table" id="leadsTable">
+            <thead>
+              <tr>
+                <th>Lead ID</th>
+                <th>Business Name & Category</th>
+                <th>Contact Person</th>
+                <th>Partner ID</th>
+                <th>Stage Status</th>
+                <th>Assigned Strategist</th>
+                <th>Deal Value</th>
+                <th>Est. Commission</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody id="leadsTableBody"></tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- TAB 4: KYC VERIFICATION DESK -->
+      <section class="tab-panel" id="tabKyc">
+        <div class="panel-header">
+          <div>
+            <h1>KYC & Compliance Verification Desk</h1>
+            <p>Mandatory PAN, Bank account, and identity inspection before commission authorization (TDS Section 194H).</p>
+          </div>
+        </div>
+
+        <div class="kyc-workspace-grid">
+          <!-- Pending Queue List -->
+          <div class="content-card">
+            <div class="card-head">
+              <h3>KYC Submissions Queue</h3>
+              <span class="count-pill" id="kycQueueCount">0 Submissions</span>
+            </div>
+            <div class="kyc-list" id="kycQueueList"></div>
+          </div>
+
+          <!-- Inspection Drawer -->
+          <div class="content-card" id="kycInspectionCard">
+            <div class="card-head">
+              <h3>Document Inspection & Verification</h3>
+              <span class="status-pill pending-pill" id="inspectKycBadge">Select Associate</span>
+            </div>
+            <div class="inspection-content" id="inspectionBody">
+              <div class="empty-state">
+                <span class="icon">📄</span>
+                <p>Select an associate from the queue to inspect submitted PAN, bank account details, and documents.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- TAB 5: COMMISSIONS & PAYOUT LEDGER -->
+      <section class="tab-panel" id="tabCommissions">
+        <div class="panel-header">
+          <div>
+            <h1>Immutable Commission Ledger & Payouts</h1>
+            <p>Governed by Finance Manager. Milestones trigger upon confirmed client settlement and verified KYC.</p>
+          </div>
+        </div>
+
+        <div class="kpi-grid mb-4">
+          <div class="kpi-card">
+            <div class="kpi-icon amber">⏳</div>
+            <div class="kpi-data">
+              <span class="kpi-label">Approved & Pending Payout</span>
+              <h3 id="commPendingPayoutTotal">₹0</h3>
+              <span class="kpi-sub amber">Ready for disbursement</span>
+            </div>
+          </div>
+
+          <div class="kpi-card">
+            <div class="kpi-icon green">✅</div>
+            <div class="kpi-data">
+              <span class="kpi-label">Total Commission Disbursed</span>
+              <h3 id="commTotalPaid">₹0</h3>
+              <span class="kpi-sub green">With UTR receipt proof</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="table-card">
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>Entry ID</th>
+                <th>Associate</th>
+                <th>Deal / Lead</th>
+                <th>Deal Value</th>
+                <th>Tier %</th>
+                <th>Commission</th>
+                <th>Status</th>
+                <th>Authorized By</th>
+                <th>Disbursement Action</th>
+              </tr>
+            </thead>
+            <tbody id="commissionsTableBody"></tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- TAB 6: BROADCASTS & CMS -->
+      <section class="tab-panel" id="tabCms">
+        <div class="panel-header">
+          <div>
+            <h1>Broadcasts & Training CMS</h1>
+            <p>Publish field bulletins, chapter incentive updates, and academy learning video modules.</p>
+          </div>
+        </div>
+
+        <div class="overview-dual-grid">
+          <!-- Create Broadcast -->
+          <div class="content-card">
+            <div class="card-head">
+              <h3>Publish Chapter Announcement</h3>
+            </div>
+            <form onsubmit="AdminApp.handlePublishBroadcast(event)">
+              <div class="form-group mb-3">
+                <label for="bcTitle">Announcement Title <span class="req">*</span></label>
+                <input type="text" id="bcTitle" placeholder="e.g. 🚀 Q3 Incentive Drive: Healthcare Clinics" required>
+              </div>
+              <div class="form-group mb-3">
+                <label for="bcPriority">Priority Level</label>
+                <select id="bcPriority">
+                  <option value="NORMAL">Normal Priority</option>
+                  <option value="HIGH">High Priority (Pinned to top)</option>
+                </select>
+              </div>
+              <div class="form-group mb-3">
+                <label for="bcContent">Bulletin Content <span class="req">*</span></label>
+                <textarea id="bcContent" rows="4" placeholder="Enter message text that will be pushed to all associate portals and mobile feed..." required></textarea>
+              </div>
+              <button type="submit" class="btn btn-primary btn-sm">Publish Announcement &rarr;</button>
+            </form>
+          </div>
+
+          <!-- Active Announcements List -->
+          <div class="content-card">
+            <div class="card-head">
+              <h3>Active Bulletins</h3>
+            </div>
+            <div class="bulletins-list" id="bulletinsContainer"></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- TAB 7: AUDIT LOGS -->
+      <section class="tab-panel" id="tabAudit">
+        <div class="panel-header">
+          <div>
+            <h1>System Security & Audit Trail</h1>
+            <p>Immutable event log recording all role transitions, KYC decisions, and financial disbursements.</p>
+          </div>
+          <div class="panel-actions">
+            <button class="btn btn-sm btn-secondary" onclick="AdminApp.exportAuditCSV()">📥 Download CSV</button>
+          </div>
+        </div>
+
+        <div class="table-card">
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>Timestamp</th>
+                <th>Actor Name</th>
+                <th>Role</th>
+                <th>Action</th>
+                <th>Entity Target</th>
+                <th>Target ID</th>
+                <th>Audit Details</th>
+              </tr>
+            </thead>
+            <tbody id="auditLogsTableBody"></tbody>
+          </table>
+        </div>
+      </section>
+
+    </main>
+  </div>
+
+  <!-- SLIDE-OVER DRAWER: LEAD MANAGEMENT -->
+  <div class="drawer-overlay" id="leadDrawer">
+    <div class="drawer-card">
+      <div class="drawer-head">
+        <div>
+          <span class="drawer-tag" id="drawerLeadId">LEAD #901</span>
+          <h2 id="drawerLeadTitle">Banjara Spice Multi-Cuisine</h2>
+        </div>
+        <button class="drawer-close" onclick="AdminApp.closeLeadDrawer()">✕</button>
+      </div>
+
+      <div class="drawer-body">
+        <div class="drawer-status-box mb-4">
+          <label>Update 12-Stage Pipeline Status:</label>
+          <select id="drawerLeadStatus" class="select-lg" onchange="AdminApp.handleDrawerStatusChange(this.value)">
+            <option value="SUBMITTED">1. SUBMITTED</option>
+            <option value="UNDER_REVIEW">2. UNDER_REVIEW</option>
+            <option value="DUPLICATE">3. DUPLICATE</option>
+            <option value="CONTACT_VERIFIED">4. CONTACT_VERIFIED</option>
+            <option value="ASSIGNED">5. ASSIGNED</option>
+            <option value="MEETING_SCHEDULED">6. MEETING_SCHEDULED</option>
+            <option value="PROPOSAL_SENT">7. PROPOSAL_SENT</option>
+            <option value="WON">8. WON</option>
+            <option value="LOST">9. LOST</option>
+            <option value="COMMISSION_PENDING">10. COMMISSION_PENDING</option>
+            <option value="COMMISSION_APPROVED">11. COMMISSION_APPROVED</option>
+            <option value="PAID">12. PAID</option>
+          </select>
+        </div>
+
+        <div class="drawer-grid">
+          <div class="form-group">
+            <label>Assigned Sales Strategist:</label>
+            <select id="drawerLeadStrategist">
+              <option value="Unassigned">Unassigned</option>
+              <option value="Arjun Reddy (Senior Partner)">Arjun Reddy (Senior Partner)</option>
+              <option value="Kavita Rao (Senior Strategist)">Kavita Rao (Senior Strategist)</option>
+              <option value="Nikhil Verma (Tech Solutions)">Nikhil Verma (Tech Solutions)</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label>Deal Value (₹):</label>
+            <input type="number" id="drawerDealValue" placeholder="e.g. 50000" onkeyup="AdminApp.recalcDrawerCommission()">
+          </div>
+
+          <div class="form-group full-width">
+            <label>Associate Commission (Auto-calculated):</label>
+            <div class="commission-preview-box" id="drawerCommissionPreview">₹0</div>
+          </div>
+
+          <div class="form-group full-width">
+            <label>Internal Follow-up Notes:</label>
+            <textarea id="drawerNotes" rows="3" placeholder="Add details from meeting with client or next action date..."></textarea>
+          </div>
+        </div>
+
+        <div class="history-timeline-box mt-4">
+          <h4>Status Transition History</h4>
+          <div class="timeline-items" id="drawerTimeline"></div>
+        </div>
+      </div>
+
+      <div class="drawer-foot">
+        <button class="btn btn-secondary" onclick="AdminApp.closeLeadDrawer()">Cancel</button>
+        <button class="btn btn-primary" onclick="AdminApp.saveLeadDrawer()">Save Lead Updates &rarr;</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- MODAL: PAYOUT DISBURSEMENT (FINANCE ROLE) -->
+  <div class="modal-overlay" id="payoutModal">
+    <div class="modal-box">
+      <div class="modal-badge">💰 Milestone Disbursement</div>
+      <h3>Record Commission Payout</h3>
+      <p>Enter the IMPS / Bank Transaction Reference (UTR) to disburse earnings and issue voucher.</p>
+
+      <div class="payout-summary-box mb-3">
+        <div class="row"><span>Gross Commission:</span> <strong id="payoutGross">₹0</strong></div>
+        <div class="row"><span>TDS (5% Section 194H):</span> <strong id="payoutTds">₹0</strong></div>
+        <div class="row total"><span>Net Payable:</span> <strong id="payoutNet" style="color:#10b981;">₹0</strong></div>
+      </div>
+
+      <div class="form-group text-left mb-4">
+        <label for="bankUtrInput">Bank UTR / Transaction Reference <span class="req">*</span></label>
+        <input type="text" id="bankUtrInput" placeholder="e.g. HDFC99210411" required>
+      </div>
+
+      <div class="modal-actions">
+        <button class="btn btn-secondary" onclick="document.getElementById('payoutModal').classList.remove('active')">Cancel</button>
+        <button class="btn btn-primary" onclick="AdminApp.submitPayoutRecord()">Confirm & Disburse &rarr;</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="db.js"></script>
+  <script src="api.js"></script>
+  <script src="admin.js"></script>
+</body>
+</html>

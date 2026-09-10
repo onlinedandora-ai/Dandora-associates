@@ -1,0 +1,1782 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dandora.online Associate Network | Turn Connections into Guaranteed Income</title>
+  <meta name="description" content="Join Hyderabad and India's fastest-growing digital transformation network. Learn modern digital business skills, earn attractive commissions, and qualify for direct client project work with Dandora.online." />
+  <meta name="keywords" content="Dandora online, Dandora Associate, digital affiliate Hyderabad, student side income, homemaker business, freelance referral program" />
+  <meta property="og:title" content="Dandora.online Associate Ecosystem - Earn with Us" />
+  <meta property="og:description" content="Democratize digital services delivery across local markets by creating an empowered, trained, and economically incentivized distributed workforce." />
+  <meta property="og:type" content="website" />
+  <link rel="stylesheet" href="style.css" />
+  <!-- Font Awesome / Phosphor style SVG icons inline for zero dependencies -->
+</head>
+<body>
+
+  <!-- Site Navigation Header -->
+  <header class="site-header">
+    <div class="container nav-container">
+      <a href="#" class="brand-logo" aria-label="Dandora.online Home">
+        <div class="logo-symbol">D</div>
+        <span>Dandora<span style="color: var(--cyan);">.online</span></span>
+        <span class="badge badge-sm" style="font-size: 0.68rem; margin-left: 0.4rem;">Associates</span>
+      </a>
+
+      <nav>
+        <ul class="nav-links">
+          <li><a href="#motivation" class="nav-link">Who It's For</a></li>
+          <li><a href="#earnings" class="nav-link">Earnings & Tiers</a></li>
+          <li><a href="#calculator" class="nav-link">Income Calculator</a></li>
+          <li><a href="#how-it-works" class="nav-link">How It Works</a></li>
+          <li><a href="#simulator" class="nav-link">App Simulator</a></li>
+          <li><a href="#faq" class="nav-link">FAQ</a></li>
+        </ul>
+      </nav>
+
+      <div class="nav-actions">
+        <button class="sync-status-pill offline" id="globalSyncPill" onclick="openCloudSyncModal()" title="Configure Remote API / Google Sheets Sync">
+          <span class="sync-indicator-dot"></span>
+          <span id="syncStatusText">Local Only</span>
+          <span class="queue-badge" id="syncQueueBadge" style="display: none;">0</span>
+        </button>
+        <a href="admin.html" class="btn btn-secondary btn-sm" style="border-color: rgba(239, 68, 68, 0.4); color: #f87171; white-space: nowrap;" title="Administrative CRM & KYC Console">
+          👑 Admin Console
+        </a>
+        <a href="portal.html" class="btn btn-secondary btn-sm" id="navLoginBtn" style="white-space: nowrap;">
+          <svg width="15" height="15" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 16l-4-4m0 0l4-4m-4 4h14m-5 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h7a3 3 0 013 3v1"></path></svg>
+          Partner Portal
+        </a>
+        <a href="mobile/index.html" class="btn btn-secondary btn-sm" id="navMobileBtn" style="white-space: nowrap;">
+          📱 Mobile App
+        </a>
+        <a href="register.html" class="btn btn-primary btn-sm" id="navRegisterBtn" style="white-space: nowrap;">
+          Register (4 Steps) &rarr;
+        </a>
+        <button class="mobile-toggle" id="mobileMenuBtn" aria-label="Open Navigation Menu">
+          <svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- 2.1 Hero Section -->
+  <section class="hero-section" id="hero">
+    <div class="container hero-grid">
+      <div class="hero-content">
+        <div class="hero-badge-wrap">
+          <div class="badge pulse-dot">
+            DANDORA PARTNER NETWORK • 100% FREE REGISTRATION
+          </div>
+        </div>
+
+        <h1 class="hero-title">
+          Turn Your Daily Connections into <span class="gradient-text">Performance Milestone Earnings.</span>
+        </h1>
+
+        <p class="hero-description">
+          Join Hyderabad and India's fastest-growing digital transformation network. Whether you are a college student, dedicated homemaker, ambitious freelancer, or career starter: Learn modern digital business skills, earn attractive commissions, and qualify for direct client project work with Dandora.online.
+        </p>
+
+        <div class="hero-cta-group">
+          <button class="btn btn-primary" id="heroPrimaryCta" onclick="openRegistrationWizard()">
+            <svg width="18" height="18" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18 9v3m0 0v3m0-3h3m-3 0h-3m-2-5a4 4 0 11-8 0 4 4 0 018 0zM3 20a6 6 0 0112 0v1H3v-1z"></path></svg>
+            Register as an Associate (Free)
+          </button>
+          <a href="portal.html" class="btn btn-secondary">
+            <svg width="18" height="18" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+            Launch Web App Portal
+          </a>
+          <a href="mobile/index.html" class="btn btn-secondary" id="heroSecondaryCta">
+            <svg width="18" height="18" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z"></path></svg>
+            Open Mobile App
+          </a>
+        </div>
+
+        <div class="trust-strip">
+          <span class="trust-item">
+            <svg width="16" height="16" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
+            Zero upfront fees
+          </span>
+          <span class="trust-item">
+            <svg width="16" height="16" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
+            Flexible hours
+          </span>
+          <span class="trust-item">
+            <svg width="16" height="16" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
+            Dedicated training provided
+          </span>
+          <span class="trust-item">
+            <svg width="16" height="16" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
+            Weekly / milestone payouts
+          </span>
+        </div>
+      </div>
+
+      <!-- Hero Visual & Live App Preview -->
+      <div class="hero-visual">
+        <div class="hero-dashboard-preview">
+          <div class="preview-header">
+            <div class="associate-id-chip">
+              <span style="color:#ffffff;">ID:</span> DAN-HYD-8821
+            </div>
+            <div class="live-indicator">
+              Execution Machine Active
+            </div>
+          </div>
+
+          <div class="preview-stat-card">
+            <div class="stat-label">Verified Associate Earnings (This Month)</div>
+            <div class="stat-value-row">
+              <div class="stat-amount gradient-emerald">₹48,500</div>
+              <span class="stat-tag">+3 Deals Closed</span>
+            </div>
+          </div>
+
+          <div style="font-size: 0.82rem; font-weight: 700; color: var(--text-muted); text-transform: uppercase; margin-bottom: 0.6rem; letter-spacing: 0.05em;">
+            Live Deal Tracker (Hyderabad Hub)
+          </div>
+
+          <div class="mini-pipeline-stream">
+            <div class="mini-stream-item">
+              <div>
+                <div class="stream-business">Sri Sai Multispeciality Clinic</div>
+                <div style="font-size: 0.72rem; color: var(--text-muted);">Web Platform + Booking ERP</div>
+              </div>
+              <div class="stream-status">Won • ₹12,000 Payout</div>
+            </div>
+
+            <div class="mini-stream-item" style="border-left-color: var(--amber);">
+              <div>
+                <div class="stream-business">Royal Spice Kitchen (Madhapur)</div>
+                <div style="font-size: 0.72rem; color: var(--text-muted);">Digital Menu & SEO Setup</div>
+              </div>
+              <div style="color: var(--amber); font-weight: 600;">Meeting Scheduled</div>
+            </div>
+
+            <div class="mini-stream-item" style="border-left-color: var(--emerald);">
+              <div>
+                <div class="stream-business">Prism Interiors & Architects</div>
+                <div style="font-size: 0.72rem; color: var(--text-muted);">Corporate Portfolio Website</div>
+              </div>
+              <div class="stream-status">Paid to Bank (UPI)</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Floating Accent Badges -->
+        <div class="floating-stat-card floating-stat-1">
+          <div class="float-icon" style="background: rgba(16, 185, 129, 0.15); color: var(--emerald);">
+            ⚡
+          </div>
+          <div>
+            <div style="font-size: 0.75rem; color: var(--text-muted);">Fast Payout</div>
+            <div style="font-size: 0.95rem; font-weight: 700;">48 - 72 Hours</div>
+          </div>
+        </div>
+
+        <div class="floating-stat-card floating-stat-2">
+          <div class="float-icon" style="background: rgba(0, 229, 255, 0.15); color: var(--cyan);">
+            🤝
+          </div>
+          <div>
+            <div style="font-size: 0.75rem; color: var(--text-muted);">Technical Execution</div>
+            <div style="font-size: 0.95rem; font-weight: 700;">100% Handled by Dandora</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 2.2 Segment-by-Segment Motivation Matrix -->
+  <section class="section" id="motivation" style="background: rgba(0, 0, 0, 0.2);">
+    <div class="container">
+      <div class="section-header">
+        <div class="badge badge-emerald section-tagline">Tailored Earning Pathways</div>
+        <h2 class="section-title">Designed for Your Life, Schedule & Ambition</h2>
+        <p class="section-subtitle">
+          Whether you have 2 hours a day or want to lead regional digital client acquisitions, there is a dedicated track designed specifically for you.
+        </p>
+      </div>
+
+      <!-- Segment Selector Tabs -->
+      <div class="segment-tabs" role="tablist">
+        <button class="segment-tab-btn active" data-target="segment-students" role="tab" id="tabStudents">
+          🎓 College Students
+        </button>
+        <button class="segment-tab-btn" data-target="segment-homemakers" role="tab" id="tabHomemakers">
+          🏡 Dedicated Homemakers
+        </button>
+        <button class="segment-tab-btn" data-target="segment-jobseekers" role="tab" id="tabJobSeekers">
+          🚀 Unemployed Youth & Job Seekers
+        </button>
+        <button class="segment-tab-btn" data-target="segment-freelancers" role="tab" id="tabFreelancers">
+          💼 Freelancers & Part-Time Earners
+        </button>
+      </div>
+
+      <!-- Tab 1: College Students -->
+      <div class="segment-card active" id="segment-students">
+        <div class="segment-content">
+          <span class="segment-quote">"Build Your Resume & Earn Your Own Pocket Money."</span>
+          <h3>Gain Real Corporate Exposure While Still in College</h3>
+          <p class="segment-body">
+            Don't wait until graduation to build corporate experience. Learn how local businesses use websites, digital marketing, and automated management systems. Connect local shop owners, clinics, and service providers to Dandora, earn 10% to 20% on every closed deal, and get certified as a digital scout.
+          </p>
+          <ul class="segment-perks">
+            <li class="segment-perk-item">
+              <svg width="18" height="18" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+              Verified Corporate Internship Certificate
+            </li>
+            <li class="segment-perk-item">
+              <svg width="18" height="18" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+              Earn ₹15,000 - ₹35,000/mo alongside studies
+            </li>
+            <li class="segment-perk-item">
+              <svg width="18" height="18" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+              Zero exam conflicts – work your own hours
+            </li>
+            <li class="segment-perk-item">
+              <svg width="18" height="18" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+              Direct career fast-track into Dandora engineering
+            </li>
+          </ul>
+          <button class="btn btn-primary" onclick="openRegistrationWizard('Student')">Join as College Scout</button>
+        </div>
+
+        <div class="segment-preview-box">
+          <div class="audience-avatar-hero">
+            <div class="avatar-circle">🎓</div>
+            <div>
+              <div style="font-weight: 700; font-size: 1.1rem;">Nikhil V. (B.Tech 3rd Year)</div>
+              <div style="font-size: 0.8rem; color: var(--cyan);">Osmania University Campus Ambassador</div>
+            </div>
+          </div>
+          <div class="audience-metrics-grid">
+            <div class="metric-pill">
+              <div class="metric-pill-val gradient-emerald">₹28,400</div>
+              <div class="metric-pill-lbl">Avg Monthly Earned</div>
+            </div>
+            <div class="metric-pill">
+              <div class="metric-pill-val">6 Deals</div>
+              <div class="metric-pill-lbl">Local Gyms & Cafes</div>
+            </div>
+          </div>
+          <div style="font-size: 0.85rem; color: var(--text-secondary); line-height: 1.5; font-style: italic;">
+            "I helped 4 neighborhood businesses launch online ordering through Dandora. The team handled all coding while I pocketed my college semester fees!"
+          </div>
+        </div>
+      </div>
+
+      <!-- Tab 2: Dedicated Homemakers -->
+      <div class="segment-card" id="segment-homemakers">
+        <div class="segment-content">
+          <span class="segment-quote">"Financial Independence from the Comfort of Your Home."</span>
+          <h3>Monetize Your Community & Neighborhood Trust</h3>
+          <p class="segment-body">
+            You don't need fixed 9-to-5 desk hours to build a strong income stream. Use your neighborhood relationships, parent groups, and community networks to identify businesses needing digital solutions. We handle technical execution and client delivery; you earn predictable commissions and recurring revenue.
+          </p>
+          <ul class="segment-perks">
+            <li class="segment-perk-item">
+              <svg width="18" height="18" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+              100% Home & Mobile based flexibility
+            </li>
+            <li class="segment-perk-item">
+              <svg width="18" height="18" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+              No technical or coding knowledge required
+            </li>
+            <li class="segment-perk-item">
+              <svg width="18" height="18" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+              Transparent UPI payouts straight to your bank
+            </li>
+            <li class="segment-perk-item">
+              <svg width="18" height="18" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+              Dedicated mentorship & friendly Telugu/Hindi support
+            </li>
+          </ul>
+          <button class="btn btn-primary" onclick="openRegistrationWizard('Homemaker')">Join as Community Partner</button>
+        </div>
+
+        <div class="segment-preview-box">
+          <div class="audience-avatar-hero">
+            <div class="avatar-circle">🏡</div>
+            <div>
+              <div style="font-weight: 700; font-size: 1.1rem;">Sunitha Reddy</div>
+              <div style="font-size: 0.8rem; color: var(--emerald);">Kukatpally Colony Chapter Lead</div>
+            </div>
+          </div>
+          <div class="audience-metrics-grid">
+            <div class="metric-pill">
+              <div class="metric-pill-val gradient-emerald">₹42,000</div>
+              <div class="metric-pill-lbl">Last Month's Payout</div>
+            </div>
+            <div class="metric-pill">
+              <div class="metric-pill-val">3 Retainers</div>
+              <div class="metric-pill-lbl">Recurring Monthly Income</div>
+            </div>
+          </div>
+          <div style="font-size: 0.85rem; color: var(--text-secondary); line-height: 1.5; font-style: italic;">
+            "Connecting our local pediatric clinic and dental center to Dandora gave me financial freedom without compromising a single minute of my family time."
+          </div>
+        </div>
+      </div>
+
+      <!-- Tab 3: Unemployed Youth & Job Seekers -->
+      <div class="segment-card" id="segment-jobseekers">
+        <div class="segment-content">
+          <span class="segment-quote">"Gain Practical Digital Exposure with Immediate Earnings."</span>
+          <h3>Break Out of the Job-Hunting Waiting Cycle</h3>
+          <p class="segment-body">
+            Break out of the waiting cycle. Join Dandora's field scouting and consulting network to develop real-world business development acumen. High performers who prove their dedication and capability unlock direct project assignments and full-time career pathways within the Dandora ecosystem.
+          </p>
+          <ul class="segment-perks">
+            <li class="segment-perk-item">
+              <svg width="18" height="18" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+              Active career pipeline with Dandora tech agency
+            </li>
+            <li class="segment-perk-item">
+              <svg width="18" height="18" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+              Immediate commission cash flow from Day 1
+            </li>
+            <li class="segment-perk-item">
+              <svg width="18" height="18" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+              Hands-on B2B sales & enterprise consultative skills
+            </li>
+            <li class="segment-perk-item">
+              <svg width="18" height="18" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+              Work-sharing allocation for content, design & coding
+            </li>
+          </ul>
+          <button class="btn btn-primary" onclick="openRegistrationWizard('JobSeeker')">Start Your Career Track</button>
+        </div>
+
+        <div class="segment-preview-box">
+          <div class="audience-avatar-hero">
+            <div class="avatar-circle">🚀</div>
+            <div>
+              <div style="font-weight: 700; font-size: 1.1rem;">Karthik G.</div>
+              <div style="font-size: 0.8rem; color: var(--cyan);">Associate Consultant &gt; Full-time Strategist</div>
+            </div>
+          </div>
+          <div class="audience-metrics-grid">
+            <div class="metric-pill">
+              <div class="metric-pill-val gradient-emerald">₹68,000</div>
+              <div class="metric-pill-lbl">Peak Month Commission</div>
+            </div>
+            <div class="metric-pill">
+              <div class="metric-pill-val">Hired!</div>
+              <div class="metric-pill-lbl">Promoted to Dandora Ops</div>
+            </div>
+          </div>
+          <div style="font-size: 0.85rem; color: var(--text-secondary); line-height: 1.5; font-style: italic;">
+            "Instead of sending 200 silent job applications, I proved my value closing deals in Secunderabad. Dandora offered me a full-time position within 60 days!"
+          </div>
+        </div>
+      </div>
+
+      <!-- Tab 4: Freelancers & Part-Time Earners -->
+      <div class="segment-card" id="segment-freelancers">
+        <div class="segment-content">
+          <span class="segment-quote">"Monetize Your Existing Client Base with Zero Overhead."</span>
+          <h3>Offer Enterprise Web & Automation Without Development Headaches</h3>
+          <p class="segment-body">
+            Already offering services or meeting business owners? Expand your portfolio overnight. Offer Dandora's full spectrum of enterprise web platforms, digital systems, and automation tools to your existing contacts. Earn recurring commissions without managing developers, servers, or delivery headaches.
+          </p>
+          <ul class="segment-perks">
+            <li class="segment-perk-item">
+              <svg width="18" height="18" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+              Expand to ₹1L+ enterprise digital contracts
+            </li>
+            <li class="segment-perk-item">
+              <svg width="18" height="18" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+              Up to 20% one-time + 10% monthly retainers
+            </li>
+            <li class="segment-perk-item">
+              <svg width="18" height="18" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+              Zero hosting, coding, or maintenance responsibility
+            </li>
+            <li class="segment-perk-item">
+              <svg width="18" height="18" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+              Direct fulfillment sub-contracts in your core domain
+            </li>
+          </ul>
+          <button class="btn btn-primary" onclick="openRegistrationWizard('Freelancer')">Scale Your Freelance Revenue</button>
+        </div>
+
+        <div class="segment-preview-box">
+          <div class="audience-avatar-hero">
+            <div class="avatar-circle">💼</div>
+            <div>
+              <div style="font-weight: 700; font-size: 1.1rem;">Farhan Ahmed</div>
+              <div style="font-size: 0.8rem; color: var(--amber);">Senior Graphic Designer & Growth Partner</div>
+            </div>
+          </div>
+          <div class="audience-metrics-grid">
+            <div class="metric-pill">
+              <div class="metric-pill-val gradient-amber">₹1,15,000</div>
+              <div class="metric-pill-lbl">Monthly Combined Inflow</div>
+            </div>
+            <div class="metric-pill">
+              <div class="metric-pill-val">10% Retainer</div>
+              <div class="metric-pill-lbl">3 Enterprise Accounts</div>
+            </div>
+          </div>
+          <div style="font-size: 0.85rem; color: var(--text-secondary); line-height: 1.5; font-style: italic;">
+            "My clients used to ask me for custom web apps and CRM integrations. By routing them to Dandora, I make huge commissions while also getting paid for UI assets!"
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 2.3 Transparent Earnings & Progression Model -->
+  <section class="section" id="earnings">
+    <div class="container">
+      <div class="section-header">
+        <div class="badge badge-amber section-tagline">Progression Roadmap</div>
+        <h2 class="section-title">Transparent Earnings & Partner Tiers</h2>
+        <p class="section-subtitle">
+          From your very first verified lead to managing full regional territories, enjoy clear commission structures with no ceiling on what you can achieve.
+        </p>
+      </div>
+
+      <div class="tiers-grid">
+        <!-- Tier 1: Associate Scout -->
+        <div class="tier-card" id="tierScout">
+          <div class="tier-header">
+            <div class="badge badge-sm" style="margin-bottom: 0.6rem;">Tier 01 • Entry Level</div>
+            <h3 class="tier-title">Associate Scout</h3>
+            <p class="tier-subtitle">Entry tier for community discovery and lead intake.</p>
+          </div>
+
+          <div class="tier-payout-box">
+            <div class="payout-rate gradient-text">10%</div>
+            <div class="payout-rate-sub">of Closed Contract Value</div>
+            <div class="retainer-badge-row">
+              <span style="color: var(--text-muted);">Recurring Retainer:</span>
+              <span style="color: var(--text-muted); font-weight: 600;">—</span>
+            </div>
+          </div>
+
+          <div class="tier-responsibilities">
+            <div class="tier-resp-title">Core Responsibilities & Eligibility</div>
+            <ul class="tier-resp-list">
+              <li>
+                <svg width="16" height="16" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
+                Discover local shop, clinic & enterprise leads
+              </li>
+              <li>
+                <svg width="16" height="16" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
+                Verify contact details & business needs
+              </li>
+              <li>
+                <svg width="16" height="16" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
+                Submit lead tickets via Associate App
+              </li>
+              <li>
+                <svg width="16" height="16" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
+                Access to core sales training modules
+              </li>
+            </ul>
+          </div>
+
+          <button class="btn btn-secondary" onclick="openRegistrationWizard('Scout')">Start as Scout</button>
+        </div>
+
+        <!-- Tier 2: Associate Consultant -->
+        <div class="tier-card featured" id="tierConsultant">
+          <div class="tier-ribbon">
+            <span class="badge badge-emerald">POPULAR</span>
+          </div>
+
+          <div class="tier-header">
+            <div class="badge badge-emerald badge-sm" style="margin-bottom: 0.6rem;">Tier 02 • Proven Closer</div>
+            <h3 class="tier-title">Associate Consultant</h3>
+            <p class="tier-subtitle">Achieved after 3 successfully closed deals.</p>
+          </div>
+
+          <div class="tier-payout-box">
+            <div class="payout-rate gradient-emerald">15%</div>
+            <div class="payout-rate-sub">of Closed Contract Value</div>
+            <div class="retainer-badge-row">
+              <span style="color: var(--text-primary); font-weight: 600;">+ 5% Recurring Retainer</span>
+              <span class="badge badge-emerald badge-sm">Monthly</span>
+            </div>
+          </div>
+
+          <div class="tier-responsibilities">
+            <div class="tier-resp-title">Core Responsibilities & Eligibility</div>
+            <ul class="tier-resp-list">
+              <li>
+                <svg width="16" height="16" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
+                Participates in client discovery calls
+              </li>
+              <li>
+                <svg width="16" height="16" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
+                Introduces senior Dandora strategists
+              </li>
+              <li>
+                <svg width="16" height="16" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
+                <strong>Qualifies for paid project work-sharing tasks</strong>
+              </li>
+              <li>
+                <svg width="16" height="16" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
+                Earns ongoing monthly retainers on active clients
+              </li>
+            </ul>
+          </div>
+
+          <button class="btn btn-emerald" onclick="openRegistrationWizard('Consultant')">Unlock Consultant Track</button>
+        </div>
+
+        <!-- Tier 3: Growth Partner -->
+        <div class="tier-card elite" id="tierGrowth">
+          <div class="tier-ribbon">
+            <span class="badge badge-amber">ELITE LEADERSHIP</span>
+          </div>
+
+          <div class="tier-header">
+            <div class="badge badge-amber badge-sm" style="margin-bottom: 0.6rem;">Tier 03 • Territory Leader</div>
+            <h3 class="tier-title">Growth Partner</h3>
+            <p class="tier-subtitle">Top-tier community and regional franchise leaders.</p>
+          </div>
+
+          <div class="tier-payout-box">
+            <div class="payout-rate gradient-amber">20%</div>
+            <div class="payout-rate-sub">of Closed Contract Value</div>
+            <div class="retainer-badge-row">
+              <span style="color: var(--text-primary); font-weight: 600;">+ 10% Recurring Retainer</span>
+              <span class="badge badge-amber badge-sm">Monthly</span>
+            </div>
+          </div>
+
+          <div class="tier-responsibilities">
+            <div class="tier-resp-title">Core Responsibilities & Eligibility</div>
+            <ul class="tier-resp-list">
+              <li>
+                <svg width="16" height="16" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
+                Manages regional territory or sub-associate team
+              </li>
+              <li>
+                <svg width="16" height="16" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
+                Handles key enterprise relationship management
+              </li>
+              <li>
+                <svg width="16" height="16" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
+                Leads outsourced Dandora project deliveries
+              </li>
+              <li>
+                <svg width="16" height="16" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
+                2% - 3% team overriding bonus on sub-associates
+              </li>
+            </ul>
+          </div>
+
+          <button class="btn btn-primary" onclick="openRegistrationWizard('GrowthPartner')">Apply for Territory Lead</button>
+        </div>
+      </div>
+
+      <!-- Live Interactive Commission Calculator -->
+      <div class="calculator-box" id="calculator">
+        <div class="calc-controls">
+          <div class="badge badge-sm" style="margin-bottom: 0.6rem;">Interactive Model</div>
+          <h3 class="calc-title">Real-Time Commission Calculator</h3>
+          <p class="calc-desc">
+            Calculate your estimated monthly and yearly payout based on your target partner tier and closed client volume.
+          </p>
+
+          <div class="calc-tier-selector">
+            <button class="tier-btn" data-tier="scout" onclick="setCalcTier('scout', this)">Associate Scout (10%)</button>
+            <button class="tier-btn active" data-tier="consultant" onclick="setCalcTier('consultant', this)">Consultant (15%+5%)</button>
+            <button class="tier-btn" data-tier="growth" onclick="setCalcTier('growth', this)">Growth Partner (20%+10%)</button>
+          </div>
+
+          <!-- Tier Progression Milestone Bar -->
+          <div class="progression-milestone-wrap">
+            <div style="display: flex; justify-content: space-between; align-items: baseline;">
+              <span style="font-size: 0.8rem; font-weight: 700; text-transform: uppercase; color: var(--text-muted); letter-spacing: 0.05em;">Career Tier Milestone Path</span>
+              <span style="font-size: 0.75rem; color: var(--cyan); font-weight: 600;" id="milestoneProgressLabel">Consultant Tier (3 Deals)</span>
+            </div>
+            <div class="milestones-track">
+              <div class="milestone-progress-fill" id="milestoneFill" style="width: 30%;"></div>
+              <div class="milestone-node achieved" id="msNode1">
+                <div class="milestone-dot">1</div>
+                <span class="milestone-lbl">Scout (Entry)</span>
+              </div>
+              <div class="milestone-node achieved" id="msNode2">
+                <div class="milestone-dot">3</div>
+                <span class="milestone-lbl">Consultant (3 Deals)</span>
+              </div>
+              <div class="milestone-node" id="msNode3">
+                <div class="milestone-dot">10</div>
+                <span class="milestone-lbl">Growth Partner (10 Deals)</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Slider 1: Deals per month -->
+          <div class="slider-group">
+            <div class="slider-header">
+              <span class="slider-label">Closed Deals / Month</span>
+              <span class="slider-display-val" id="dealsDisplay">3 Deals</span>
+            </div>
+            <input type="range" id="dealsSlider" class="calc-slider" min="1" max="15" value="3" step="1" oninput="calculateEarnings()" />
+          </div>
+
+          <!-- Slider 2: Average deal value -->
+          <div class="slider-group">
+            <div class="slider-header">
+              <span class="slider-label">Average Contract Value</span>
+              <span class="slider-display-val" id="valueDisplay">₹45,000</span>
+            </div>
+            <input type="range" id="valueSlider" class="calc-slider" min="15000" max="250000" value="45000" step="5000" oninput="calculateEarnings()" />
+          </div>
+
+          <!-- Advanced Bonuses & Overrides -->
+          <div class="calc-advanced-box">
+            <div class="advanced-toggle-row">
+              <span style="font-size: 0.82rem; font-weight: 700; text-transform: uppercase; color: var(--amber); letter-spacing: 0.05em;">
+                ⚡ Bonus Multipliers &amp; Overrides
+              </span>
+              <span class="badge badge-amber badge-sm" id="activeBonusBadge" style="display: none;">+0% Bonus</span>
+            </div>
+
+            <div class="bonus-toggle-item">
+              <label class="switch-label" for="toggleCampusBonus">
+                <input type="checkbox" id="toggleCampusBonus" class="toggle-switch-input" onchange="calculateEarnings()" />
+                <div>
+                  <div style="font-weight: 600; color: #ffffff;">Campus Ambassador / Chapter Override (+3%)</div>
+                  <div style="font-size: 0.72rem; color: var(--text-muted);">Overriding commission bonus on regional student/chapter deals</div>
+                </div>
+              </label>
+            </div>
+
+            <div class="bonus-toggle-item">
+              <label class="switch-label" for="toggleStreakBonus">
+                <input type="checkbox" id="toggleStreakBonus" class="toggle-switch-input" onchange="calculateEarnings()" />
+                <div>
+                  <div style="font-weight: 600; color: #ffffff;">5-Deals High Velocity Streak Booster (+2.5%)</div>
+                  <div style="font-size: 0.72rem; color: var(--text-muted);">Milestone accelerator for closing 5+ deals in a month</div>
+                </div>
+              </label>
+            </div>
+
+            <div class="bonus-toggle-item">
+              <label class="switch-label" for="toggleCustomRate">
+                <input type="checkbox" id="toggleCustomRate" class="toggle-switch-input" onchange="toggleCustomRateControls()" />
+                <div>
+                  <div style="font-weight: 600; color: #ffffff;">Custom Rate Simulation Mode</div>
+                  <div style="font-size: 0.72rem; color: var(--text-muted);">Manually simulate custom commission &amp; retainer percentages</div>
+                </div>
+              </label>
+            </div>
+
+            <div id="customRateControls" style="display: none; margin-top: 1rem; padding-top: 0.8rem; border-top: 1px dashed var(--border-subtle);">
+              <div class="slider-group" style="margin-bottom: 1rem;">
+                <div class="slider-header">
+                  <span class="slider-label" style="font-size: 0.82rem;">Custom One-Time Commission %</span>
+                  <span class="slider-display-val" style="font-size: 1rem;" id="customCommDisplay">20%</span>
+                </div>
+                <input type="range" id="customCommSlider" class="calc-slider" min="5" max="35" value="20" step="1" oninput="calculateEarnings()" />
+              </div>
+              <div class="slider-group" style="margin-bottom: 0;">
+                <div class="slider-header">
+                  <span class="slider-label" style="font-size: 0.82rem;">Custom Monthly Retainer %</span>
+                  <span class="slider-display-val" style="font-size: 1rem;" id="customRetainerDisplay">10%</span>
+                </div>
+                <input type="range" id="customRetainerSlider" class="calc-slider" min="0" max="15" value="10" step="1" oninput="calculateEarnings()" />
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="calc-result-panel">
+          <div class="result-tag">Estimated Monthly Earning</div>
+          <div class="result-monthly-total" id="monthlyTotalDisplay">₹27,000</div>
+
+          <div class="result-breakdown-list">
+            <div class="breakdown-row">
+              <span>One-Time Commission (<span id="calcCommRate">15%</span>):</span>
+              <strong id="calcOneTimeSum">₹20,250</strong>
+            </div>
+            <div class="breakdown-row">
+              <span>Monthly Recurring Retainer (<span id="calcRetainerRate">5%</span>):</span>
+              <strong id="calcRetainerSum">₹6,750 /mo</strong>
+            </div>
+            <div class="breakdown-row">
+              <span>Total Contract Pipeline Generated:</span>
+              <strong id="calcPipelineTotal">₹1,35,000</strong>
+            </div>
+          </div>
+
+          <div class="annual-projection-chip" id="annualProjectionDisplay">
+            🌟 Projected Annual Income: ₹3,24,000 / year
+          </div>
+
+          <button class="btn btn-emerald" style="width: 100%;" onclick="openRegistrationWizard()">
+            Claim This Earning Track Now
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 2.4 How It Works (Step-by-Step Infographic Flow) -->
+  <section class="section" id="how-it-works" style="background: rgba(0, 0, 0, 0.25);">
+    <div class="container">
+      <div class="section-header">
+        <div class="badge section-tagline">Frictionless 5-Step Engine</div>
+        <h2 class="section-title">How Dandora Works (From Lead to Bank Payout)</h2>
+        <p class="section-subtitle">
+          You don't need to write code, configure servers, or negotiate difficult contracts. You scout; we close & deliver.
+        </p>
+      </div>
+
+      <div class="steps-timeline">
+        <!-- Step 1 -->
+        <div class="step-card">
+          <div class="step-number">01</div>
+          <h3 class="step-title">Download & Sign Up</h3>
+          <p class="step-desc">
+            Install the Dandora Associate App or register online. Complete your educational and skills profile, and receive your verified Associate ID in under 3 minutes.
+          </p>
+          <div class="step-meta-badge">
+            ⚡ &lt; 3 Mins Verification
+          </div>
+        </div>
+
+        <!-- Step 2 -->
+        <div class="step-card">
+          <div class="step-number">02</div>
+          <h3 class="step-title">Learn with Rapid Modules</h3>
+          <p class="step-desc">
+            Watch brief 3-minute video guides on Dandora's digital offerings: websites, custom ERP portals, social media management, and WhatsApp automation.
+          </p>
+          <div class="step-meta-badge">
+            🎥 3-Min Micro Lessons
+          </div>
+        </div>
+
+        <!-- Step 3 -->
+        <div class="step-card">
+          <div class="step-number">03</div>
+          <h3 class="step-title">Connect & Log Leads</h3>
+          <p class="step-desc">
+            Talk to local shop owners, service providers, or enterprises. Submit their contact details and business requirements directly through your app interface.
+          </p>
+          <div class="step-meta-badge">
+            📱 1-Tap Lead Form
+          </div>
+        </div>
+
+        <!-- Step 4 -->
+        <div class="step-card">
+          <div class="step-number">04</div>
+          <h3 class="step-title">Dandora Closes & Executes</h3>
+          <p class="step-desc">
+            Our senior Hyderabad strategists pitch, negotiate, and deliver the technical solutions. You monitor real-time deal progress and status changes.
+          </p>
+          <div class="step-meta-badge">
+            🤝 100% Expert Handoff
+          </div>
+        </div>
+
+        <!-- Step 5 -->
+        <div class="step-card">
+          <div class="step-number">05</div>
+          <h3 class="step-title">Get Paid & Take On Projects</h3>
+          <p class="step-desc">
+            Commission is credited directly to your bank account (UPI/NEFT) within 48-72 hours of client milestone clearance. Skilled associates unlock direct delivery work.
+          </p>
+          <div class="step-meta-badge" style="color: var(--cyan);">
+            💰 Fast 48-72 Hr Bank UPI
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 3: Interactive Associate App & CRM Simulator -->
+  <section class="section" id="simulator">
+    <div class="container">
+      <div class="section-header">
+        <div class="badge badge-emerald section-tagline">Interactive Platform Experience</div>
+        <h2 class="section-title">Associate Mobile Platform & CRM Simulator</h2>
+        <p class="section-subtitle">
+          Experience the real-time engagement platform, digital training academy, and lead pipeline tracker used by Dandora Associates every day.
+        </p>
+      </div>
+
+      <div class="simulator-container">
+        <!-- Simulator Navigation -->
+        <div class="sim-nav" role="tablist">
+          <button class="sim-tab-btn active" id="simNavBroadcast" onclick="switchSimTab('broadcast', this)">
+            <svg width="18" height="18" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z"></path></svg>
+            3.2 Live Web & Business Broadcast Feed
+          </button>
+          <button class="sim-tab-btn" id="simNavAcademy" onclick="switchSimTab('academy', this)">
+            <svg width="18" height="18" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path></svg>
+            3.3 Digital Training Hub & Scout Quiz
+          </button>
+          <button class="sim-tab-btn" id="simNavCrm" onclick="switchSimTab('crm', this)">
+            <svg width="18" height="18" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01"></path></svg>
+            3.4 Lead Intake & Pipeline Tracker
+          </button>
+        </div>
+
+        <!-- SIM 1: Broadcast Feed (Section 3.2) -->
+        <div class="sim-view active" id="simViewBroadcast">
+          <div class="broadcast-grid">
+            <div class="news-card-stream">
+              <div style="display: flex; justify-content: space-between; align-items: center;">
+                <h4 style="font-size: 1.15rem;">Automated Website & Case Study Sync</h4>
+                <span class="badge badge-emerald badge-sm">Live REST Sync</span>
+              </div>
+
+              <!-- News Card 1 -->
+              <div class="news-card">
+                <div class="news-meta">
+                  <span class="news-tag">Case Study • Healthcare</span>
+                  <span class="news-time">30 mins ago</span>
+                </div>
+                <h5 class="news-headline">How Dandora Built a 100% Automated Appointment Portal for Apollo Tele-Consultants</h5>
+                <p class="news-summary">
+                  Client saw 3.4x appointment volume increase within 14 days of launch. Read this breakdown to pitch dental and specialty clinics in your area.
+                </p>
+                <div class="share-action-row">
+                  <span style="font-size: 0.8rem; color: var(--text-muted);">Referral Tag: ?ref=DAN-HYD-8821</span>
+                  <button class="share-btn-wa" onclick="shareToWhatsApp('Apollo Tele-Consultants Portal Launch', 'DAN-HYD-8821')">
+                    <svg width="14" height="14" fill="currentColor" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z"></path></svg>
+                    Share to WhatsApp (+Your Referral)
+                  </button>
+                </div>
+              </div>
+
+              <!-- News Card 2 -->
+              <div class="news-card">
+                <div class="news-meta">
+                  <span class="news-tag" style="color: var(--amber);">New Service Launch</span>
+                  <span class="news-time">2 hours ago</span>
+                </div>
+                <h5 class="news-headline">Introducing Dandora Smart QR Menu & Instant UPI Table Checkout for Restaurants</h5>
+                <p class="news-summary">
+                  Zero commission on food orders for restaurant owners. Earn a flat ₹6,000 commission + 5% monthly SaaS retainer on every local restaurant onboarded.
+                </p>
+                <div class="share-action-row">
+                  <span style="font-size: 0.8rem; color: var(--text-muted);">Marketing Collateral Ready</span>
+                  <button class="share-btn-wa" onclick="shareToWhatsApp('Smart QR Menu Launch', 'DAN-HYD-8821')">
+                    <svg width="14" height="14" fill="currentColor" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z"></path></svg>
+                    Share to WhatsApp (+Your Referral)
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Milestone & Celebration Feed (Section 3.2) -->
+            <div class="broadcast-sidebar">
+              <div>
+                <h5 style="font-size: 0.95rem; text-transform: uppercase; color: var(--amber); letter-spacing: 0.05em; margin-bottom: 0.8rem;">
+                  🎉 Milestone & Payout Ticker
+                </h5>
+                <div class="milestone-ticker-list">
+                  <div class="ticker-item">
+                    <span>💸</span>
+                    <div>
+                      <strong>₹24,000 Payout Sent</strong>
+                      <div style="font-size: 0.75rem; color: var(--text-muted);">Priya M. (Scout, Banjara Hills)</div>
+                    </div>
+                  </div>
+                  <div class="ticker-item">
+                    <span>🏆</span>
+                    <div>
+                      <strong>Consultant Tier Unlocked</strong>
+                      <div style="font-size: 0.75rem; color: var(--text-muted);">Suresh Kumar completed 3rd deal</div>
+                    </div>
+                  </div>
+                  <div class="ticker-item">
+                    <span>🚀</span>
+                    <div>
+                      <strong>New Enterprise Client Won</strong>
+                      <div style="font-size: 0.75rem; color: var(--text-muted);">Lead submitted by Associate #3412</div>
+                    </div>
+                  </div>
+                  <div class="ticker-item">
+                    <span>✨</span>
+                    <div>
+                      <strong>₹18,500 Payout Sent</strong>
+                      <div style="font-size: 0.75rem; color: var(--text-muted);">Rajesh B. (Kondapur Chapter)</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div style="padding-top: 1rem; border-top: 1px solid var(--border-subtle);">
+                <div style="font-size: 0.85rem; font-weight: 700; margin-bottom: 0.5rem;">One-Click Referral Generator</div>
+                <div style="font-size: 0.8rem; color: var(--text-secondary); margin-bottom: 0.8rem;">
+                  Share your personalized referral landing page link directly across WhatsApp, Instagram Bio & Telegram.
+                </div>
+                <button class="btn btn-secondary btn-sm" style="width: 100%;" onclick="copyReferralLink()">
+                  📋 Copy My Referral Link
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- SIM 2: Training Academy Hub (Section 3.3) -->
+        <div class="sim-view" id="simViewAcademy">
+          <!-- Module Track Pills Bar -->
+          <div class="track-pills-bar" id="academyTrackPills">
+            <button class="track-pill-btn active" data-track="foundations" onclick="selectQuizTrack('foundations', this)">
+              🏅 Track 1: Scout Foundations
+            </button>
+            <button class="track-pill-btn" data-track="healthcare" onclick="selectQuizTrack('healthcare', this)">
+              🩺 Track 2: Healthcare &amp; Clinics
+            </button>
+            <button class="track-pill-btn" data-track="restaurant" onclick="selectQuizTrack('restaurant', this)">
+              🍽️ Track 3: Restaurant QR Menus
+            </button>
+            <button class="track-pill-btn" data-track="enterprise" onclick="selectQuizTrack('enterprise', this)">
+              💼 Track 4: Master Objection Closer
+            </button>
+          </div>
+
+          <div class="academy-grid">
+            <div>
+              <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.2rem;">
+                <h4 style="font-size: 1.15rem;" id="academyModulesTitle">Bite-Sized Video Academy (2–4 Mins)</h4>
+                <span class="badge badge-sm" id="academyLessonsCount">3 Lessons</span>
+              </div>
+
+              <div class="modules-list" id="academyModulesList">
+                <div class="module-card" onclick="playLesson('How to Identify a Struggling Local Business', '3:15 mins', 'Identify local shops without Google Business Profiles, outdated static websites, or manual pen-and-paper billing systems.')">
+                  <div class="module-left">
+                    <div class="module-icon-box">▶</div>
+                    <div>
+                      <div class="module-title">Module 1: How to Spot a Struggling Local Business</div>
+                      <div class="module-meta">⏱ 3 Mins • Target: Retail, Clinics &amp; Salons</div>
+                    </div>
+                  </div>
+                  <span class="badge badge-emerald badge-sm">Completed</span>
+                </div>
+
+                <div class="module-card" onclick="playLesson('The 30-Second Elevator Pitch for Dandora', '2:45 mins', 'Master the exact script: how to introduce Dandora as Hyderabad\'s premier digital execution team that handles design, hosting, and SEO with guaranteed delivery.')">
+                  <div class="module-left">
+                    <div class="module-icon-box">▶</div>
+                    <div>
+                      <div class="module-title">Module 2: The 30-Second Elevator Pitch</div>
+                      <div class="module-meta">⏱ 2 Mins 45 Secs • Conversion Framework</div>
+                    </div>
+                  </div>
+                  <span class="badge badge-emerald badge-sm">Completed</span>
+                </div>
+
+                <div class="module-card" onclick="playLesson('Overcoming Price &amp; Objections', '4:10 mins', 'Handle common questions: \'Why do I need a website when I have Instagram?\' and \'How does Dandora guarantee delivery?\'')">
+                  <div class="module-left">
+                    <div class="module-icon-box">▶</div>
+                    <div>
+                      <div class="module-title">Module 3: Overcoming Common Objections</div>
+                      <div class="module-meta">⏱ 4 Mins 10 Secs • Closing Strategy</div>
+                    </div>
+                  </div>
+                  <span class="badge badge-amber badge-sm">Ready to Watch</span>
+                </div>
+              </div>
+
+              <!-- Downloadable Pitch Kits (Section 3.3) -->
+              <div style="margin-top: 1.8rem; padding: 1.4rem; background: rgba(255, 255, 255, 0.02); border: 1px solid var(--border-subtle); border-radius: var(--radius-md);">
+                <div style="font-weight: 700; margin-bottom: 0.4rem; font-size: 0.95rem;">📥 Downloadable Pitch Kits</div>
+                <p style="font-size: 0.82rem; color: var(--text-secondary); margin-bottom: 1rem;">
+                  Official Dandora-branded PDF brochures, solution rate cards, and presentation slides to show prospective clients.
+                </p>
+                <div style="display: flex; gap: 0.6rem; flex-wrap: wrap;">
+                  <button class="btn btn-secondary btn-sm" onclick="downloadKit('Retail &amp; Clinic Brochure')">📄 Dandora Solutions Brochure (PDF)</button>
+                  <button class="btn btn-secondary btn-sm" onclick="downloadKit('Associate Rate Card 2026')">📊 2026 Rate Card &amp; Packages</button>
+                </div>
+              </div>
+
+              <!-- Badges Showcase Box -->
+              <div class="badges-showcase-box">
+                <div style="display: flex; justify-content: space-between; align-items: center;">
+                  <span style="font-size: 0.85rem; font-weight: 700; text-transform: uppercase; color: var(--amber); letter-spacing: 0.05em;">
+                    🏅 Verified Associate Certifications
+                  </span>
+                  <span style="font-size: 0.75rem; color: var(--cyan);" id="unlockedBadgesCounter">1 of 4 Unlocked</span>
+                </div>
+                <div class="badges-grid" id="badgesGrid">
+                  <div class="badge-item-card unlocked" id="badgeCard-foundations">
+                    <div class="badge-icon-emoji">🏅</div>
+                    <div class="badge-item-title">Certified Scout</div>
+                    <div class="badge-status-lbl">● ACTIVE</div>
+                  </div>
+                  <div class="badge-item-card" id="badgeCard-healthcare">
+                    <div class="badge-icon-emoji">🩺</div>
+                    <div class="badge-item-title">Healthcare Specialist</div>
+                    <div class="badge-status-lbl">LOCKED</div>
+                  </div>
+                  <div class="badge-item-card" id="badgeCard-restaurant">
+                    <div class="badge-icon-emoji">🍽️</div>
+                    <div class="badge-item-title">F&amp;B QR Advisor</div>
+                    <div class="badge-status-lbl">LOCKED</div>
+                  </div>
+                  <div class="badge-item-card" id="badgeCard-enterprise">
+                    <div class="badge-icon-emoji">💼</div>
+                    <div class="badge-item-title">Master Closer</div>
+                    <div class="badge-status-lbl">LOCKED</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Micro-Quiz Engine (Section 3.3) -->
+            <div class="quiz-container" id="quizContainer">
+              <div class="quiz-header">
+                <div>
+                  <h5 style="font-size: 1.05rem;" id="quizTrackTitle">Scout Certification Micro-Quiz</h5>
+                  <div style="font-size: 0.78rem; color: var(--text-muted);" id="quizTrackSubtitle">Complete all 3 questions to unlock the badge</div>
+                </div>
+                <div class="quiz-badge-target" id="quizTrackBadgeTarget">🏅 Certified Scout Badge</div>
+              </div>
+
+              <div id="quizQuestionArea">
+                <div style="font-size: 0.8rem; color: var(--cyan); font-weight: 700; margin-bottom: 0.4rem;" id="quizProgressNum">
+                  Question 1 of 3
+                </div>
+                <div class="question-text" id="quizQuestionText">
+                  When approaching a local business owner who has no website, what is your primary objective as an Associate?
+                </div>
+
+                <div class="quiz-options" id="quizOptionsArea">
+                  <button class="quiz-opt-btn" onclick="checkQuizAnswer(0)">
+                    A) Quote prices and try to sign a contract immediately on the spot.
+                  </button>
+                  <button class="quiz-opt-btn" onclick="checkQuizAnswer(1)">
+                    B) Discover their digital pain point, gather contact info, and log a ticket for Dandora strategists.
+                  </button>
+                  <button class="quiz-opt-btn" onclick="checkQuizAnswer(2)">
+                    C) Promise them #1 ranking on Google within 24 hours.
+                  </button>
+                </div>
+              </div>
+
+              <div id="quizResultArea" style="display: none; text-align: center; padding: 1.5rem 0;">
+                <div style="font-size: 3rem; margin-bottom: 0.5rem;" id="quizResultIcon">🎉</div>
+                <h4 style="font-size: 1.3rem; margin-bottom: 0.4rem; color: var(--emerald);" id="quizResultTitle">Scout Certification Unlocked!</h4>
+                <p style="font-size: 0.88rem; color: var(--text-secondary); margin-bottom: 1.2rem;" id="quizResultDesc">
+                  You passed with 100% score. Your Associate Profile has been stamped with the official <strong>"Certified Dandora Scout"</strong> digital badge!
+                </p>
+                <div style="display: flex; gap: 0.6rem; justify-content: center;">
+                  <button class="btn btn-secondary btn-sm" onclick="resetQuiz()">Retake Quiz</button>
+                  <button class="btn btn-primary btn-sm" onclick="advanceNextTrack()">Next Track Certification →</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- SIM 3: Lead Pipeline CRM & Intake Form (Section 3.4) -->
+        <div class="sim-view" id="simViewCrm">
+          <div class="lead-crm-layout">
+            <!-- Lead Submission Form -->
+            <div class="crm-form-box">
+              <h4 style="font-size: 1.2rem; margin-bottom: 0.4rem;">Submit New Business Lead Ticket</h4>
+              <p style="font-size: 0.82rem; color: var(--text-secondary); margin-bottom: 1.4rem;">
+                Enter verified business details. Dandora's pre-sales desk will validate and assign a senior strategist within 2 hours.
+              </p>
+
+              <form id="leadIntakeForm" onsubmit="handleLeadSubmit(event)">
+                <div class="form-group">
+                  <label class="form-label" for="leadBizName">Business / Store Name *</label>
+                  <input type="text" id="leadBizName" class="form-control" placeholder="e.g. Meenakshi Jewellers" required />
+                </div>
+
+                <div class="form-row">
+                  <div class="form-group">
+                    <label class="form-label" for="leadContactName">Contact Person Name *</label>
+                    <input type="text" id="leadContactName" class="form-control" placeholder="e.g. Ramesh Reddy" required />
+                  </div>
+                  <div class="form-group">
+                    <label class="form-label" for="leadPhone">Contact Phone Number *</label>
+                    <input type="tel" id="leadPhone" class="form-control" placeholder="10-digit mobile" pattern="[0-9]{10}" required />
+                  </div>
+                </div>
+
+                <div class="form-row">
+                  <div class="form-group">
+                    <label class="form-label" for="leadCategory">Business Category *</label>
+                    <select id="leadCategory" class="form-control" required>
+                      <option value="Healthcare / Clinic">Healthcare / Clinic</option>
+                      <option value="Restaurant / Cafe">Restaurant / Cafe</option>
+                      <option value="Retail / Boutique">Retail / Boutique</option>
+                      <option value="Real Estate / Architecture">Real Estate / Architecture</option>
+                      <option value="Coaching / Education">Coaching / Education</option>
+                      <option value="Corporate / Enterprise">Corporate / Enterprise</option>
+                    </select>
+                  </div>
+                  <div class="form-group">
+                    <label class="form-label" for="leadNeed">Primary Digital Need *</label>
+                    <select id="leadNeed" class="form-control" required>
+                      <option value="Website & Branding">Website &amp; Branding</option>
+                      <option value="Custom Web App / ERP">Custom Web App / ERP</option>
+                      <option value="Digital Marketing & SEO">Digital Marketing &amp; SEO</option>
+                      <option value="E-Commerce & Online Store">E-Commerce &amp; Online Store</option>
+                    </select>
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <label class="form-label" for="leadNotes">Notes / Opportunity Details</label>
+                  <textarea id="leadNotes" class="form-control" rows="2" placeholder="e.g. Needs appointment booking portal and online catalog. Owner available around 4 PM."></textarea>
+                </div>
+
+                <button type="submit" class="btn btn-primary" style="width: 100%;">
+                  Log Lead into Dandora Execution Machine
+                </button>
+              </form>
+            </div>
+
+            <!-- Live Pipeline Tracker & Financial Ledger (Section 3.4) -->
+            <div class="pipeline-stream-box">
+              <div class="pipeline-stats-row">
+                <div class="metric-pill">
+                  <div class="metric-pill-val gradient-emerald" id="crmTotalEarned">₹48,500</div>
+                  <div class="metric-pill-lbl">Lifetime Payouts</div>
+                </div>
+                <div class="metric-pill">
+                  <div class="metric-pill-val" id="crmPendingSum" style="color: var(--amber);">₹18,000</div>
+                  <div class="metric-pill-lbl">Pending Approvals</div>
+                </div>
+                <div class="metric-pill">
+                  <div class="metric-pill-val" id="crmLiveCount">4 Active</div>
+                  <div class="metric-pill-lbl">Pipeline Tickets</div>
+                </div>
+              </div>
+
+              <div style="display: flex; justify-content: space-between; align-items: center;">
+                <h5 style="font-size: 0.95rem; text-transform: uppercase; color: var(--text-muted); letter-spacing: 0.05em;">
+                  Live Ticket Pipeline (Submitted → Won → Paid)
+                </h5>
+                <button class="btn btn-secondary btn-sm" onclick="exportData('leads')">Export CSV</button>
+              </div>
+
+              <!-- Ticket Stream Container -->
+              <div id="ticketsList" style="display: flex; flex-direction: column; gap: 0.8rem; max-height: 380px; overflow-y: auto;">
+                <!-- Initial Mock Tickets -->
+                <div class="lead-ticket-card">
+                  <div class="ticket-header">
+                    <span class="ticket-biz">Meenakshi Jewellers (Abids)</span>
+                    <span class="ticket-status-badge status-meeting">Client Meeting Scheduled</span>
+                  </div>
+                  <div style="font-size: 0.8rem; color: var(--text-secondary); display: flex; justify-content: space-between;">
+                    <span>Service: E-Commerce &amp; Catalog</span>
+                    <span>Assigned to: Senior Strategist Amit R.</span>
+                  </div>
+                </div>
+
+                <div class="lead-ticket-card">
+                  <div class="ticket-header">
+                    <span class="ticket-biz">Dr. Ananya Dental Speciality</span>
+                    <span class="ticket-status-badge status-won">Won / Commission Pending</span>
+                  </div>
+                  <div style="font-size: 0.8rem; color: var(--text-secondary); display: flex; justify-content: space-between;">
+                    <span>Contract Value: ₹65,000</span>
+                    <span style="color: var(--emerald); font-weight: 700;">Payout: ₹9,750 (UPI Pending)</span>
+                  </div>
+                </div>
+
+                <div class="lead-ticket-card">
+                  <div class="ticket-header">
+                    <span class="ticket-biz">Urban Craft Brewery (Jubilee Hills)</span>
+                    <span class="ticket-status-badge status-paid">Paid (Receipt #DND-771)</span>
+                  </div>
+                  <div style="font-size: 0.8rem; color: var(--text-secondary); display: flex; justify-content: space-between;">
+                    <span>Contract Value: ₹1,20,000</span>
+                    <span style="color: var(--cyan); font-weight: 700;">Transferred via IMPS/UPI</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 2.5 Frequently Asked Questions (Web FAQ Accordion) -->
+  <section class="section" id="faq">
+    <div class="container">
+      <div class="section-header">
+        <div class="badge section-tagline">Clear Answers</div>
+        <h2 class="section-title">Frequently Asked Questions</h2>
+        <p class="section-subtitle">
+          Everything you need to know about partnering with Dandora.online as an Associate.
+        </p>
+      </div>
+
+      <div class="faq-container">
+        <!-- FAQ 1 -->
+        <div class="faq-item open">
+          <button class="faq-question" onclick="toggleFaq(this)">
+            <span>Do I need technical skills or a computer science degree?</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer" style="max-height: 200px;">
+            No. As an associate, your main role is identifying businesses that need modern websites, branding, or digital platforms. Dandora handles all software architecture and execution. If you do possess technical or design skills, you can submit them in your profile for direct project work allocation.
+          </div>
+        </div>
+
+        <!-- FAQ 2 -->
+        <div class="faq-item">
+          <button class="faq-question" onclick="toggleFaq(this)">
+            <span>Is there any registration fee or deposit?</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            Absolutely zero. The Dandora Associate Program is completely free. We never charge associates for training materials, portal access, or registration.
+          </div>
+        </div>
+
+        <!-- FAQ 3 -->
+        <div class="faq-item">
+          <button class="faq-question" onclick="toggleFaq(this)">
+            <span>When and how do associates get paid?</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            Commissions are transferred directly to your verified bank account (via UPI / NEFT) within 48 to 72 hours of Dandora receiving payment milestones from the client.
+          </div>
+        </div>
+
+        <!-- FAQ 4 -->
+        <div class="faq-item">
+          <button class="faq-question" onclick="toggleFaq(this)">
+            <span>How does the "Work-Sharing" program work?</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            When Dandora receives large client contracts (e.g., website copywriting, social media management, catalog design, data entry, software testing), we prioritize distributing tasks to verified associates who have demonstrated relevant skills and strong work ethics.
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 6: Quality Control, Governance & Risk Mitigation -->
+  <section class="governance-strip">
+    <div class="container">
+      <div class="gov-grid">
+        <div class="gov-item">
+          <h4>
+            <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24" style="color: var(--cyan);"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path></svg>
+            Spam Lead Mitigation Policy
+          </h4>
+          <p>
+            To prevent unverified or duplicate entries, every lead undergoes automated phone validation or confirmation calls by Dandora's pre-sales desk before advancement.
+          </p>
+        </div>
+
+        <div class="gov-item">
+          <h4>
+            <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24" style="color: var(--emerald);"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 11c0 3.517-1.009 6.799-2.753 9.571m-3.44-2.04l.054-.09A13.916 13.916 0 008 11a4 4 0 118 0c0 1.017-.07 2.019-.203 3m-2.118 6.844A21.88 21.88 0 0015.171 17m3.839 1.132c.645-2.266.99-4.659.99-7.132A8 8 0 008 4.07M3 15.364c.64-1.319 1-2.8 1-4.364 0-1.457.39-2.823 1.07-4"></path></svg>
+            Code of Conduct & Representation
+          </h4>
+          <p>
+            Associates are legally categorized as Independent Referral Partners. Clear guidelines prohibit misrepresenting pricing, guaranteeing search rankings, or signing contracts.
+          </p>
+        </div>
+
+        <div class="gov-item">
+          <h4>
+            <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24" style="color: var(--amber);"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+            Active Performance & Re-Engagement
+          </h4>
+          <p>
+            Associates inactive for 90 days receive automated refresh playbooks. Consistent performers unlock territory franchise rights and guaranteed corporate placement.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Site Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="#" class="brand-logo">
+            <div class="logo-symbol">D</div>
+            <span>Dandora<span style="color: var(--cyan);">.online</span></span>
+          </a>
+          <p>
+            Democratizing digital services delivery across local markets by creating an empowered, trained, and economically incentivized distributed workforce.
+          </p>
+          <div style="margin-top: 1.2rem; font-size: 0.85rem; color: var(--text-muted);">
+            Operational Hub: HITEC City, Hyderabad, Telangana, India
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h5>Partner Program</h5>
+          <ul class="footer-links">
+            <li><a href="#motivation" class="footer-link">Audience Pathways</a></li>
+            <li><a href="#earnings" class="footer-link">Commission Tiers</a></li>
+            <li><a href="#calculator" class="footer-link">Income Estimator</a></li>
+            <li><a href="#how-it-works" class="footer-link">Workflow Engine</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h5>Associate Resources</h5>
+          <ul class="footer-links">
+            <li><a href="#simulator" class="footer-link" onclick="openAppSimulator('broadcast')">Broadcast Feed</a></li>
+            <li><a href="#simulator" class="footer-link" onclick="openAppSimulator('academy')">Video Academy</a></li>
+            <li><a href="#simulator" class="footer-link" onclick="openAppSimulator('crm')">Lead Submission CRM</a></li>
+            <li><a href="#faq" class="footer-link">Frequently Asked Questions</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h5>Get Started</h5>
+          <button class="btn btn-primary btn-sm" style="width: 100%; margin-bottom: 0.8rem;" onclick="openRegistrationWizard()">
+            Register as Associate (Free)
+          </button>
+          <button class="btn btn-secondary btn-sm" style="width: 100%;" onclick="openAppModal()">
+            Download Mobile App
+          </button>
+          <div style="margin-top: 1.2rem; font-size: 0.8rem; color: var(--text-muted);">
+            Support: <a href="mailto:support@dandora.online" style="color: var(--cyan);">support@dandora.online</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>
+          © 2026 Dandora.online. All Rights Reserved. Master Blueprint Ref: DANDORA-OPS-ASSOC-V2.
+        </div>
+        <div style="display: flex; gap: 1.5rem;">
+          <a href="#" style="color: var(--text-muted); font-size: 0.82rem;">Terms &amp; Independent Partner Agreement</a>
+          <a href="#" style="color: var(--text-muted); font-size: 0.82rem;">Privacy &amp; Data Policy</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ==========================================================================
+       Pre-Registration & Profiling Wizard Modal (Section 3.1 Data Spec)
+       ========================================================================== -->
+  <div class="modal-backdrop" id="registrationModal" role="dialog" aria-modal="true">
+    <div class="modal-card">
+      <div class="modal-header">
+        <div>
+          <h3 style="font-size: 1.3rem;">Become a Dandora Associate</h3>
+          <div style="font-size: 0.8rem; color: var(--cyan);">Free Registration • Get Your Associate ID in 3 Minutes</div>
+        </div>
+        <button class="modal-close" onclick="closeRegistrationWizard()" aria-label="Close modal">&times;</button>
+      </div>
+
+      <!-- Step Indicator Bar -->
+      <div class="wizard-progress">
+        <div class="wizard-progress-step active" id="progStep1">1. Identity</div>
+        <div class="wizard-progress-step" id="progStep2">2. Education</div>
+        <div class="wizard-progress-step" id="progStep3">3. Skills</div>
+        <div class="wizard-progress-step" id="progStep4">4. Payout</div>
+        <div class="wizard-progress-step" id="progStep5">5. Your ID</div>
+      </div>
+
+      <div class="modal-body">
+        <!-- Wizard Step 1: Identity & Demographics (Section 3.1) -->
+        <div class="wizard-step-panel active" id="wizardStep1">
+          <h4 style="margin-bottom: 0.3rem;">Identity &amp; Demographics</h4>
+          <p style="font-size: 0.85rem; color: var(--text-secondary); margin-bottom: 1.4rem;">
+            Used for KYC validation, geo-fenced lead mapping, and regional campaign assignments.
+          </p>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label" for="regFullName">Full Legal Name *</label>
+              <input type="text" id="regFullName" class="form-control" placeholder="e.g. Sravan Kumar" required />
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="regMobile">Mobile Phone (WhatsApp Enabled) *</label>
+              <input type="tel" id="regMobile" class="form-control" placeholder="10-digit number" required />
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label" for="regEmail">Email Address *</label>
+              <input type="email" id="regEmail" class="form-control" placeholder="sravan@example.com" required />
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="regDob">Date of Birth *</label>
+              <input type="date" id="regDob" class="form-control" required />
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label" for="regGender">Gender</label>
+              <select id="regGender" class="form-control">
+                <option value="Male">Male</option>
+                <option value="Female">Female</option>
+                <option value="Non-Binary/Other">Other / Prefer not to say</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="regCity">City *</label>
+              <input type="text" id="regCity" class="form-control" value="Hyderabad" required />
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label" for="regState">State *</label>
+              <input type="text" id="regState" class="form-control" value="Telangana" required />
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="regPincode">Pincode *</label>
+              <input type="text" id="regPincode" class="form-control" placeholder="e.g. 500081" required />
+            </div>
+          </div>
+        </div>
+
+        <!-- Wizard Step 2: Education & Background (Section 3.1) -->
+        <div class="wizard-step-panel" id="wizardStep2">
+          <h4 style="margin-bottom: 0.3rem;">Education &amp; Current Status</h4>
+          <p style="font-size: 0.85rem; color: var(--text-secondary); margin-bottom: 1.4rem;">
+            Enables customized training material delivery and capability baseline scoring.
+          </p>
+
+          <div class="form-group">
+            <label class="form-label" for="regHighestEdu">Highest Qualification *</label>
+            <select id="regHighestEdu" class="form-control">
+              <option value="Undergraduate">Undergraduate (B.Tech, B.Sc, B.Com, BBA)</option>
+              <option value="Postgraduate">Postgraduate (M.Tech, MBA, M.Sc, etc.)</option>
+              <option value="Diploma">Diploma / Polytechnic</option>
+              <option value="High School">High School / Intermediate (12th)</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="regMajor">Field of Study / Major</label>
+            <input type="text" id="regMajor" class="form-control" placeholder="e.g. Computer Science, Commerce, Arts" />
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="regCurrentStatus">Current Professional Status *</label>
+            <select id="regCurrentStatus" class="form-control">
+              <option value="Student">College Student</option>
+              <option value="Homemaker">Dedicated Homemaker</option>
+              <option value="Freelancer">Freelancer / Consultant</option>
+              <option value="Actively Seeking Job">Actively Seeking Employment / Job Seeker</option>
+              <option value="Employed">Currently Employed (Part-Time Scout)</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- Wizard Step 3: Core Skill Matrix (Section 3.1) -->
+        <div class="wizard-step-panel" id="wizardStep3">
+          <h4 style="margin-bottom: 0.3rem;">Core Skill Matrix (Select All that Apply)</h4>
+          <p style="font-size: 0.85rem; color: var(--text-secondary); margin-bottom: 1.4rem;">
+            Auto-tags you in the Dandora Resource Management system for direct work-sharing and client contract allocation.
+          </p>
+
+          <div class="skill-tags-cloud">
+            <input type="checkbox" id="skillGraphic" class="skill-tag-check" value="Graphic Design (Canva/Photoshop)" checked />
+            <label for="skillGraphic" class="skill-tag-label">🎨 Graphic Design (Canva/Photoshop)</label>
+
+            <input type="checkbox" id="skillWriting" class="skill-tag-check" value="Content Writing & Copywriting" checked />
+            <label for="skillWriting" class="skill-tag-label">✍️ Content Writing &amp; Copywriting</label>
+
+            <input type="checkbox" id="skillVideo" class="skill-tag-check" value="Video Editing" />
+            <label for="skillVideo" class="skill-tag-label">🎬 Video Editing (Reels/Shorts)</label>
+
+            <input type="checkbox" id="skillSmm" class="skill-tag-check" value="Social Media Management" checked />
+            <label for="skillSmm" class="skill-tag-label">📱 Social Media Management</label>
+
+            <input type="checkbox" id="skillWeb" class="skill-tag-check" value="Web Development (HTML/CSS/WordPress)" />
+            <label for="skillWeb" class="skill-tag-label">💻 Web Development (HTML/WordPress)</label>
+
+            <input type="checkbox" id="skillSales" class="skill-tag-check" value="Direct Sales & Field Calling" checked />
+            <label for="skillSales" class="skill-tag-label">🗣️ Direct Sales &amp; Field Calling</label>
+
+            <input type="checkbox" id="skillData" class="skill-tag-check" value="Data Entry & Operations" />
+            <label for="skillData" class="skill-tag-label">📊 Data Entry &amp; Operations</label>
+          </div>
+        </div>
+
+        <!-- Wizard Step 4: Banking & Payout Setup (Section 3.1) -->
+        <div class="wizard-step-panel" id="wizardStep4">
+          <h4 style="margin-bottom: 0.3rem;">Banking &amp; Commission Payout Setup</h4>
+          <p style="font-size: 0.85rem; color: var(--text-secondary); margin-bottom: 1.4rem;">
+            Required for instant, compliant, and automated commission payouts within 48-72 hours.
+          </p>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label" for="regUpi">Primary UPI ID (Instant Payout) *</label>
+              <input type="text" id="regUpi" class="form-control" placeholder="e.g. yourname@oksbi / @paytm" required />
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="regPan">PAN Card Number *</label>
+              <input type="text" id="regPan" class="form-control" placeholder="ABCDE1234F" maxlength="10" style="text-transform: uppercase;" required />
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label" for="regBankAcc">Bank Account Number</label>
+              <input type="text" id="regBankAcc" class="form-control" placeholder="Account Number" />
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="regIfsc">Bank IFSC Code</label>
+              <input type="text" id="regIfsc" class="form-control" placeholder="e.g. SBIN0001234" style="text-transform: uppercase;" />
+            </div>
+          </div>
+        </div>
+
+        <!-- Wizard Step 5: Digital ID Card Generated! -->
+        <div class="wizard-step-panel" id="wizardStep5">
+          <div style="text-align: center; margin-bottom: 1.5rem;">
+            <div style="font-size: 2.2rem; margin-bottom: 0.3rem;">🎉</div>
+            <h4 style="font-size: 1.4rem; color: var(--emerald);">Welcome to Dandora Partner Network!</h4>
+            <p style="font-size: 0.85rem; color: var(--text-secondary);">
+              Your profile has been created and verified. Here is your official Dandora Associate ID card.
+            </p>
+          </div>
+
+          <!-- The Digital ID Card -->
+          <div class="id-card-preview" id="digitalIdCard">
+            <div class="id-card-top">
+              <div class="brand-logo" style="font-size: 1.1rem;">
+                <div class="logo-symbol" style="width: 28px; height: 28px; font-size: 0.85rem;">D</div>
+                <span>Dandora.online</span>
+              </div>
+              <span class="id-status-badge">● VERIFIED ASSOCIATE</span>
+            </div>
+
+            <div class="id-card-main">
+              <div class="id-photo-placeholder" id="idAvatarPreview">
+                SK
+              </div>
+              <div class="id-info">
+                <h4 id="idCardName">Sravan Kumar</h4>
+                <div class="id-number" id="idCardNumber">DAN-HYD-2026-8942</div>
+                <div style="font-size: 0.8rem; color: var(--text-muted);" id="idCardTrack">
+                  Track: Associate Scout • Hyderabad Chapter
+                </div>
+              </div>
+            </div>
+
+            <div style="border-top: 1px dashed rgba(255, 255, 255, 0.15); padding-top: 0.8rem;">
+              <div style="font-size: 0.75rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.4rem;">
+                Certified Work-Sharing Tags:
+              </div>
+              <div class="id-skills-row" id="idCardSkillsContainer">
+                <span class="id-skill-pill">Graphic Design</span>
+                <span class="id-skill-pill">Direct Sales</span>
+                <span class="id-skill-pill">Social Media</span>
+              </div>
+            </div>
+
+            <div style="border-top: 1px dashed rgba(255, 255, 255, 0.15); padding-top: 0.8rem; margin-top: 0.8rem;">
+              <div style="font-size: 0.75rem; color: var(--amber); text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.4rem;">
+                Earned Certification Badges:
+              </div>
+              <div class="id-skills-row" id="idCardBadgesContainer">
+                <span class="id-skill-pill" style="border: 1px solid var(--amber); color: var(--amber);">🏅 Certified Scout</span>
+              </div>
+            </div>
+          </div>
+
+          <div style="display: flex; gap: 0.8rem;">
+            <button class="btn btn-secondary btn-sm" style="flex: 1;" onclick="printOrCopyId()">
+              📋 Copy Associate ID
+            </button>
+            <button class="btn btn-emerald btn-sm" style="flex: 1;" onclick="exportData('associate')">
+              📥 Download Partner Pass
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Modal Navigation Footer -->
+      <div class="modal-footer" id="modalFooterNav">
+        <button class="btn btn-secondary btn-sm" id="wizardBackBtn" onclick="wizardPrevStep()" style="visibility: hidden;">
+          ← Back
+        </button>
+        <button class="btn btn-primary btn-sm" id="wizardNextBtn" onclick="wizardNextStep()">
+          Continue →
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- App Download Modal / Dialog -->
+  <div class="modal-backdrop" id="appDownloadModal" role="dialog" aria-modal="true">
+    <div class="modal-card" style="max-width: 480px; text-align: center;">
+      <div class="modal-header">
+        <h4 style="font-size: 1.15rem;">Download Dandora Associate App</h4>
+        <button class="modal-close" onclick="closeAppModal()">&times;</button>
+      </div>
+      <div class="modal-body" style="padding: 2rem;">
+        <div style="width: 80px; height: 80px; border-radius: 20px; background: linear-gradient(135deg, var(--cyan), #0066ff); display: flex; align-items: center; justify-content: center; font-size: 2.2rem; margin: 0 auto 1.2rem; box-shadow: 0 0 25px var(--cyan-glow);">
+          📱
+        </div>
+        <h3 style="margin-bottom: 0.4rem;">Dandora Partner APK &amp; PWA</h3>
+        <p style="font-size: 0.88rem; color: var(--text-secondary); margin-bottom: 1.6rem;">
+          Deploy leads, track real-time deal stages, watch training modules, and receive instant push payout alerts.
+        </p>
+
+        <div style="display: flex; flex-direction: column; gap: 0.8rem;">
+          <button class="btn btn-primary" onclick="simulateDownload('Google Play Store APK')">
+            ▶ Download for Android (Direct APK / Play Store)
+          </button>
+          <button class="btn btn-secondary" onclick="simulateDownload('Progressive Web App')">
+            🌐 Launch PWA Web App in Browser
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Lesson Player Modal -->
+  <div class="modal-backdrop" id="lessonModal" role="dialog" aria-modal="true">
+    <div class="modal-card" style="max-width: 580px;">
+      <div class="modal-header">
+        <div>
+          <h4 style="font-size: 1.15rem;" id="lessonModalTitle">Module Lesson</h4>
+          <span style="font-size: 0.78rem; color: var(--cyan);" id="lessonModalDuration">3 Mins</span>
+        </div>
+        <button class="modal-close" onclick="closeLessonModal()">&times;</button>
+      </div>
+      <div class="modal-body">
+        <!-- Mock Video Player Frame -->
+        <div style="aspect-ratio: 16/9; background: #000; border-radius: var(--radius-md); border: 1px solid var(--border-glow); display: flex; flex-direction: column; align-items: center; justify-content: center; position: relative; margin-bottom: 1.2rem; overflow: hidden;">
+          <div style="width: 60px; height: 60px; border-radius: 50%; background: var(--cyan); display: flex; align-items: center; justify-content: center; font-size: 1.8rem; color: #000; cursor: pointer; box-shadow: 0 0 20px var(--cyan);">
+            ▶
+          </div>
+          <div style="position: absolute; bottom: 12px; left: 15px; font-size: 0.8rem; color: #fff; background: rgba(0,0,0,0.6); padding: 2px 8px; border-radius: 4px;">
+            Dandora Digital Academy • HD Video
+          </div>
+        </div>
+        <h5 style="font-size: 0.95rem; margin-bottom: 0.3rem;">Summary &amp; Key Takeaways</h5>
+        <p style="font-size: 0.85rem; color: var(--text-secondary); line-height: 1.6;" id="lessonModalDesc">
+          Key lesson points.
+        </p>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-primary btn-sm" style="width: 100%;" onclick="closeLessonModal()">
+          ✓ Mark as Completed &amp; Continue
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Cloud Sync & Google Sheets Webhook Modal -->
+  <div class="modal-backdrop" id="cloudSyncModal" role="dialog" aria-modal="true">
+    <div class="modal-card" style="max-width: 650px;">
+      <div class="modal-header">
+        <div>
+          <h4 style="font-size: 1.2rem;">Live Remote API &amp; Google Sheets Sync</h4>
+          <span style="font-size: 0.8rem; color: var(--cyan);">Real-time dispatch of Associate registrations &amp; CRM leads</span>
+        </div>
+        <button class="modal-close" onclick="closeCloudSyncModal()">&times;</button>
+      </div>
+      <div class="modal-body">
+        <div class="form-group">
+          <label class="form-label" for="webhookUrlInput">Google Apps Script / Webhook Endpoint URL</label>
+          <div style="display: flex; gap: 0.5rem;">
+            <input type="url" id="webhookUrlInput" class="form-control" placeholder="https://script.google.com/macros/s/.../exec" />
+            <button class="btn btn-secondary btn-sm" onclick="testCloudConnection()" style="white-space: nowrap;">
+              ⚡ Test Ping
+            </button>
+          </div>
+          <div style="font-size: 0.75rem; color: var(--text-muted); margin-top: 0.35rem;">
+            Supports Google Apps Script Webhook, Zapier, Make.com, or custom REST POST endpoints.
+          </div>
+        </div>
+
+        <div style="display: flex; justify-content: space-between; align-items: center; padding: 0.8rem 1rem; background: rgba(255,255,255,0.02); border: 1px solid var(--border-subtle); border-radius: var(--radius-sm); margin-bottom: 1rem;">
+          <div>
+            <div style="font-weight: 600; font-size: 0.88rem;">Auto-Sync Real-Time</div>
+            <div style="font-size: 0.75rem; color: var(--text-muted);">Automatically push new leads &amp; sign-ups immediately to your Sheet</div>
+          </div>
+          <label class="switch-label" for="toggleAutoSync">
+            <input type="checkbox" id="toggleAutoSync" class="toggle-switch-input" checked onchange="saveCloudSyncConfig()" />
+          </label>
+        </div>
+
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.4rem;">
+          <span style="font-weight: 700; font-size: 0.85rem;">📋 Free Google Apps Script Template (Copy &amp; Paste into Google Sheets)</span>
+          <button class="btn btn-secondary btn-sm" onclick="copyGoogleScriptCode()">Copy Script</button>
+        </div>
+        <div class="code-snippet-box" id="googleScriptCodePreview">
+          <button class="copy-code-btn" onclick="copyGoogleScriptCode()">Copy</button>
+          <pre style="margin: 0; font-family: inherit; font-size: inherit;">// 1. Open your Google Sheet -> Extensions -> Apps Script
+// 2. Paste this code and click 'Deploy' -> 'New Deployment'
+// 3. Select type: 'Web app', Who has access: 'Anyone', Deploy & paste URL above!
+
+function doPost(e) {
+  var lock = LockService.getScriptLock();
+  lock.tryLock(10000);
+  try {
+    var sheetName = 'Leads';
+    var data = JSON.parse(e.postData.contents);
+    var ss = SpreadsheetApp.getActiveSpreadsheet();
+    
+    if (data.type === 'associate') {
+      sheetName = 'Associates';
+    }
+    
+    var sheet = ss.getSheetByName(sheetName);
+    if (!sheet) {
+      sheet = ss.insertSheet(sheetName);
+      if (data.type === 'associate') {
+        sheet.appendRow(['Timestamp', 'Associate ID', 'Name', 'Phone', 'Email', 'Status', 'City', 'Skills', 'UPI', 'PAN']);
+      } else {
+        sheet.appendRow(['Timestamp', 'Lead ID', 'Business Name', 'Contact', 'Phone', 'Category', 'Need', 'Status', 'Est Amount', 'Payout']);
+      }
+    }
+    
+    if (data.type === 'associate') {
+      sheet.appendRow([new Date(), data.associateId, data.fullName, data.phone, data.email, data.status, data.city, (data.skills || []).join(', '), data.upi, data.pan]);
+    } else {
+      sheet.appendRow([new Date(), data.id, data.bizName, data.contact, data.phone, data.category, data.need, data.statusText, data.amount, data.payout]);
+    }
+    
+    return ContentService.createTextOutput(JSON.stringify({result: 'success'})).setMimeType(ContentService.MimeType.JSON);
+  } catch (err) {
+    return ContentService.createTextOutput(JSON.stringify({result: 'error', error: err.toString()})).setMimeType(ContentService.MimeType.JSON);
+  } finally {
+    lock.releaseLock();
+  }
+}</pre>
+        </div>
+
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 1rem; padding-top: 0.8rem; border-top: 1px solid var(--border-subtle);">
+          <div style="font-size: 0.85rem;">
+            Unsynced Offline Queue: <strong id="modalQueueCount" style="color: var(--amber);">0 items</strong>
+          </div>
+          <button class="btn btn-emerald btn-sm" onclick="syncPendingQueue()">
+            🚀 Sync Pending Queue Now
+          </button>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-secondary btn-sm" onclick="closeCloudSyncModal()">Cancel</button>
+        <button class="btn btn-primary btn-sm" onclick="saveCloudSyncConfig(true)">Save Configuration</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast Container -->
+  <div class="toast-container" id="toastContainer"></div>
+
+  <!-- GSAP Animation Library & Engine -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="animations.js"></script>
+  <!-- JavaScript Business Logic -->
+  <script src="app.js"></script>
+</body>
+</html>

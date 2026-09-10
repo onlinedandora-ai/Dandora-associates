@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <title>Dandora Associate Mobile App</title>
+  <meta name="description" content="Dandora.online Associate Mobile Application. Log leads, track real-time deal stages, watch training modules, and receive instant push payouts." />
+  <link rel="manifest" href="manifest.json" />
+  <meta name="theme-color" content="#070a13" />
+  <link rel="stylesheet" href="mobile.css" />
+</head>
+<body>
+
+  <!-- Mobile Smartphone Device Shell -->
+  <div class="mobile-device-shell">
+    
+    <!-- Native Device Status Bar -->
+    <div class="mobile-status-bar">
+      <span id="mobileClock">10:45</span>
+      <div class="status-icons">
+        <span>5G</span>
+        <span>📶</span>
+        <span>🔋 98%</span>
+      </div>
+    </div>
+
+    <!-- Mobile App Header -->
+    <header class="mobile-app-header">
+      <div class="app-brand">
+        <div class="app-logo-box">D</div>
+        <span>Dandora<span style="color: var(--cyan);">.online</span></span>
+      </div>
+      <div style="display: flex; align-items: center; gap: 0.6rem;">
+        <span class="m-badge badge-won" style="font-size: 0.65rem;">● LIVE HUB</span>
+        <a href="../portal.html" style="font-size: 0.72rem; color: var(--cyan); text-decoration: none; padding: 0.2rem 0.5rem; background: rgba(0,229,255,0.1); border-radius: 6px;">
+          Desktop Portal →
+        </a>
+      </div>
+    </header>
+
+    <!-- Scrollable Viewport Content Area -->
+    <main class="mobile-viewport" id="mobileViewport">
+
+      <!-- TAB 1: FEED SCREEN -->
+      <section class="tab-screen active" id="screen-feed">
+        <h2 class="screen-title">Broadcast Feed</h2>
+        <p class="screen-sub">Real-time business updates &amp; shareable client case studies.</p>
+
+        <!-- Celebration Payout Banner -->
+        <div class="m-card" style="background: linear-gradient(135deg, rgba(16, 185, 129, 0.15) 0%, rgba(13, 21, 39, 0.9) 100%); border-color: rgba(16, 185, 129, 0.3);">
+          <div style="display: flex; align-items: center; gap: 0.6rem; margin-bottom: 0.3rem;">
+            <span style="font-size: 1.2rem;">🎉</span>
+            <strong style="color: var(--emerald); font-size: 0.85rem;">Milestone Payout Disbursed</strong>
+          </div>
+          <div style="font-size: 0.8rem; color: var(--text-secondary);">
+            Associate Suresh K. closed 3rd contract in Madhapur: <strong>₹24,000 sent via UPI!</strong>
+          </div>
+        </div>
+
+        <!-- News Card 1 -->
+        <div class="m-card">
+          <div style="font-size: 0.72rem; color: var(--cyan); font-weight: 700; text-transform: uppercase; margin-bottom: 0.3rem;">
+            Case Study • Healthcare
+          </div>
+          <h4 style="font-size: 0.95rem; margin-bottom: 0.4rem;">Apollo Tele-Consultants Booking Portal</h4>
+          <p style="font-size: 0.8rem; color: var(--text-secondary); line-height: 1.5; margin-bottom: 0.8rem;">
+            Automated WhatsApp reminders and table appointment schedule generated 3.4x more daily consultations.
+          </p>
+          <button class="btn-m-primary" style="font-size: 0.82rem; padding: 0.55rem;" onclick="shareFromMobile('Apollo Healthcare Portal')">
+            Share on WhatsApp (+My Referral)
+          </button>
+        </div>
+
+        <!-- News Card 2 -->
+        <div class="m-card">
+          <div style="font-size: 0.72rem; color: var(--amber); font-weight: 700; text-transform: uppercase; margin-bottom: 0.3rem;">
+            New Service Launch
+          </div>
+          <h4 style="font-size: 0.95rem; margin-bottom: 0.4rem;">Restaurant Smart QR Table Menus</h4>
+          <p style="font-size: 0.8rem; color: var(--text-secondary); line-height: 1.5; margin-bottom: 0.8rem;">
+            Zero food aggregator fees for restaurant owners. Earn flat ₹6,000 commission + 5% monthly SaaS software retainer.
+          </p>
+          <button class="btn-m-primary" style="font-size: 0.82rem; padding: 0.55rem;" onclick="shareFromMobile('Restaurant QR Menus')">
+            Share on WhatsApp (+My Referral)
+          </button>
+        </div>
+      </section>
+
+      <!-- TAB 2: PIPELINE SCREEN -->
+      <section class="tab-screen" id="screen-pipeline">
+        <h2 class="screen-title">My Deal Pipeline</h2>
+        <p class="screen-sub">Track active leads submitted to the Dandora machine.</p>
+
+        <div id="mobilePipelineList">
+          <!-- Rendered via mobile.js -->
+        </div>
+      </section>
+
+      <!-- TAB 3: QUICK LOG LEAD SCREEN (Center Action) -->
+      <section class="tab-screen" id="screen-log">
+        <h2 class="screen-title">Log New Lead</h2>
+        <p class="screen-sub">Pre-sales desk validates &amp; calls client within 2 hours.</p>
+
+        <form id="quickLeadForm" onsubmit="handleQuickLeadSubmit(event)">
+          <div class="m-form-group">
+            <label class="m-form-label" for="mBizName">Business / Store Name *</label>
+            <input type="text" id="mBizName" class="m-input" required placeholder="e.g. Hyderabad Biryani House" />
+          </div>
+
+          <div class="m-form-group">
+            <label class="m-form-label" for="mContactName">Owner / Manager Name</label>
+            <input type="text" id="mContactName" class="m-input" placeholder="e.g. Vikram Reddy" />
+          </div>
+
+          <div class="m-form-group">
+            <label class="m-form-label" for="mPhone">Contact Mobile Number *</label>
+            <input type="tel" id="mPhone" class="m-input" required pattern="[0-9]{10}" placeholder="10-digit phone" />
+          </div>
+
+          <div class="m-form-group">
+            <label class="m-form-label" for="mCategory">Business Category</label>
+            <select id="mCategory" class="m-input">
+              <option value="Restaurant / Cafe">Restaurant / Cafe</option>
+              <option value="Healthcare / Clinic">Healthcare / Clinic</option>
+              <option value="Retail / Store">Retail / Store</option>
+              <option value="Real Estate">Real Estate / Architecture</option>
+              <option value="Education">Education &amp; Coaching</option>
+            </select>
+          </div>
+
+          <div class="m-form-group">
+            <label class="m-form-label" for="mNeed">Digital Requirement</label>
+            <select id="mNeed" class="m-input">
+              <option value="Website & Branding">Website &amp; Branding</option>
+              <option value="Restaurant Smart QR">Restaurant Smart QR Menus</option>
+              <option value="Custom Web App">Custom Web App / ERP</option>
+              <option value="Digital Marketing">Social Media &amp; SEO</option>
+            </select>
+          </div>
+
+          <!-- Photo Attachment Box -->
+          <div class="m-form-group">
+            <label class="m-form-label">Storefront / Signboard Photo</label>
+            <input type="file" id="storePhotoInput" accept="image/*" capture="environment" style="display: none;" onchange="handlePhotoSelected(event)" />
+            <div class="photo-upload-box" id="photoPreviewBox" onclick="triggerPhotoCapture()">
+              <div style="font-size: 1.6rem; margin-bottom: 0.3rem;">📸</div>
+              <div style="font-size: 0.8rem; font-weight: 600; color: var(--cyan);">Tap to take or attach shop photo</div>
+              <div style="font-size: 0.72rem; color: var(--text-muted);">(Optional - Storefront &amp; Signboard)</div>
+            </div>
+          </div>
+
+          <button type="submit" class="btn-m-primary" style="margin-top: 1.2rem;">
+            Submit Lead to Dandora Strategists
+          </button>
+        </form>
+      </section>
+
+      <!-- TAB 4: ACADEMY SCREEN -->
+      <section class="tab-screen" id="screen-academy">
+        <h2 class="screen-title">Mobile Academy</h2>
+        <p class="screen-sub">3-minute rapid video lessons for quick local pitches.</p>
+
+        <div class="m-card">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.4rem;">
+            <strong style="font-size: 0.9rem;">Module 1: The 30-Sec Elevator Pitch</strong>
+            <span class="m-badge badge-won">3 Mins</span>
+          </div>
+          <p style="font-size: 0.8rem; color: var(--text-secondary); margin-bottom: 0.8rem;">
+            How to introduce Dandora as Hyderabad's top tech team that guarantees delivery.
+          </p>
+          <button class="btn-m-primary" style="font-size: 0.78rem; padding: 0.45rem;" onclick="showMobileToast('Playing 3-min audio/video lesson...')">
+            ▶ Watch 3-Min Reel
+          </button>
+        </div>
+
+        <div class="m-card">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.4rem;">
+            <strong style="font-size: 0.9rem;">Module 2: Restaurant QR Menu Pitch</strong>
+            <span class="m-badge badge-won">2:45 Mins</span>
+          </div>
+          <p style="font-size: 0.8rem; color: var(--text-secondary); margin-bottom: 0.8rem;">
+            Master the math of showing restaurant owners how they save 30% on commissions.
+          </p>
+          <button class="btn-m-primary" style="font-size: 0.78rem; padding: 0.45rem;" onclick="showMobileToast('Playing 3-min audio/video lesson...')">
+            ▶ Watch 3-Min Reel
+          </button>
+        </div>
+
+        <div class="m-card">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.4rem;">
+            <strong style="font-size: 0.9rem;">Scout Certification Quiz</strong>
+            <span class="m-badge badge-assigned">3 Questions</span>
+          </div>
+          <p style="font-size: 0.8rem; color: var(--text-secondary); margin-bottom: 0.8rem;">
+            Take the quick test to stamp your digital partner pass with the Certified Scout badge.
+          </p>
+          <button class="btn-m-primary" style="background: var(--amber); color: #030712; font-size: 0.78rem; padding: 0.45rem;" onclick="showMobileToast('Quiz complete! Badge stamped on profile.')">
+            🏅 Take 1-Min Quiz
+          </button>
+        </div>
+      </section>
+
+      <!-- TAB 5: PROFILE & WALLET SCREEN -->
+      <section class="tab-screen" id="screen-profile">
+        <h2 class="screen-title">Partner Wallet &amp; Pass</h2>
+        <p class="screen-sub">Earnings, UPI verification, and your digital Associate ID.</p>
+
+        <!-- Wallet Card -->
+        <div class="m-card" style="background: linear-gradient(135deg, #0d1527 0%, #1e293b 100%); border-color: var(--cyan);">
+          <div style="font-size: 0.75rem; color: var(--text-muted); text-transform: uppercase; margin-bottom: 0.2rem;">
+            Lifetime Commission Earnings
+          </div>
+          <div style="font-size: 2.2rem; font-weight: 800; font-family: var(--font-display); color: var(--emerald); margin-bottom: 0.6rem;">
+            ₹48,500
+          </div>
+          <div style="display: flex; justify-content: space-between; font-size: 0.8rem; border-top: 1px solid rgba(255,255,255,0.08); padding-top: 0.6rem;">
+            <span>Settlement: <strong>UPI (Verified)</strong></span>
+            <span style="color: var(--cyan); font-weight: 600;">48-72h Speed</span>
+          </div>
+        </div>
+
+        <!-- Digital ID Card Mini -->
+        <div class="m-card" style="border-color: var(--border-glow);">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.8rem;">
+            <strong style="font-size: 0.95rem;">Dandora Associate Pass</strong>
+            <span class="m-badge badge-won">VERIFIED</span>
+          </div>
+          <div style="display: flex; gap: 0.8rem; align-items: center; margin-bottom: 0.8rem;">
+            <div style="width: 48px; height: 48px; border-radius: 10px; background: linear-gradient(135deg, var(--cyan), #0066ff); display: flex; align-items: center; justify-content: center; font-weight: 800; color: #030712; font-size: 1.2rem;">
+              SK
+            </div>
+            <div>
+              <div style="font-weight: 700; font-size: 0.95rem;" id="mProfileName">Sravan Kumar</div>
+              <div style="font-size: 0.75rem; color: var(--cyan); font-family: monospace;" id="mProfileId">DAN-HYD-2026-8821</div>
+            </div>
+          </div>
+          <div style="display: flex; gap: 0.4rem; flex-wrap: wrap;">
+            <span class="m-badge badge-paid">🏅 Certified Scout</span>
+            <span class="m-badge badge-paid">🩺 Healthcare Tech</span>
+          </div>
+        </div>
+
+        <div style="margin-top: 1.5rem; text-align: center;">
+          <a href="../portal.html" style="color: var(--cyan); font-size: 0.82rem; text-decoration: none; font-weight: 600;">
+            Open Full Desktop Partner Portal →
+          </a>
+        </div>
+      </section>
+
+    </main>
+
+    <!-- Bottom Tab Navigation Bar -->
+    <nav class="mobile-bottom-nav">
+      <!-- Tab 1: Feed -->
+      <button class="nav-tab-btn active" data-tab="feed" onclick="switchMobileTab('feed', this)">
+        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z"></path></svg>
+        <span>Feed</span>
+      </button>
+
+      <!-- Tab 2: Pipeline -->
+      <button class="nav-tab-btn" data-tab="pipeline" onclick="switchMobileTab('pipeline', this)">
+        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"></path></svg>
+        <span>Pipeline</span>
+      </button>
+
+      <!-- Tab 3: Center FAB Log Lead -->
+      <div class="nav-fab-btn" onclick="switchMobileTab('log', document.querySelector('.nav-tab-btn[data-tab=\'log\']'))" title="Quick Log Lead">
+        <svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M12 4v16m8-8H4"></path></svg>
+      </div>
+
+      <!-- Tab 4: Academy -->
+      <button class="nav-tab-btn" data-tab="academy" onclick="switchMobileTab('academy', this)">
+        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path></svg>
+        <span>Academy</span>
+      </button>
+
+      <!-- Tab 5: Profile/Wallet -->
+      <button class="nav-tab-btn" data-tab="profile" onclick="switchMobileTab('profile', this)">
+        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path></svg>
+        <span>Wallet</span>
+      </button>
+    </nav>
+
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="../animations.js"></script>
+  <script src="mobile.js"></script>
+</body>
+</html>
