@@ -1,0 +1,44 @@
+{
+  "hosting": {
+    "public": ".",
+    "ignore": [
+      "firebase.json",
+      ".firebaserc",
+      "**/.*",
+      "**/node_modules/**",
+      "server/**",
+      "data/**",
+      "android/**",
+      "ios/**",
+      "server.js",
+      "package.json",
+      "package-lock.json",
+      "capacitor.config.json",
+      "README.md",
+      "*.log",
+      "downloads/**",
+      "**/*.apk",
+      "**/*.exe"
+    ],
+    "cleanUrls": true,
+    "trailingSlash": false,
+    "rewrites": [
+      {
+        "source": "/portal",
+        "destination": "/portal.html"
+      },
+      {
+        "source": "/admin",
+        "destination": "/admin.html"
+      },
+      {
+        "source": "/register",
+        "destination": "/register.html"
+      },
+      {
+        "source": "/mobile",
+        "destination": "/mobile/index.html"
+      }
+    ]
+  }
+}
