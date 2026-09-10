@@ -45,9 +45,9 @@
           <svg width="14" height="14" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 16l-4-4m0 0l4-4m-4 4h14m-5 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h7a3 3 0 013 3v1"></path></svg>
           Portal
         </a>
-        <a href="mobile/index.html" class="btn btn-secondary btn-sm" id="navMobileBtn">
+        <button onclick="openAppModal()" class="btn btn-secondary btn-sm" id="navMobileBtn">
           📱 App
-        </a>
+        </button>
         <a href="register.html" class="btn btn-primary btn-sm" id="navRegisterBtn">
           Register &rarr;
         </a>
@@ -85,10 +85,10 @@
             <svg width="18" height="18" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
             Launch Web App Portal
           </a>
-          <a href="mobile/index.html" class="btn btn-secondary" id="heroSecondaryCta">
+          <button class="btn btn-secondary" id="heroSecondaryCta" onclick="openAppModal()">
             <svg width="18" height="18" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z"></path></svg>
-            Open Mobile App
-          </a>
+            Mobile App (Android / iOS)
+          </button>
         </div>
 
         <div class="trust-strip">
@@ -1697,29 +1697,84 @@
   </div>
 
   <!-- App Download Modal / Dialog -->
+  <!-- App Download Modal / Dialog with Separate Android and iOS Cards -->
   <div class="modal-backdrop" id="appDownloadModal" role="dialog" aria-modal="true">
-    <div class="modal-card" style="max-width: 480px; text-align: center;">
+    <div class="modal-card" style="max-width: 680px; text-align: left;">
       <div class="modal-header">
-        <h4 style="font-size: 1.15rem;">Download Dandora Associate App</h4>
+        <div>
+          <h4 style="font-size: 1.25rem;">Choose Your Mobile Platform</h4>
+          <span style="font-size: 0.8rem; color: var(--text-secondary);">Dandora Associate App is optimized separately for Android and Apple iOS</span>
+        </div>
         <button class="modal-close" onclick="closeAppModal()">&times;</button>
       </div>
-      <div class="modal-body" style="padding: 2rem;">
-        <div style="width: 80px; height: 80px; border-radius: 20px; background: linear-gradient(135deg, var(--cyan), #0066ff); display: flex; align-items: center; justify-content: center; font-size: 2.2rem; margin: 0 auto 1.2rem; box-shadow: 0 0 25px var(--cyan-glow);">
-          📱
-        </div>
-        <h3 style="margin-bottom: 0.4rem;">Dandora Partner APK &amp; PWA</h3>
-        <p style="font-size: 0.88rem; color: var(--text-secondary); margin-bottom: 1.6rem;">
-          Deploy leads, track real-time deal stages, watch training modules, and receive instant push payout alerts.
-        </p>
+      <div class="modal-body" style="padding: 1.8rem;">
+        <div style="display: flex; flex-wrap: wrap; gap: 1.4rem; justify-content: center;">
+          
+          <!-- Android Card -->
+          <div style="flex: 1 1 270px; background: var(--bg-cream); border: 2px solid var(--border-hairline); border-radius: var(--radius-lg); padding: 1.6rem; display: flex; flex-direction: column; justify-content: space-between; box-shadow: 0 4px 16px rgba(138, 106, 74, 0.05);">
+            <div>
+              <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 0.8rem;">
+                <div style="width: 44px; height: 44px; border-radius: 12px; background: rgba(56, 94, 56, 0.15); display: flex; align-items: center; justify-content: center; font-size: 1.7rem;">
+                  🤖
+                </div>
+                <span class="badge badge-emerald" style="font-size: 0.72rem;">Android (APK)</span>
+              </div>
+              <h3 style="font-size: 1.2rem; margin-bottom: 0.4rem; color: var(--text-primary);">Android App</h3>
+              <p style="font-size: 0.85rem; color: var(--text-secondary); line-height: 1.5; margin-bottom: 1.2rem;">
+                Install the native APK directly on any Android smartphone (Samsung, OnePlus, Xiaomi, Vivo, Realme, etc.).
+              </p>
+              <ul style="font-size: 0.82rem; color: var(--text-contrast); list-style: none; margin-bottom: 1.4rem; display: flex; flex-direction: column; gap: 0.4rem;">
+                <li>✓ Direct APK Download (3.76 MB)</li>
+                <li>✓ Background sync &amp; push alerts</li>
+                <li>✓ Native Capacitor 6 runtime</li>
+              </ul>
+            </div>
+            <div>
+              <a href="/downloads/Dandora-Partner-App.apk" download="Dandora-Partner-App.apk" class="btn btn-primary" style="width: 100%; display: flex; justify-content: center; align-items: center; gap: 0.5rem; text-decoration: none; margin-bottom: 0.5rem;">
+                <svg width="18" height="18" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path></svg>
+                Download Android APK
+              </a>
+              <a href="/mobile/index.html" class="btn btn-secondary btn-sm" style="width: 100%; text-align: center; text-decoration: none; font-size: 0.78rem;">
+                Launch Android Web App
+              </a>
+            </div>
+          </div>
 
-        <div style="display: flex; flex-direction: column; gap: 0.8rem;">
-          <a href="/downloads/Dandora-Partner-App.apk" download="Dandora-Partner-App.apk" class="btn btn-primary" style="display: flex; justify-content: center; align-items: center; gap: 0.5rem; text-decoration: none;">
-            <svg width="18" height="18" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path></svg>
-            Download Android APK (v1.0 Direct Install)
-          </a>
-          <a href="/mobile/index.html" class="btn btn-secondary" style="display: flex; justify-content: center; align-items: center; gap: 0.5rem; text-decoration: none;">
-            🌐 Launch Mobile Web App (PWA)
-          </a>
+          <!-- Apple iOS Card -->
+          <div style="flex: 1 1 270px; background: var(--bg-cream); border: 2px solid var(--border-hairline); border-radius: var(--radius-lg); padding: 1.6rem; display: flex; flex-direction: column; justify-content: space-between; box-shadow: 0 4px 16px rgba(138, 106, 74, 0.05);">
+            <div>
+              <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 0.8rem;">
+                <div style="width: 44px; height: 44px; border-radius: 12px; background: rgba(217, 93, 57, 0.15); display: flex; align-items: center; justify-content: center; font-size: 1.7rem;">
+                  🍎
+                </div>
+                <span class="badge badge-terracotta" style="font-size: 0.72rem;">Apple iOS</span>
+              </div>
+              <h3 style="font-size: 1.2rem; margin-bottom: 0.4rem; color: var(--text-primary);">iPhone &amp; iPad</h3>
+              <p style="font-size: 0.85rem; color: var(--text-secondary); line-height: 1.5; margin-bottom: 0.8rem;">
+                Full-screen standalone app for Safari on iOS or native Xcode project for TestFlight/App Store.
+              </p>
+              <div style="background: rgba(234, 239, 229, 0.7); border: 1px solid var(--border-subtle); border-radius: var(--radius-sm); padding: 0.7rem; margin-bottom: 1.2rem; font-size: 0.78rem; color: var(--text-secondary); line-height: 1.45;">
+                <strong style="color: var(--text-primary);">To Install on iPhone:</strong><br>
+                1. Tap button below to open in Safari<br>
+                2. Tap Share <strong>⎋</strong> &rarr; <strong>"Add to Home Screen"</strong>
+              </div>
+              <ul style="font-size: 0.82rem; color: var(--text-contrast); list-style: none; margin-bottom: 1.4rem; display: flex; flex-direction: column; gap: 0.4rem;">
+                <li>✓ Fullscreen native feel (no URL bar)</li>
+                <li>✓ Native Xcode workspace in <code>./ios</code></li>
+                <li>✓ Works on iOS 14.0 to 18+</li>
+              </ul>
+            </div>
+            <div>
+              <a href="/mobile/index.html" class="btn btn-primary" style="width: 100%; display: flex; justify-content: center; align-items: center; gap: 0.5rem; text-decoration: none; margin-bottom: 0.5rem;">
+                <svg width="18" height="18" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z"></path></svg>
+                Launch on iPhone (iOS)
+              </a>
+              <span style="display: block; text-align: center; font-size: 0.75rem; color: var(--text-muted);">
+                Xcode Project: <code>npm run ios:open</code>
+              </span>
+            </div>
+          </div>
+
         </div>
       </div>
     </div>
