@@ -26,10 +26,10 @@
       <nav>
         <ul class="nav-links">
           <li><a href="#motivation" class="nav-link">Who It's For</a></li>
-          <li><a href="#earnings" class="nav-link">Earnings & Tiers</a></li>
+          <li><a href="#earnings" class="nav-link">Earnings &amp; Tiers</a></li>
           <li><a href="#calculator" class="nav-link">Income Calculator</a></li>
-          <li><a href="#how-it-works" class="nav-link">How It Works</a></li>
           <li><a href="#simulator" class="nav-link">App Simulator</a></li>
+          <li><a href="#how-it-works" class="nav-link">How It Works</a></li>
           <li><a href="#faq" class="nav-link">FAQ</a></li>
         </ul>
       </nav>
@@ -40,7 +40,7 @@
           <span id="syncStatusText">Local Only</span>
           <span class="queue-badge" id="syncQueueBadge" style="display: none;">0</span>
         </button>
-        <a href="admin.html" class="btn btn-secondary btn-sm" style="border-color: rgba(239, 68, 68, 0.4); color: #f87171; white-space: nowrap;" title="Administrative CRM & KYC Console">
+        <a href="admin.html" class="btn btn-secondary btn-sm" style="border-color: rgba(239, 68, 68, 0.4); color: #f87171; white-space: nowrap;" title="Administrative CRM &amp; KYC Console">
           👑 Admin Console
         </a>
         <a href="portal.html" class="btn btn-secondary btn-sm" id="navLoginBtn" style="white-space: nowrap;">
@@ -60,10 +60,10 @@
     </div>
   </header>
 
-  <!-- 2.1 Hero Section -->
+  <!-- 2.1 Full-Width Centered Hero Section -->
   <section class="hero-section" id="hero">
-    <div class="container hero-grid">
-      <div class="hero-content">
+    <div class="container hero-centered-container">
+      <div class="hero-header-centered">
         <div class="hero-badge-wrap">
           <div class="badge pulse-dot">
             DANDORA PARTNER NETWORK • 100% FREE REGISTRATION
@@ -113,8 +113,8 @@
         </div>
       </div>
 
-      <!-- Hero Visual & Live App Preview -->
-      <div class="hero-visual">
+      <!-- Hero Visual & Wide Elevated Showcase Card -->
+      <div class="hero-showcase-container">
         <div class="hero-dashboard-preview">
           <div class="preview-header">
             <div class="associate-id-chip">
@@ -125,19 +125,36 @@
             </div>
           </div>
 
-          <div class="preview-stat-card">
-            <div class="stat-label">Verified Associate Earnings (This Month)</div>
-            <div class="stat-value-row">
-              <div class="stat-amount gradient-emerald">₹48,500</div>
-              <span class="stat-tag">+3 Deals Closed</span>
+          <!-- 3-Metric Summary Strip -->
+          <div class="showcase-metrics-grid">
+            <div class="preview-stat-card">
+              <div class="stat-label">Verified Payout (This Month)</div>
+              <div class="stat-value-row">
+                <div class="stat-amount gradient-emerald">₹48,500</div>
+                <span class="stat-tag">+3 Deals Closed</span>
+              </div>
+            </div>
+            <div class="preview-stat-card">
+              <div class="stat-label">Active Client Pipeline</div>
+              <div class="stat-value-row">
+                <div class="stat-amount">₹1,85,000</div>
+                <span class="badge badge-sm badge-amber">4 In Progress</span>
+              </div>
+            </div>
+            <div class="preview-stat-card">
+              <div class="stat-label">Partner Milestone Rank</div>
+              <div class="stat-value-row">
+                <div class="stat-amount" style="font-size: 1.35rem; color: var(--terracotta);">Consultant</div>
+                <span class="badge badge-sm badge-terracotta">Tier 2</span>
+              </div>
             </div>
           </div>
 
-          <div style="font-size: 0.82rem; font-weight: 700; color: var(--text-muted); text-transform: uppercase; margin-bottom: 0.6rem; letter-spacing: 0.05em;">
-            Live Deal Tracker (Hyderabad Hub)
+          <div style="font-size: 0.82rem; font-weight: 700; color: var(--text-muted); text-transform: uppercase; margin-bottom: 0.8rem; letter-spacing: 0.05em;">
+            Live Deal Tracker • Hyderabad Hub
           </div>
 
-          <div class="mini-pipeline-stream">
+          <div class="showcase-pipeline-grid">
             <div class="mini-stream-item">
               <div>
                 <div class="stream-business">Sri Sai Multispeciality Clinic</div>
@@ -146,17 +163,17 @@
               <div class="stream-status">Won • ₹12,000 Payout</div>
             </div>
 
-            <div class="mini-stream-item" style="border-left-color: var(--amber);">
+            <div class="mini-stream-item" style="border-left-color: var(--warm-amber);">
               <div>
                 <div class="stream-business">Royal Spice Kitchen (Madhapur)</div>
-                <div style="font-size: 0.72rem; color: var(--text-muted);">Digital Menu & SEO Setup</div>
+                <div style="font-size: 0.72rem; color: var(--text-muted);">Digital Menu &amp; SEO Setup</div>
               </div>
-              <div style="color: var(--amber); font-weight: 600;">Meeting Scheduled</div>
+              <div style="color: var(--warm-amber); font-weight: 600; font-size: 0.82rem;">Meeting Scheduled</div>
             </div>
 
-            <div class="mini-stream-item" style="border-left-color: var(--emerald);">
+            <div class="mini-stream-item" style="border-left-color: var(--sage-green);">
               <div>
-                <div class="stream-business">Prism Interiors & Architects</div>
+                <div class="stream-business">Prism Interiors &amp; Architects</div>
                 <div style="font-size: 0.72rem; color: var(--text-muted);">Corporate Portfolio Website</div>
               </div>
               <div class="stream-status">Paid to Bank (UPI)</div>
@@ -166,7 +183,7 @@
 
         <!-- Floating Accent Badges -->
         <div class="floating-stat-card floating-stat-1">
-          <div class="float-icon" style="background: rgba(16, 185, 129, 0.15); color: var(--emerald);">
+          <div class="float-icon" style="background: rgba(124, 139, 94, 0.15); color: var(--sage-green);">
             ⚡
           </div>
           <div>
@@ -176,7 +193,7 @@
         </div>
 
         <div class="floating-stat-card floating-stat-2">
-          <div class="float-icon" style="background: rgba(0, 229, 255, 0.15); color: var(--cyan);">
+          <div class="float-icon" style="background: rgba(181, 118, 79, 0.15); color: var(--terracotta);">
             🤝
           </div>
           <div>
@@ -459,15 +476,15 @@
           </div>
 
           <div class="tier-responsibilities">
-            <div class="tier-resp-title">Core Responsibilities & Eligibility</div>
+            <div class="tier-resp-title">Core Responsibilities &amp; Eligibility</div>
             <ul class="tier-resp-list">
               <li>
                 <svg width="16" height="16" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
-                Discover local shop, clinic & enterprise leads
+                Discover local shop, clinic &amp; enterprise leads
               </li>
               <li>
                 <svg width="16" height="16" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
-                Verify contact details & business needs
+                Verify contact details &amp; business needs
               </li>
               <li>
                 <svg width="16" height="16" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
@@ -480,17 +497,17 @@
             </ul>
           </div>
 
-          <button class="btn btn-secondary" onclick="openRegistrationWizard('Scout')">Start as Scout</button>
+          <button class="btn btn-secondary" onclick="openRegistrationWizard('Scout')">Start as Scout &rarr;</button>
         </div>
 
         <!-- Tier 2: Associate Consultant -->
         <div class="tier-card featured" id="tierConsultant">
           <div class="tier-ribbon">
-            <span class="badge badge-emerald">POPULAR</span>
+            <span class="badge badge-terracotta">⭐ MOST POPULAR • 3 DEALS</span>
           </div>
 
           <div class="tier-header">
-            <div class="badge badge-emerald badge-sm" style="margin-bottom: 0.6rem;">Tier 02 • Proven Closer</div>
+            <div class="badge badge-terracotta badge-sm" style="margin-bottom: 0.6rem;">Tier 02 • Proven Closer</div>
             <h3 class="tier-title">Associate Consultant</h3>
             <p class="tier-subtitle">Achieved after 3 successfully closed deals.</p>
           </div>
@@ -505,7 +522,7 @@
           </div>
 
           <div class="tier-responsibilities">
-            <div class="tier-resp-title">Core Responsibilities & Eligibility</div>
+            <div class="tier-resp-title">Core Responsibilities &amp; Eligibility</div>
             <ul class="tier-resp-list">
               <li>
                 <svg width="16" height="16" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
@@ -526,13 +543,13 @@
             </ul>
           </div>
 
-          <button class="btn btn-emerald" onclick="openRegistrationWizard('Consultant')">Unlock Consultant Track</button>
+          <button class="btn btn-primary" onclick="openRegistrationWizard('Consultant')">Unlock Consultant Track &rarr;</button>
         </div>
 
         <!-- Tier 3: Growth Partner -->
         <div class="tier-card elite" id="tierGrowth">
           <div class="tier-ribbon">
-            <span class="badge badge-amber">ELITE LEADERSHIP</span>
+            <span class="badge badge-amber">👑 ELITE PARTNER • 10 DEALS</span>
           </div>
 
           <div class="tier-header">
@@ -551,7 +568,7 @@
           </div>
 
           <div class="tier-responsibilities">
-            <div class="tier-resp-title">Core Responsibilities & Eligibility</div>
+            <div class="tier-resp-title">Core Responsibilities &amp; Eligibility</div>
             <ul class="tier-resp-list">
               <li>
                 <svg width="16" height="16" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
@@ -572,12 +589,25 @@
             </ul>
           </div>
 
-          <button class="btn btn-primary" onclick="openRegistrationWizard('GrowthPartner')">Apply for Territory Lead</button>
+          <button class="btn btn-secondary" onclick="openRegistrationWizard('GrowthPartner')">Apply for Territory Lead &rarr;</button>
         </div>
       </div>
+    </div>
+  </section>
 
-      <!-- Live Interactive Commission Calculator -->
-      <div class="calculator-box" id="calculator">
+  <!-- Section 4: Interactive Income Modeling Lab -->
+  <section class="section" id="calculator">
+    <div class="container">
+      <div class="section-header">
+        <div class="badge badge-amber section-tagline">Dynamic Income Modeling Lab</div>
+        <h2 class="section-title">Calculate Your Monthly &amp; Annual Income Potential</h2>
+        <p class="section-subtitle">
+          Test real client scenarios, simulate higher deal sizes, and explore your immediate take-home payout across any partner tier.
+        </p>
+      </div>
+
+      <!-- Live Interactive Commission Calculator Widget -->
+      <div class="calculator-box">
         <div class="calc-controls">
           <div class="badge badge-sm" style="margin-bottom: 0.6rem;">Interactive Model</div>
           <h3 class="calc-title">Real-Time Commission Calculator</h3>
@@ -721,82 +751,7 @@
     </div>
   </section>
 
-  <!-- 2.4 How It Works (Step-by-Step Infographic Flow) -->
-  <section class="section" id="how-it-works" style="background: rgba(0, 0, 0, 0.25);">
-    <div class="container">
-      <div class="section-header">
-        <div class="badge section-tagline">Frictionless 5-Step Engine</div>
-        <h2 class="section-title">How Dandora Works (From Lead to Bank Payout)</h2>
-        <p class="section-subtitle">
-          You don't need to write code, configure servers, or negotiate difficult contracts. You scout; we close & deliver.
-        </p>
-      </div>
-
-      <div class="steps-timeline">
-        <!-- Step 1 -->
-        <div class="step-card">
-          <div class="step-number">01</div>
-          <h3 class="step-title">Download & Sign Up</h3>
-          <p class="step-desc">
-            Install the Dandora Associate App or register online. Complete your educational and skills profile, and receive your verified Associate ID in under 3 minutes.
-          </p>
-          <div class="step-meta-badge">
-            ⚡ &lt; 3 Mins Verification
-          </div>
-        </div>
-
-        <!-- Step 2 -->
-        <div class="step-card">
-          <div class="step-number">02</div>
-          <h3 class="step-title">Learn with Rapid Modules</h3>
-          <p class="step-desc">
-            Watch brief 3-minute video guides on Dandora's digital offerings: websites, custom ERP portals, social media management, and WhatsApp automation.
-          </p>
-          <div class="step-meta-badge">
-            🎥 3-Min Micro Lessons
-          </div>
-        </div>
-
-        <!-- Step 3 -->
-        <div class="step-card">
-          <div class="step-number">03</div>
-          <h3 class="step-title">Connect & Log Leads</h3>
-          <p class="step-desc">
-            Talk to local shop owners, service providers, or enterprises. Submit their contact details and business requirements directly through your app interface.
-          </p>
-          <div class="step-meta-badge">
-            📱 1-Tap Lead Form
-          </div>
-        </div>
-
-        <!-- Step 4 -->
-        <div class="step-card">
-          <div class="step-number">04</div>
-          <h3 class="step-title">Dandora Closes & Executes</h3>
-          <p class="step-desc">
-            Our senior Hyderabad strategists pitch, negotiate, and deliver the technical solutions. You monitor real-time deal progress and status changes.
-          </p>
-          <div class="step-meta-badge">
-            🤝 100% Expert Handoff
-          </div>
-        </div>
-
-        <!-- Step 5 -->
-        <div class="step-card">
-          <div class="step-number">05</div>
-          <h3 class="step-title">Get Paid & Take On Projects</h3>
-          <p class="step-desc">
-            Commission is credited directly to your bank account (UPI/NEFT) within 48-72 hours of client milestone clearance. Skilled associates unlock direct delivery work.
-          </p>
-          <div class="step-meta-badge" style="color: var(--cyan);">
-            💰 Fast 48-72 Hr Bank UPI
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Section 3: Interactive Associate App & CRM Simulator -->
+  <!-- Section 5: Interactive Associate App & CRM Simulator -->
   <section class="section" id="simulator">
     <div class="container">
       <div class="section-header">
@@ -1202,7 +1157,82 @@
     </div>
   </section>
 
-  <!-- 2.5 Frequently Asked Questions (Web FAQ Accordion) -->
+  <!-- Section 6: How It Works (Step-by-Step Infographic Flow) -->
+  <section class="section" id="how-it-works">
+    <div class="container">
+      <div class="section-header">
+        <div class="badge section-tagline">Frictionless 5-Step Engine</div>
+        <h2 class="section-title">How Dandora Works (From Lead to Bank Payout)</h2>
+        <p class="section-subtitle">
+          You don't need to write code, configure servers, or negotiate difficult contracts. You scout; we close &amp; deliver.
+        </p>
+      </div>
+
+      <div class="steps-timeline">
+        <!-- Step 1 -->
+        <div class="step-card">
+          <div class="step-number">01</div>
+          <h3 class="step-title">Download &amp; Sign Up</h3>
+          <p class="step-desc">
+            Install the Dandora Associate App or register online. Complete your educational and skills profile, and receive your verified Associate ID in under 3 minutes.
+          </p>
+          <div class="step-meta-badge">
+            ⚡ &lt; 3 Mins Verification
+          </div>
+        </div>
+
+        <!-- Step 2 -->
+        <div class="step-card">
+          <div class="step-number">02</div>
+          <h3 class="step-title">Learn with Rapid Modules</h3>
+          <p class="step-desc">
+            Watch brief 3-minute video guides on Dandora's digital offerings: websites, custom ERP portals, social media management, and WhatsApp automation.
+          </p>
+          <div class="step-meta-badge">
+            🎥 3-Min Micro Lessons
+          </div>
+        </div>
+
+        <!-- Step 3 -->
+        <div class="step-card">
+          <div class="step-number">03</div>
+          <h3 class="step-title">Connect &amp; Log Leads</h3>
+          <p class="step-desc">
+            Talk to local shop owners, service providers, or enterprises. Submit their contact details and business requirements directly through your app interface.
+          </p>
+          <div class="step-meta-badge">
+            📱 1-Tap Lead Form
+          </div>
+        </div>
+
+        <!-- Step 4 -->
+        <div class="step-card">
+          <div class="step-number">04</div>
+          <h3 class="step-title">Dandora Closes &amp; Executes</h3>
+          <p class="step-desc">
+            Our senior Hyderabad strategists pitch, negotiate, and deliver the technical solutions. You monitor real-time deal progress and status changes.
+          </p>
+          <div class="step-meta-badge">
+            🤝 100% Expert Handoff
+          </div>
+        </div>
+
+        <!-- Step 5 -->
+        <div class="step-card">
+          <div class="step-number">05</div>
+          <h3 class="step-title">Get Paid &amp; Take On Projects</h3>
+          <p class="step-desc">
+            Commission is credited directly to your bank account (UPI/NEFT) within 48-72 hours of client milestone clearance. Skilled associates unlock direct delivery work.
+          </p>
+          <div class="step-meta-badge" style="color: var(--sage-green);">
+            💰 Fast 48-72 Hr Bank UPI
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 7: Frequently Asked Questions (Web FAQ Accordion) -->
   <section class="section" id="faq">
     <div class="container">
       <div class="section-header">
@@ -1293,6 +1323,55 @@
           <p>
             Associates inactive for 90 days receive automated refresh playbooks. Consistent performers unlock territory franchise rights and guaranteed corporate placement.
           </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 8: High-Conversion Final Join Banner (#join-now) -->
+  <section class="section join-banner-section" id="join-now">
+    <div class="container">
+      <div class="join-banner-card">
+        <div class="join-banner-badge">
+          <span class="badge badge-terracotta pulse-dot">READY TO EARN WITH DANDORA?</span>
+        </div>
+        <h2 class="join-banner-title">
+          Turn Your Free Time &amp; Connections into a <span class="gradient-text">Reliable Income Stream.</span>
+        </h2>
+        <p class="join-banner-desc">
+          No registration fee. No coding required. Get assigned your official Associate ID in under 3 minutes and start scouting businesses in Hyderabad and beyond today.
+        </p>
+        <div class="join-banner-actions">
+          <button class="btn btn-primary" onclick="openRegistrationWizard()">
+            <svg width="18" height="18" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18 9v3m0 0v3m0-3h3m-3 0h-3m-2-5a4 4 0 11-8 0 4 4 0 018 0zM3 20a6 6 0 0112 0v1H3v-1z"></path></svg>
+            Register as an Associate (Free) &rarr;
+          </button>
+          <a href="portal.html" class="btn btn-secondary">
+            <svg width="18" height="18" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+            Launch Web App Portal
+          </a>
+          <button class="btn btn-secondary" onclick="openAppModal()">
+            <svg width="18" height="18" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z"></path></svg>
+            Download Mobile App
+          </button>
+        </div>
+        <div class="join-banner-perks">
+          <span class="join-banner-perk">
+            <svg width="16" height="16" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
+            100% Free Signup
+          </span>
+          <span class="join-banner-perk">
+            <svg width="16" height="16" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
+            Weekly Direct UPI Payouts
+          </span>
+          <span class="join-banner-perk">
+            <svg width="16" height="16" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
+            Zero Technical Prerequisites
+          </span>
+          <span class="join-banner-perk">
+            <svg width="16" height="16" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
+            Dedicated Training Hub
+          </span>
         </div>
       </div>
     </div>
