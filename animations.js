@@ -52,7 +52,6 @@
     const heroCtas = document.querySelectorAll('.hero-cta-group .btn');
     const trustStrip = document.querySelector('.trust-strip');
     const heroPreview = document.querySelector('.hero-dashboard-preview');
-    const floatingBadges = document.querySelectorAll('.floating-stat-card');
 
     const tl = gsap.timeline({ defaults: { ease: 'power3.out' } });
 
@@ -78,20 +77,6 @@
 
     if (heroPreview) {
       tl.from(heroPreview, { opacity: 0, scale: 0.92, y: 40, duration: 1.1, ease: 'power2.out' }, '-=0.8');
-    }
-
-    if (floatingBadges.length > 0) {
-      tl.from(floatingBadges, { opacity: 0, scale: 0.8, y: 20, stagger: 0.15, duration: 0.7, ease: 'back.out(1.7)' }, '-=0.4');
-      // Gentle floating physics
-      floatingBadges.forEach((badge, index) => {
-        gsap.to(badge, {
-          y: index % 2 === 0 ? -6 : 6,
-          repeat: -1,
-          yoyo: true,
-          duration: 2.2 + index * 0.4,
-          ease: 'sine.inOut'
-        });
-      });
     }
   }
 
